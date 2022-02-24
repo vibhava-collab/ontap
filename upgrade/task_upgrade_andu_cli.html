@@ -953,14 +953,14 @@
 
 
 
+
+
           
         </li>
       </ul>
     
 
   
-
-
 
 
 
@@ -16042,9 +16042,9 @@
         Cluster upgrade limits
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/upgrade/task_identifying_current_cluster_activity.html">
         Current cluster activity
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/upgrade/concept_how_firmware_is_updated_during_upgrade.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/upgrade/concept_how_firmware_is_updated_during_upgrade.html">
         How firmware is updated during upgrade
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> What should I verify before I upgrade with or without Upgrade Advisor?</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/upgrade/task_what_to_check_before_upgrade.html">
@@ -22039,11 +22039,27 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-22 07:48:06 +0000">02/22/2022</time>
+    <time datetime="2022-02-24 14:06:48 +0000">02/24/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -22301,6 +22317,48 @@ cluster1::&gt;</pre>
 </div>
 <div class="paragraph">
 <p>If your cluster is not configured to send AutoSupport messages, a copy of the notification is saved locally.</p>
+</div>
+</li>
+<li>
+<p>Verify that the cluster is enabled for automatic unplanned switchover:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+This procedure is performed only for MetroCluster FC configurations.  If you are using a MetroCluster IP configuration, skip this procedure.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Check whether automatic unplanned switchover is enabled:</p>
+<div class="paragraph">
+<p><code>metrocluster show</code></p>
+</div>
+<div class="paragraph">
+<p>If automatic unplanned switchover is enabled, the following statement appears in the command output:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>AUSO Failure Domain    auso-on-cluster-disaster</pre>
+</div>
+</div>
+</li>
+<li>
+<p>If the statement does not appear in the output, enable automatic unplanned switchover:</p>
+<div class="paragraph">
+<p><code>metrocluster modify -auto-switchover-failure-domain auso-on-cluster-disaster</code></p>
+</div>
+</li>
+<li>
+<p>Verify that automatic unplanned switchover has been enabled by repeating Step 1.</p>
+</li>
+</ol>
 </div>
 </li>
 </ol>
