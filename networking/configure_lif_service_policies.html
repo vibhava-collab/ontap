@@ -14054,6 +14054,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -21279,6 +21281,8 @@
         Basic monitoring
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_admin_add_and_remove_volumes_in_consistency_groups.html">
         Add and remove volumes in a consistency group
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/resume-protection-fan-out-configuration.html">
+        Restore protection in a fan-out configuration
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_admin_converting_existing_relationships_to_smbc.html">
         Convert existing relationships to SM-BC relationships
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_admin_upgrade_and_revert_considerations.html">
@@ -22039,11 +22043,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-24 14:06:48 +0000">02/24/2022</time>
+    <time datetime="2022-02-25 14:05:40 +0000">02/25/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/mpittman-netapp">
+    <img  class="avatar avatar-small"
+          alt="mpittman-netapp"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/86311789?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -22142,7 +22154,7 @@ management-ssh              tcp:22
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>network interface service-policy create -vserver svm1 -policy svm1_data_policy - services data-nfs,data-cifs,data-core -allowed-addresses 10.1.0.0/16</pre>
+<pre>network interface service-policy create -vserver svm1 -policy svm1_data_policy -services data-nfs,data-cifs,data-core -allowed-addresses 10.1.0.0/16</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -22150,7 +22162,7 @@ management-ssh              tcp:22
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>network interface service-policy create -vserver cluster1 -policy intercluster1 - services intercluster-core -allowed-addresses 10.1.0.0/16</pre>
+<pre>network interface service-policy create -vserver cluster1 -policy intercluster1 -services intercluster-core -allowed-addresses 10.1.0.0/16</pre>
 </div>
 </div>
 </li>
@@ -22304,7 +22316,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 <p>Add an additional service entry to an existing service policy</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>network interface service-policy add- service</code></p>
+<p><code>network interface service-policy add-service</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -22320,7 +22332,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 <p>Modify a service entry in an existing service policy</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>network interface service-policy modify- service</code></p>
+<p><code>network interface service-policy modify-service</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -22328,7 +22340,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 <p>Remove a service entry from an existing service policy</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>network interface service-policy remove- service</code></p>
+<p><code>network interface service-policy remove-service</code></p>
 </div></div></td>
 </tr>
 <tr>
@@ -22352,7 +22364,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 <p>Restore a built-in service-policy to its original state</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>network interface service-policy restore- defaults</code></p>
+<p><code>network interface service-policy restore-defaults</code></p>
 </div></div></td>
 </tr>
 <tr>
