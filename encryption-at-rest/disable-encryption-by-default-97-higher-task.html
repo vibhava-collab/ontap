@@ -22043,11 +22043,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-26 02:41:06 +0000">02/26/2022</time>
+    <time datetime="2022-02-28 15:25:13 +0000">02/28/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/andris-ntap">
+    <img  class="avatar avatar-small"
+          alt="andris-ntap"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/84108159?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -22063,7 +22071,7 @@
 
 
 <div class="paragraph lead">
-<p>Beginning with ONTAP 9.7, aggregate and volume encryption is enabled by default if you have a volume encryption (VE) license and use an onboard or external key manager. You can disable encryption by default if required.</p>
+<p>Beginning with ONTAP 9.7, aggregate and volume encryption is enabled by default if you have a volume encryption (VE) license and use an onboard or external key manager. You can disable encryption by default for the entire cluster, if required.</p>
 </div>
 <div class="paragraph">
 <div class="title">What you&#8217;ll need</div>
@@ -22073,12 +22081,9 @@
 <div class="title">Step</div>
 <ol class="arabic">
 <li>
-<p>To disable encryption by default in ONTAP 9.7 or later, run the following command:</p>
+<p>To disable encryption by default for the entire cluster in ONTAP 9.7 or later, run the following command:</p>
 <div class="paragraph">
-<p><code>options -option-name encryption.data_at_rest_encryption.disable_by_default -vserver (vservername or * for all) -option-value on</code></p>
-</div>
-<div class="paragraph">
-<p>For complete command syntax, see the man page for the command.</p>
+<p><code>options -option-name encryption.data_at_rest_encryption.disable_by_default -option-value on</code></p>
 </div>
 </li>
 </ol>
