@@ -22047,7 +22047,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 14:02:21 +0000">03/02/2022</time>
+    <time datetime="2022-03-02 20:39:37 +0000">03/02/2022</time>
     
   
 
@@ -22096,9 +22096,14 @@
 </div>
 </li>
 <li>
-<p>Break the SnapMirror relationship:</p>
+<p>Break the replication relationship:</p>
 <div class="paragraph">
-<p><code>snapmirror break -source-path svm1:volA -destination-path svm_backup:volA_dst</code></p>
+<p><code>snapmirror break -source-path SVM:volume|cluster://SVM/volume, …​ -destination-path SVM:volume|cluster://SVM/volume, …​</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cluster_dst::&gt; snapmirror break -source-path svm1:volA -destination-path svm_backup:volA_dst</pre>
+</div>
 </div>
 </li>
 <li>
