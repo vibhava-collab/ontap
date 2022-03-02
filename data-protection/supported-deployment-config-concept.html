@@ -21286,7 +21286,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_admin_add_and_remove_volumes_in_consistency_groups.html">
         Add and remove volumes in a consistency group
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/resume-protection-fan-out-configuration.html">
-        Restore protection in a fan-out configuration
+        Resume protection in a fan-out configuration
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_admin_converting_existing_relationships_to_smbc.html">
         Convert existing relationships to SM-BC relationships
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_admin_upgrade_and_revert_considerations.html">
@@ -22047,35 +22047,11 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-01 16:44:44 +0000">03/01/2022</time>
+    <time datetime="2022-03-02 14:02:21 +0000">03/02/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-ahibbard">
-    <img  class="avatar avatar-small"
-          alt="netapp-ahibbard"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/85892662?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/netapp-lenida">
-    <img  class="avatar avatar-small"
-          alt="netapp-lenida"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54081920?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -22088,7 +22064,7 @@
 <p>You can use a <em>fan-out</em> deployment to extend data protection to multiple secondary systems. You can use a <em>cascade</em> deployment to extend data protection to tertiary systems.</p>
 </div>
 <div class="paragraph">
-<p>Both fan-out and cascade deployments support any combination of SnapMirror DR, SnapVault, or unified replication; however, SnapMirror Synchronous relationships (supported beginning with ONTAP 9.5) support only fan-out deployments with one or more asynchronous SnapMirror relationships and do not support cascade deployments. Only one relationship in the fan-out configuration can be a SnapMirror Synchronous relationship, all the other relationships from the source volume must be asynchronous SnapMirror relationships.</p>
+<p>Both fan-out and cascade deployments support any combination of SnapMirror DR, SnapVault, or unified replication; however, SnapMirror Synchronous relationships (supported beginning with ONTAP 9.5) support only fan-out deployments with one or more asynchronous SnapMirror relationships and do not support cascade deployments. Only one relationship in the fan-out configuration can be a SnapMirror Synchronous relationship, all the other relationships from the source volume must be asynchronous SnapMirror relationships. <a href="../smbc/resume-protection-fan-out-configuration.html">SnapMirror Business Continuity</a> (supported beginning with ONTAP 9.8) also supports fan-out configurations.</p>
 </div>
 <div class="admonitionblock note">
 <table>
