@@ -16,20 +16,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/>
-  
-  <meta name="description" content="The method you use to upgrade depends upon your configuration.  If available, the automated nondisruptive upgrade (ANDU) using System Manager is the preferre...">
-  <meta name="keywords" content=" upgrade, methods, andu, ndu, automated, automatic, system manager, cli, nondisruptive, disruptive">
-  
-  
-
-  <!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The method you use to upgrade depends upon your configuration.  If available, the automated nondisruptive upgrade (ANDU) using System Manager is the preferre...">
+  <meta name="keywords" content=" upgrade, methods, andu, ndu, automated, automatic, system manager, cli, nondisruptive, disruptive"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
-  <!-- RSS Feed -->
-  
-
-  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
@@ -60,26 +51,10 @@
   <link rel="stylesheet" href="/us-en/ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
   <link rel="stylesheet" href='/us-en/ontap/css/product-family.css' type="text/css">
-  
-
-  
-  <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'>
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-  
-    <script src='/us-en/ontap/js/na-search.js'></script>
-  
-
-  
-  <script src='/us-en/ontap/js/na-pagenav.js'></script>
-  
-
-  <link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap/js/na-search.js'></script><script src='/us-en/ontap/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/prism-netapp.css' type='text/css'>
 
 
@@ -97,9 +72,7 @@
   <script src='/us-en/ontap/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/ontap/js/toc.js'></script>
-  <script src='/us-en/ontap/js/customscripts.js'></script>
-
-  <script>
+  <script src='/us-en/ontap/js/customscripts.js'></script><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -22042,8 +22015,7 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container -->
-    <article class="page-content">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
@@ -22076,11 +22048,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-04 03:12:14 +0000">03/04/2022</time>
+    <time datetime="2022-03-07 20:07:28 +0000">03/07/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-forry">
+    <img  class="avatar avatar-small"
+          alt="netapp-forry"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-aoife">
     <img  class="avatar avatar-small"
           alt="netapp-aoife"
@@ -22106,57 +22086,84 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The method you use to upgrade depends upon your configuration.  If available, the automated nondisruptive upgrade (ANDU) using System Manager is the preferred method.</p>
+<p>The method you use to upgrade&#8201;&#8212;&#8201;nondisruptive or disruptive, automated or manual&#8201;&#8212;&#8201;depends upon your configuration.  If available, the automated nondisruptive upgrade (ANDU) using System Manager is the preferred method.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nondisruptive upgrades</strong><br>
+Nondisruptive upgrades take advantage of ONTAP’s high-availability (HA) failover technology to ensure that clusters continue to serve data during the upgrade. There are two types of nondisruptive upgrade processes.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Nondisruptive upgrade</strong>:  In a nondisruptive upgrade, update procedures are performed in the background while maintaining service to clients. Nondisruptive upgrades can be performed using an automated or manual method.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Automated nondisruptive upgrade (ANDU)</strong> can be executed using System Manager or the ONTAP command line interface (CLI).  If available for your configuration, ANDU using System Manager is the recommended method of upgrade.   With ANDU, ONTAP automatically installs the target ONTAP image on each node, validates the cluster components to ensure that the cluster can be upgraded nondisruptively, and then executes the upgrade in the background.</p>
+<p><em>Batch</em> updates<br>
+In a batch update, the cluster is divided into several batches, each of which contains multiple HA pairs.  In the first batch, half of the nodes are upgraded, followed by their HA partners. The process is then repeated sequentially for the remaining batches.</p>
 </li>
 <li>
-<p><strong>Manual nondisruptive upgrade</strong> involves manual steps to confirm the ONTAP configuration on each node and then uses the rolling update method to perform the upgrade. In the rolling update method, a node is taken offline and upgraded while its partner takes over its storage. When the node upgrade is complete, the partner node gives control back to the original owning node and the process is repeated, this time on the partner node. Each additional HA pair is upgraded in sequence until all HA pairs are running the target release. Manual nondisruptive upgrades are executed using the ONTAP CLI.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Disruptive</strong>: In a disruptive upgrade, storage failover is disabled for each HA pair, and then each node is rebooted one at a time. Disruptive upgrades can be performed more quickly than nondisruptive upgrades, and require fewer steps to complete. However, you should not perform a disruptive upgrade unless you can take the cluster offline for the duration of the upgrade. If you are operating in a SAN environment, you should be prepared to shut down or suspend all SAN clients before performing a disruptive upgrade. Disruptive upgrades are performed using the ONTAP CLI.</p>
+<p><em>Rolling</em> updates<br>
+In a rolling update, a node is taken offline and upgraded while its partner takes over its storage. When the node upgrade is complete, the partner node gives control back to the original owning node and the process is repeated, this time on the partner node. Each additional HA pair is upgraded in sequence until all HA pairs are running the target release.<br>
+<strong>Note:</strong> The term <em>rolling upgrade</em> is frequently used in the software industry for software upgrades that don&#8217;t cause disruptions in service and hence is often synonymous with "nondisruptive upgrade". In ONTAP 9 upgrades, a <em>rolling update</em> is one of the processes that can be used for nondisruptive upgrades.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
+<p>Nondisruptive upgrades can be performed using an <em>automated</em> or <em>manual</em> method.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Automated nondisruptive upgrade (ANDU)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>When an administrator initiates an ANDU, ONTAP automatically installs the target ONTAP image on each node, validates the cluster components to ensure that the cluster can be upgraded nondisruptively, and then executes a batch or rolling update in the background.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Batch updates are the default for clusters of 8 nodes or more.</p>
+</li>
+<li>
+<p>Rolling updates are the default for clusters with fewer than 8 nodes. Rolling updates can also be selected explicitly for clusters with 8 nodes or more.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>An ANDU can be executed using System Manager or the ONTAP command line interface (CLI). If available for your configuration, ANDU using System Manager is the recommended method of upgrade.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Manual nondisruptive upgrade</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>An administrator must manually confirm upgrade readiness of the cluster components on each node, then manually perform rolling update process steps in the foreground.</p>
+</li>
+<li>
+<p>Manual nondisruptive upgrades are executed using the ONTAP CLI.</p>
+</li>
+<li>
 <p>You should only use a manual method if ANDU is not supported for your configuration.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Disruptive upgrades</strong><br>
+In a disruptive upgrade, storage failover is disabled for each HA pair, and then each node is rebooted one at a time. Disruptive upgrades can be performed more quickly than nondisruptive upgrades, and require fewer steps to complete. However, you should not perform a disruptive upgrade unless you can take the cluster offline for the duration of the upgrade. If you are operating in a SAN environment, you should be prepared to shut down or suspend all SAN clients before performing a disruptive upgrade. Disruptive upgrades are performed using the ONTAP CLI.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-metrocluster-configurations">Non-MetroCluster configurations</h2>
+<h2 id="methods-for-non-metrocluster-configurations">Methods for non-MetroCluster configurations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The upgrade methods available for each configuration are listed in order of recommended usage.</p>
+<p>Clusters with 2 or more nodes can use any of the following upgrade methods, which are listed in order of recommended usage.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ONTAP version</th>
-<th class="tableblock halign-left valign-top">Number of nodes</th>
-<th class="tableblock halign-left valign-top">Upgrade method</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9.0 or later</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2, 4, 8</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<div class="ulist">
 <ul>
 <li>
 <p><a href="task_upgrade_andu_sm.html">Automated nondisruptive using System Manager</a></p>
@@ -22165,42 +22172,30 @@
 <p><a href="task_upgrade_andu_cli.html">Automated nondisruptive using the CLI</a></p>
 </li>
 <li>
-<p><a href="task_upgrade_nondisruptive_manual_cli.html">Manual nondisruptive using the CLI (the Rolling Method)</a></p>
+<p><a href="task_upgrade_nondisruptive_manual_cli.html">Manual nondisruptive using the CLI</a></p>
 </li>
 <li>
 <p><a href="task_updating_an_ontap_cluster_disruptively.html">Manual disruptive using the CLI</a></p>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9.0 or later</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+</div>
+<div class="paragraph">
+<p>Single node clusters must use one of disruptive methods, although the automated method is recommended.</p>
+</div>
+<div class="ulist">
 <ul>
 <li>
-<p><a href="task_upgrade_andu_cli.html">Automated nondisruptive using the CLI</a></p>
-</li>
-<li>
-<p><a href="task_upgrade_nondisruptive_manual_cli.html">Manual nondisruptive using the CLI (the Rolling Method)</a></p>
+<p><a href="task_upgrade_disruptive_automated_cli.html">Automated disruptive using the CLI</a></p>
 </li>
 <li>
 <p><a href="task_updating_an_ontap_cluster_disruptively.html">Manual disruptive using the CLI</a></p>
 </li>
 </ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9.2 or later</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single-node</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="task_upgrade_disruptive_automated_cli.html">Automated disruptive using the CLI</a></p></td>
-</tr>
-</tbody>
-</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="metrocluster-configurations">MetroCluster configurations</h2>
+<h2 id="methods-for-metrocluster-configurations">Methods for MetroCluster configurations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The upgrade methods available for each configuration are listed in order of recommended usage.</p>
@@ -22319,8 +22314,7 @@
     </div>
   </div>
   
-  <div style="clear: both"></div><!-- Main needs to have height -->
-</div>
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
 
@@ -22422,9 +22416,7 @@
 </div>
 </footer>
 
-      </div>
-
-      <!-- Elasticsearch JS -->
+      </div><!-- Elasticsearch JS -->
       <script type="text/javascript" src='/us-en/ontap/js/bundle.js'></script>
 
       <!-- Syntax Highlighting -->
@@ -22439,7 +22431,4 @@
     </script>
     <script src='/us-en/ontap/js/www-ntap.js'></script>
     <script src='/us-en/ontap/js/tabbed-blocks.js'></script>
-  </body>
-
-  
-</html>
+  </body></html>

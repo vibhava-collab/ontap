@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Manual nondisruptive (rolling method) using the CLI</title>
+  <title>Manual nondisruptive upgrade using the CLI (non-MetroCluster systems)</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Manual nondisruptive (rolling method) using the CLI" />
+  <meta property="og:title" content="Manual nondisruptive upgrade using the CLI (non-MetroCluster systems)" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_nondisruptive_manual_cli.html" />
-	<meta property="og:description" content="You can nondisruptively update the version of ONTAP on your cluster." />
+	<meta property="og:description" content="To upgrade a cluster of two or more nodes using the manual nondisruptive method, you must initiate a failover operation on each node in an HA pair, update th..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/>
-  
-  <meta name="description" content="You can nondisruptively update the version of ONTAP on your cluster.">
-  <meta name="keywords" content=" netapp, ontap, upgrade, nondisruptive, nondisruptively, non-disruptive update, nondisruptive upgrade, upgrade a cluster, shift workload between clusters, hardware platform, configuration, software image, update, update ONTAP, update software, ndu">
-  
-  
-
-  <!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="To upgrade a cluster of two or more nodes using the manual nondisruptive method, you must initiate a failover operation on each node in an HA pair, update th...">
+  <meta name="keywords" content=" netapp, ontap, upgrade, nondisruptive, nondisruptively, non-disruptive update, nondisruptive upgrade, upgrade a cluster, shift workload between clusters, hardware platform, configuration, software image, update, update ONTAP, update software, ndu"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
-  <!-- RSS Feed -->
-  
-
-  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
 
   <!-- Elastic Search -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
@@ -60,26 +51,10 @@
   <link rel="stylesheet" href="/us-en/ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
   <link rel="stylesheet" href='/us-en/ontap/css/product-family.css' type="text/css">
-  
-
-  
-  <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'>
-  
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
-  
-    <script src='/us-en/ontap/js/na-search.js'></script>
-  
-
-  
-  <script src='/us-en/ontap/js/na-pagenav.js'></script>
-  
-
-  <link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap/js/na-search.js'></script><script src='/us-en/ontap/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/prism-netapp.css' type='text/css'>
 
 
@@ -97,9 +72,7 @@
   <script src='/us-en/ontap/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/ontap/js/toc.js'></script>
-  <script src='/us-en/ontap/js/customscripts.js'></script>
-
-  <script>
+  <script src='/us-en/ontap/js/customscripts.js'></script><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -22042,8 +22015,7 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container -->
-    <article class="page-content">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
@@ -22060,7 +22032,7 @@
           <a href="/us-en/ontap/">ONTAP&nbsp;9</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Manual nondisruptive (rolling method) using the CLI
+          Manual nondisruptive upgrade using the CLI (non-MetroCluster systems)
         </li>
       </ul>
     </div>
@@ -22069,18 +22041,26 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Manual nondisruptive (rolling method) using the CLI</h1>
+  <h1 class="n-doc__component-detail-heading">Manual nondisruptive upgrade using the CLI (non-MetroCluster systems)</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-03-04 03:12:14 +0000">03/04/2022</time>
+    <time datetime="2022-03-07 20:07:28 +0000">03/07/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-forry">
+    <img  class="avatar avatar-small"
+          alt="netapp-forry"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -22098,7 +22078,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The rolling upgrade method enables you to update a cluster of two or more nodes nondisruptively. This method has several steps: initiating a failover operation on each node in an HA pair, updating the &#8220;failed&#8221; node, initiating giveback, and then repeating the process for each HA pair in the cluster.</p>
+<p>To upgrade a cluster of two or more nodes using the manual nondisruptive method, you must initiate a failover operation on each node in an HA pair, update the &#8220;failed&#8221; node, initiate giveback, and then repeat the process for each HA pair in the cluster.</p>
 </div>
 <div class="paragraph">
 <p>You must have satisfied upgrade preparation requirements.</p>
@@ -22207,13 +22187,13 @@ node1    false
 <li>
 <p>Run the following command twice to determine whether the node to be updated is currently serving any clients <code>system node run -node nodenameA -command uptime</code></p>
 <div class="paragraph">
-<p>The uptime command displays the total number of operations that the node has performed for NFS, CIFS, FC, and iSCSI clients since the node was last booted. For each protocol, you must run the command twice to determine whether the operation counts are increasing. If they are increasing, the node is currently serving clients for that protocol. If they are not increasing, the node is not currently serving clients for that protocol.</p>
+<p>The uptime command displays the total number of operations that the node has performed for NFS, SMB, FC, and iSCSI clients since the node was last booted. For each protocol, you must run the command twice to determine whether the operation counts are increasing. If they are increasing, the node is currently serving clients for that protocol. If they are not increasing, the node is not currently serving clients for that protocol.</p>
 </div>
 <div class="paragraph">
 <p><strong>NOTE</strong>: You should make a note of each protocol that has increasing client operations so that after the node is updated, you can verify that client traffic has resumed.</p>
 </div>
 <div class="paragraph">
-<p>The following example shows a node with NFS, CIFS, FC, and iSCSI operations. However, the node is currently serving only NFS and iSCSI clients.</p>
+<p>The following example shows a node with NFS, SMB, FC, and iSCSI operations. However, the node is currently serving only NFS and iSCSI clients.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -22515,13 +22495,13 @@ node0    false
 <li>
 <p>Run the following command twice to determine whether the node to be updated is currently serving any clients: <code>system node run -node nodenameB -command uptime</code></p>
 <div class="paragraph">
-<p>The uptime command displays the total number of operations that the node has performed for NFS, CIFS, FC, and iSCSI clients since the node was last booted. For each protocol, you must run the command twice to determine whether the operation counts are increasing. If they are increasing, the node is currently serving clients for that protocol. If they are not increasing, the node is not currently serving clients for that protocol.</p>
+<p>The uptime command displays the total number of operations that the node has performed for NFS, SMB, FC, and iSCSI clients since the node was last booted. For each protocol, you must run the command twice to determine whether the operation counts are increasing. If they are increasing, the node is currently serving clients for that protocol. If they are not increasing, the node is not currently serving clients for that protocol.</p>
 </div>
 <div class="paragraph">
 <p><strong>NOTE</strong>: You should make a note of each protocol that has increasing client operations so that after the node is updated, you can verify that client traffic has resumed.</p>
 </div>
 <div class="paragraph">
-<p>The following example shows a node with NFS, CIFS, FC, and iSCSI operations. However, the node is currently serving only NFS and iSCSI clients.</p>
+<p>The following example shows a node with NFS, SMB, FC, and iSCSI operations. However, the node is currently serving only NFS and iSCSI clients.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -22804,7 +22784,7 @@ node1
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Manual nondisruptive (rolling method) using the CLI](https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_nondisruptive_manual_cli.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Manual nondisruptive upgrade using the CLI (non-MetroCluster systems)](https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_nondisruptive_manual_cli.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/upgrade/task_upgrade_nondisruptive_manual_cli.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>
@@ -22818,8 +22798,7 @@ node1
     </div>
   </div>
   
-  <div style="clear: both"></div><!-- Main needs to have height -->
-</div>
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
 
@@ -22921,9 +22900,7 @@ node1
 </div>
 </footer>
 
-      </div>
-
-      <!-- Elasticsearch JS -->
+      </div><!-- Elasticsearch JS -->
       <script type="text/javascript" src='/us-en/ontap/js/bundle.js'></script>
 
       <!-- Syntax Highlighting -->
@@ -22938,7 +22915,4 @@ node1
     </script>
     <script src='/us-en/ontap/js/www-ntap.js'></script>
     <script src='/us-en/ontap/js/tabbed-blocks.js'></script>
-  </body>
-
-  
-</html>
+  </body></html>
