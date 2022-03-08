@@ -22048,19 +22048,11 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 20:07:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-08 19:41:10 +0000">03/08/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -22186,119 +22178,6 @@ High Availability Configured: true</pre>
 </li>
 <li>
 <p>Verify the status of the DNS server is up.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="verifying-networking-and-storage-status-for-metrocluster-configurations">Verifying networking and storage status for MetroCluster configurations</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before and after performing an update in a MetroCluster configuration, you should verify the status of the LIFs, aggregates, and volumes for each cluster.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Verify the LIF status: <code>network interface show</code></p>
-<div class="paragraph">
-<p>In normal operation, LIFs for source SVMs must have an admin status of up and be located on their home nodes. LIFs for destination SVMs are not required to be up or located on their home nodes. In switchover, all LIFs have an admin status of up, but they do not need to be located on their home nodes.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::&gt; network interface show
-            Logical    Status     Network            Current       Current Is
-Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
------------ ---------- ---------- ------------------ ------------- ------- ----
-Cluster
-            cluster1-a1_clus1
-                         up/up    192.0.2.1/24       cluster1-01
-                                                                   e2a     true
-            cluster1-a1_clus2
-                         up/up    192.0.2.2/24       cluster1-01
-                                                                   e2b     true
-
-
-cluster1-01
-            clus_mgmt    up/up    198.51.100.1/24    cluster1-01
-                                                                   e3a     true
-            cluster1-a1_inet4_intercluster1
-                         up/up    198.51.100.2/24    cluster1-01
-                                                                   e3c     true
-            ...
-
-27 entries were displayed.</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Verify the state of the aggregates: <code>storage aggregate show -state !online</code></p>
-<div class="paragraph">
-<p>This command displays any aggregates that are <em>not</em> online. In normal operation, all aggregates located at the local site must be online. However, if the MetroCluster configuration is in switchover, root aggregates at the disaster recovery site are permitted to be offline.</p>
-</div>
-<div class="paragraph">
-<p>This example shows a cluster in normal operation:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::&gt; storage aggregate show -state !online
-There are no entries matching your query.</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This example shows a cluster in switchover, in which the root aggregates at the disaster recovery site are offline:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::&gt; storage aggregate show -state !online
-Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
---------- -------- --------- ----- ------- ------ ---------------- ------------
-aggr0_b1
-                0B        0B    0% offline      0 cluster2-01      raid_dp,
-                                                                   mirror
-                                                                   degraded
-aggr0_b2
-                0B        0B    0% offline      0 cluster2-02      raid_dp,
-                                                                   mirror
-                                                                   degraded
-2 entries were displayed.</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Verify the state of the volumes: <code>volume show -state !online</code></p>
-<div class="paragraph">
-<p>This command displays any volumes that are <em>not</em> online.</p>
-</div>
-<div class="paragraph">
-<p>If the MetroCluster configuration is in normal operation (it is not in switchover state), the output should show all volumes owned by the cluster&#8217;s secondary SVMs (those with the SVM name appended with "-mc").</p>
-</div>
-<div class="paragraph">
-<p>Those volumes come online only in the event of a switchover.</p>
-</div>
-<div class="paragraph">
-<p>This example shows a cluster in normal operation, in which the volumes at the disaster recovery site are not online.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cluster1::&gt; volume show -state !online
-  (volume show)
-Vserver   Volume       Aggregate    State      Type       Size  Available Used%
---------- ------------ ------------ ---------- ---- ---------- ---------- -----
-vs2-mc    vol1         aggr1_b1     -          RW            -          -     -
-vs2-mc    root_vs2     aggr0_b1     -          RW            -          -     -
-vs2-mc    vol2         aggr1_b1     -          RW            -          -     -
-vs2-mc    vol3         aggr1_b1     -          RW            -          -     -
-vs2-mc    vol4         aggr1_b1     -          RW            -          -     -
-5 entries were displayed.</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Verify that there are no inconsistent volumes: <code>volume show -is-inconsistent true</code></p>
-<div class="paragraph">
-<p>If any inconsistent volumes are returned, you must contact NetApp Support before you precede with the upgrade.</p>
-</div>
 </li>
 </ol>
 </div>
