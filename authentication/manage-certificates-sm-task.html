@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/ontap/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap/js/na-search.js'></script><script src='/us-en/ontap/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/ontap/js/version-dropdown.js'></script>
-  <script src='/us-en/ontap/js/product-family.js'></script>
   <script src='/us-en/ontap/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Manage certificates with System Manager](https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/manage-certificates-sm-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -22021,19 +22039,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/ontap/">ONTAP&nbsp;9</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Manage certificates with System Manager
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -22048,11 +22063,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 01:28:26 +0000">03/10/2022</time>
+    <time datetime="2022-03-15 01:52:37 +0000">03/15/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -22065,7 +22088,6 @@
 
 
 </p>
-
 
 <div id="preamble">
 <div class="sectionbody">
@@ -22090,10 +22112,8 @@
 <p>In System Manager, click <strong>Cluster &gt; Settings</strong>.</p>
 </li>
 <li>
-<p>Scroll to the <strong>Security</strong> area.</p>
-<div class="paragraph">
-<p>In the <strong>Certificates</strong> section, the following details are displayed:</p>
-</div>
+<p>Scroll to the <strong>Security</strong> area.<br>
+In the <strong>Certificates</strong> section, the following details are displayed:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -22109,10 +22129,8 @@
 </div>
 </li>
 <li>
-<p>Click any number to view details about a category of certificates, or click <span class="image"><img src="media/icon_arrow.gif" alt="right arrow"></span> to view the <strong>Certificates</strong> page, which contains information about all categories.</p>
-<div class="paragraph">
-<p>The list displays the information for the entire cluster.  If you want to display information for only a specific storage VM, perform the following steps:</p>
-</div>
+<p>Click any number to view details about a category of certificates, or click <span class="image"><img src="media/icon_arrow.gif" alt="right arrow"></span> to view the <strong>Certificates</strong> page, which contains information about all categories.<br>
+The list displays the information for the entire cluster.  If you want to display information for only a specific storage VM, perform the following steps:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -22387,16 +22405,12 @@ You cannot delete trusted certificate authorities that were preinstalled with ON
 <p>Select a <strong>type</strong>.</p>
 </li>
 <li>
-<p>Enter or import <strong>certificate details</strong>.</p>
-<div class="paragraph">
-<p>You can either write in or copy and paste in the certificate details from a text file or you can import the text from a certificate file by clicking <strong>Import</strong>.</p>
-</div>
+<p>Enter or import <strong>certificate details</strong>.<br>
+You can either write in or copy and paste in the certificate details from a text file or you can import the text from a certificate file by clicking <strong>Import</strong>.</p>
 </li>
 <li>
-<p>Enter a the <strong>private key</strong>.</p>
-<div class="paragraph">
-<p>You can either write in or copy and paste in the private key from a text file or you can import the text from a private key file by clicking <strong>Import</strong>.</p>
-</div>
+<p>Enter a the <strong>private key</strong>.<br>
+You can either write in or copy and paste in the private key from a text file or you can import the text from a private key file by clicking <strong>Import</strong>.</p>
 </li>
 </ul>
 </div>
@@ -22614,25 +22628,6 @@ You cannot delete trusted certificate authorities that were preinstalled with ON
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Manage certificates with System Manager](https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/manage-certificates-sm-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>

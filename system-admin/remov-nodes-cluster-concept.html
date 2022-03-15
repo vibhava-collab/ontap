@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/ontap/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap/js/na-search.js'></script><script src='/us-en/ontap/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/ontap/js/version-dropdown.js'></script>
-  <script src='/us-en/ontap/js/product-family.js'></script>
   <script src='/us-en/ontap/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Remove nodes from the cluster](https://docs.netapp.com/us-en/ontap/system-admin/remov-nodes-cluster-concept.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/system-admin/remov-nodes-cluster-concept.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -22021,19 +22039,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/ontap/">ONTAP&nbsp;9</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Remove nodes from the cluster
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -22048,7 +22063,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 01:28:26 +0000">03/10/2022</time>
+    <time datetime="2022-03-15 01:52:37 +0000">03/15/2022</time>
     
   
 
@@ -22061,45 +22076,97 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" href="https://github.com/netapp-forry">
+    <img  class="avatar avatar-small"
+          alt="netapp-forry"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
-
 <div class="paragraph lead">
 <p>You can remove unwanted nodes from a cluster, one node at a time. After you remove a node, you must also remove its failover partner. If you are removing a node, then its data becomes inaccessible or erased.</p>
 </div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>The following conditions must be satisfied before removing nodes from the cluster:</p>
+</div>
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
 <ul>
 <li>
 <p>More than half of the nodes in the cluster must be healthy.</p>
 </li>
 <li>
 <p>All of the data on the node that you want to remove must have been evacuated.</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
-<p>All intercluster LIFs must have been removed.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When you remove intercluster LIFs a warning is displayed that can be ignored.</p>
-</div>
-<div class="paragraph">
-<p>You must not perform operations such as <code>cluster remove-node</code>, <code>cluster unjoin</code>, and <code>node rename</code> when an automated ONTAP upgrade is in progress.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
+<p>This might include <a href="../encryption-at-rest/secure-purge-data-encrypted-volume-concept.html">purging data from an encrypted volume</a>.</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>All volumes have been <a href="../volumes/move-volume-task.html">moved</a> or <a href="../volumes/delete-flexvol-task.html">deleted</a> from aggregates owned by the node.</p>
+</li>
+<li>
+<p>All aggregates have been <a href="../disks-aggregates/commands-manage-aggregates-reference.html">deleted</a> from the node.</p>
+</li>
+<li>
+<p>If the node owns Federal Information Processing Standards (FIPS) disks or self-encrypting disks (SEDs), <a href="../encryption-at-rest/return-seds-unprotected-mode-task.html">disk encryption has been removed</a> by returning the disks to unprotected mode.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You might also want to <a href="../encryption-at-rest/sanitize-fips-drive-sed-task.html">sanitize FIPS drives or SEDs</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Data LIFs have been <a href="../networking/delete_a_lif.html">deleted</a> or <a href="../networking/migrate_a_lif.html">relocated</a> from the node.</p>
+</li>
+<li>
+<p>Cluster management LIFs have been <a href="../networking/migrate_a_lif.html">relocated</a> from the node and the home ports changed.</p>
+</li>
+<li>
+<p>All intercluster LIFs have been <a href="../networking/delete_a_lif.html">removed</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>When you remove intercluster LIFs a warning is displayed that can be ignored.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Storage failover has been <a href="../high-availability/ha_commands_for_enabling_and_disabling_storage_failover.html">disabled</a> for the node.</p>
+</li>
+<li>
+<p>All LIF failover rules have been <a href="../networking/commands_for_managing_failover_groups_and_policies.html">modified</a> to remove ports on the node.</p>
+</li>
+<li>
+<p>All VLANs on the node have been <a href="../networking/configure_vlans_over_physical_ports.html#delete-a-vlan">deleted</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is recommended that you issue an AutoSupport message to notify NetApp technical support that node removal is underway.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> You must not perform operations such as <code>cluster remove-node</code>, <code>cluster unjoin</code>, and <code>node rename</code> when an automated ONTAP upgrade is in progress.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
@@ -22115,19 +22182,8 @@
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
 <div class="paragraph">
-<p>You must make all of the system and user data from the disks that are connected to the node inaccessible to users before removing a node from the cluster. After removing a node from the cluster, if you need to join the node back to the same cluster, contact technical support for assistance about restoring data.</p>
-</div>
-</td>
-</tr>
-</table>
+<p><strong>Note:</strong> You must make all of the system and user data from the disks that are connected to the node inaccessible to users before removing a node from the cluster. After removing a node from the cluster, if you need to join the node back to the same cluster, contact technical support for assistance about restoring data.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -22136,47 +22192,6 @@
 <p>Change the privilege level to advanced:</p>
 <div class="paragraph">
 <p><code><strong>set -privilege advanced</strong></code></p>
-</div>
-</li>
-<li>
-<p>If Storage Encryption is enabled on the cluster and the self-encrypting disks (SEDs) are operating you must set the data-id-key to 0x0.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Set the data-id-key to 0x0:</p>
-<div class="paragraph">
-<p><code><strong>storage encryption disk modify -disk \[<em>disk_path_name</em>\] -data-key-id 0x0</strong></code></p>
-</div>
-</li>
-<li>
-<p>Optional: If Storage Encryption is enabled and the SEDs are operating in the Federal Information Processing Standard (FIPS) compliance mode, in addition to setting the data-id-key you must also disable the FIPS compliance mode.</p>
-<div class="paragraph">
-<p>This enables the disks that are attached to the node to be sanitized and repurposed after the node is removed from the cluster.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Display the SEDs that are currently in the FIPS compliance mode:</p>
-<div class="paragraph">
-<p><code><strong>storage encryption disk show -fips</strong></code></p>
-</div>
-</li>
-<li>
-<p>Disable the FIPS compliance mode:</p>
-<div class="paragraph">
-<p><code><strong>storage encryption disk modify disk [<em>disk_path_name</em>]-fips-key-id 0x0</strong></code></p>
-</div>
-</li>
-<li>
-<p>Verify that the modified SEDs are no longer in the FIPS compliance mode:</p>
-<div class="paragraph">
-<p><code><strong>storage encryption disk show -fips</strong></code></p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
 </div>
 </li>
 <li>
@@ -22287,25 +22302,6 @@
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Remove nodes from the cluster](https://docs.netapp.com/us-en/ontap/system-admin/remov-nodes-cluster-concept.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/system-admin/remov-nodes-cluster-concept.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>

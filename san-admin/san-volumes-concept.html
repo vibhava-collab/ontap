@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/ontap/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/ontap/js/na-search.js'></script><script src='/us-en/ontap/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/ontap/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/ontap/js/version-dropdown.js'></script>
-  <script src='/us-en/ontap/js/product-family.js'></script>
   <script src='/us-en/ontap/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[About SAN volumes overview](https://docs.netapp.com/us-en/ontap/san-admin/san-volumes-concept.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/san-admin/san-volumes-concept.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -22021,19 +22039,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/ontap/">ONTAP&nbsp;9</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          About SAN volumes overview
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -22048,16 +22063,23 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 01:28:26 +0000">03/10/2022</time>
+    <time datetime="2022-03-15 01:52:37 +0000">03/15/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
-
 
 <div id="preamble">
 <div class="sectionbody">
@@ -22108,19 +22130,18 @@
 <div class="paragraph">
 <p>When a volume using semi-thick provisioning is created, ONTAP sets aside storage space from the aggregate to account for the volume size. If the volume is running out of free space because blocks are in use by block-sharing technologies, ONTAP makes an effort to delete protection data objects (Snapshot copies and FlexClone files and LUNs) to free up the space they are holding. As long as ONTAP can delete the protection data objects fast enough to keep pace with the space required for overwrites, the write operations continue to succeed. This is called a &#8220;best effort&#8221; write guarantee.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
 <div class="paragraph">
-<p>You cannot employ storage efficiency technologies such as deduplication, compression, and compaction on a volume that is using semi-thick provisioning.</p>
+<p><strong>Note:</strong> The following functionality is not supported on volumes that use semi-thick provisioning:</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>storage efficiency technologies such as deduplication, compression, and compaction</p>
+</li>
+<li>
+<p>Microsoft Offloaded Data Transfer (ODX)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>You create a semi-thick-provisioned FlexVol volume by setting its <code>-space-slo</code> (service level objective) option to <code>semi-thick</code>.</p>
@@ -22133,19 +22154,8 @@
 <div class="paragraph">
 <p>A space-reserved file or LUN is one for which storage is allocated when it is created. Historically, NetApp has used the term &#8220;thin-provisioned LUN&#8221; to mean a LUN for which space reservation is disabled (a non-space-reserved LUN).</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Non-space-reserved files are not generally referred to as &#8220;thin-provisioned files&#8221;.</p>
-</div>
-</td>
-</tr>
-</table>
+<p><strong>Note:</strong> Non-space-reserved files are not generally referred to as &#8220;thin-provisioned files&#8221;.</p>
 </div>
 <div class="paragraph">
 <p>The following table summarizes the major differences in how the three volume provisioning options can be used with space-reserved files and LUNs:</p>
@@ -22252,7 +22262,7 @@
 <p>The <code>[-space-allocation {enabled|disabled}]</code> command in the ONTAP Command Reference Manual has more information to enable/disable support for the T10 thin provisioning and to enable T10 SCSI thin provisioning on a LUN.</p>
 </div>
 <div class="paragraph">
-<p><a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr/GUID-5CB10C70-AC11-41C0-8C16-B4D0DF916E9B.html">ONTAP 9 commands</a></p>
+<p><a href="http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr/GUID-5CB10C70-AC11-41C0-8C16-B4D0DF916E9B.html" target="_blank" rel="noopener">ONTAP 9 commands</a></p>
 </div>
 </div>
 </div>
@@ -22261,25 +22271,6 @@
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[About SAN volumes overview](https://docs.netapp.com/us-en/ontap/san-admin/san-volumes-concept.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/san-admin/san-volumes-concept.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
