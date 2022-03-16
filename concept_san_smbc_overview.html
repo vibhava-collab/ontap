@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>SnapMirror Business Continuity overview</title>
+  <title></title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="SnapMirror Business Continuity overview" />
+  <meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/concept_san_smbc_overview.html" />
-	<meta property="og:description" content="Beginning with ONTAP 9.8, you can use System Manager to protect LUNs for transparent application failover, enabling applications to fail over automatically f..." />
+	<meta property="og:description" content="" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Beginning with ONTAP 9.8, you can use System Manager to protect LUNs for transparent application failover, enabling applications to fail over automatically f...">
-  <meta name="keywords" content=" netapp, ontap, system manager, san, san protocol, all san array, asa, aff, clusters protect, automated failover, fail over, snapmirror, SM-BC, smbc, mirror clones, server, VM, data protection, protection, mediator, synchronous replication"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -121,6 +121,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
+  </script><script>
+    pageRedirect("https://docs.netapp.com/us-en/ontap/smbc/index.html");
   </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
   <script>
   if (document.location.hostname === "docs.netapp.com") {
@@ -148,7 +150,7 @@
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[SnapMirror Business Continuity overview](https://docs.netapp.com/us-en/ontap/concept_san_smbc_overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[](https://docs.netapp.com/us-en/ontap/concept_san_smbc_overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/concept_san_smbc_overview.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>
@@ -18983,7 +18985,7 @@
         <div class="na-navbar-padding"> Use SMB share properties</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/share-properties-concept.html">
-        
+        Overview
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/add-remove-share-properties-eexisting-share-task.html">
         Add or remove share properties on an existing SMB share
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/optimize-user-access-force-group-share-concept.html">
@@ -22047,14 +22049,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">SnapMirror Business Continuity overview</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 01:52:37 +0000">03/15/2022</time>
+    <time datetime="2022-03-16 16:33:56 +0000">03/16/2022</time>
     
   
 
@@ -22096,83 +22098,7 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph lead">
-<p>Beginning with ONTAP 9.8, you can use System Manager to protect LUNs for transparent application failover, enabling applications to fail over automatically for business continuity when using two AFF clusters or two All SAN Array (ASA) clusters. Your clusters cannot be mixed; they must consist of two AFF clusters or two ASA clusters. Protection for business continuity supports iSCSI and FCP protocols.</p>
-</div>
-<div class="paragraph">
-<p>The SnapMirror Business Continuity provides the following benefits:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Automated failover of business-critical applications</p>
-</li>
-<li>
-<p>Simplified application management, using consistency groups for dependent write-order consistency</p>
-</li>
-<li>
-<p>The ability to test failover for each application</p>
-</li>
-<li>
-<p>Instantaneous creation of mirror clones without impacting application availability</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/workflow_san_snapmirror_business_continuity.png" alt="SnapMirror Business Continuity workflow"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="requirements">Requirements</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>SnapMirror Business Continuity has the following requirements:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>2-node HA cluster, only – both either AFF or ASA. No intermixing.</p>
-</li>
-<li>
-<p>A server or VM running RHEL 7.6 or 7.8 or CentOS 8.0 or 8.1 for installing ONTAP Mediator</p>
-</li>
-<li>
-<p>Data Protection or Premium bundle license</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="support">Support</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>SnapMirror Business Continuity provides support for the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Synchronous replication</p>
-</li>
-<li>
-<p>SAN protocol – FCP or iSCSI</p>
-</li>
-<li>
-<p>Up to 5 consistency groups, each with up to 12 volumes</p>
-</li>
-<li>
-<p>A total of 80 concurrent synchronous relationships per HA pair in ONTAP 9.8 and 9.9.9.1 and 200 in ONTAP 9.10.1, including consistency groups</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/workflow_san_snapmirror_synchronous.png" alt="SnapMirror synchronous workflow"></span></p>
-</div>
-</div>
-</div>
+
 
     </article>
     <!-- Page Container -->
