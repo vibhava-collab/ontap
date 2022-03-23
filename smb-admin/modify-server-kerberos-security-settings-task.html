@@ -9,15 +9,15 @@
   <meta property="og:title" content="Modify the CIFS server Kerberos security settings" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/smb-admin/modify-server-kerberos-security-settings-task.html" />
-	<meta property="og:description" content="You can modify certain CIFS server Kerberos security settings, including the maximum allowed Kerberos clock slew time, the Kerberos ticket lifetime, and the ..." />
+	<meta property="og:description" content="You can modify certain CIFS server Kerberos security settings, including the maximum allowed Kerberos clock skew time, the Kerberos ticket lifetime, and the ..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can modify certain CIFS server Kerberos security settings, including the maximum allowed Kerberos clock slew time, the Kerberos ticket lifetime, and the ...">
-  <meta name="keywords" content=" modify, cifs, server, kerberos, security, setting, clock, slew, time, ticket, lifetime, renewal, modify the cifs server kerberos security ticket settings"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can modify certain CIFS server Kerberos security settings, including the maximum allowed Kerberos clock skew time, the Kerberos ticket lifetime, and the ...">
+  <meta name="keywords" content=" modify, cifs, server, kerberos, security, setting, clock, skew, time, ticket, lifetime, renewal, modify the cifs server kerberos security ticket settings"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -22067,7 +22067,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-09 22:31:46 +0000">12/09/2021</time>
+    <time datetime="2022-03-22 14:55:19 +0000">03/22/2022</time>
     
   
 
@@ -22094,7 +22094,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can modify certain CIFS server Kerberos security settings, including the maximum allowed Kerberos clock slew time, the Kerberos ticket lifetime, and the maximum number of ticket renewal days.</p>
+<p>You can modify certain CIFS server Kerberos security settings, including the maximum allowed Kerberos clock skew time, the Kerberos ticket lifetime, and the maximum number of ticket renewal days.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
@@ -22110,56 +22110,69 @@
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">If you want to&#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">Enter&#8230;&#8203;</th>
-</tr>
-</thead>
 <tbody>
 <tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">If you want to&#8230;&#8203;</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Enter&#8230;&#8203;</p></th>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the maximum allowed Kerberos clock skew time in minutes</p>
+<p>Specify the maximum allowed Kerberos clock skew time in minutes.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-clock-skew <em>integer_in_minutes</em></code>     The default setting is 5 minutes.</p>
+<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-clock-skew <em>integer_in_minutes</em></code></p>
+</div>
+<div class="paragraph">
+<p>The default setting is 5 minutes.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the Kerberos ticket lifetime in hours</p>
+<p>Specify the Kerberos ticket lifetime in hours.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-ticket-age integer_in_hours</code>     The default setting is 10 hours.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the maximum number of ticket renewal days</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-renew-age <em>integer_in_days</em></code>     The default setting is 7 days.</p>
+<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-ticket-age integer_in_hours</code></p>
+</div>
+<div class="paragraph">
+<p>The default setting is 10 hours.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the timeout for sockets on KDCs after which all KDCs are marked as unreachable</p>
+<p>Specify the maximum number of ticket renewal days.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-kdc-timeout <em>integer_in_seconds</em></code>     The default setting is 3 seconds.</p>
+<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-renew-age <em>integer_in_days</em></code></p>
+</div>
+<div class="paragraph">
+<p>The default setting is 7 days.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the timeout for sockets on KDCs after which all KDCs are marked as unreachable.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>vserver cifs security modify -vserver <em>vserver_name</em> -kerberos-kdc-timeout <em>integer_in_seconds</em></code></p>
+</div>
+<div class="paragraph">
+<p>The default setting is 3 seconds.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </li>
 <li>
-<p>Verify the Kerberos security settings: <code>vserver cifs security show -vserver <em>vserver_name</em></code></p>
+<p>Verify the Kerberos security settings:</p>
+<div class="paragraph">
+<p><code>vserver cifs security show -vserver <em>vserver_name</em></code></p>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <div class="title">Example</div>
-<p>The following example makes the following changes to Kerberos security: <code>Kerberos Clock Skew</code> is set to <code>3</code> minutes and <code>Kerberos Ticket Age</code> is set to <code>8</code> hours for SVM vs1:</p>
+<p>The following example makes the following changes to Kerberos security: &#8220;Kerberos Clock Skew&#8221; is set to 3 minutes and &#8220;Kerberos Ticket Age&#8221; is set to 8 hours for SVM vs1:</p>
 </div>
 <div class="listingblock">
 <div class="content">
