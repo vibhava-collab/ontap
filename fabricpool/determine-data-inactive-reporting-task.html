@@ -22067,11 +22067,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-03-23 22:51:37 +0000">03/23/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -22180,10 +22188,15 @@ vs1     vv2    10.38MB                             0%
 <p>For the <code>snapshot-only</code> tiering policy, ONTAP reports the amount of the active file system that is inactive for at least 31 days.</p>
 </li>
 <li>
-<p>For the <code>none</code> tiering policy, ONTAP reports the amount of the entire volume that is inactive for at least 31 days.</p>
+<p>For the <code>none</code> tiering policy, ONTAP reports the amount of the entire volume that is inactive for at least 31 days. You cannot use the <code>-tiering-minimum-cooling-days</code> parameter with the <code>none</code> tiering policy.</p>
 </li>
 <li>
 <p>For the <code>all</code> tiering policy, inactive data reporting is not supported.</p>
+<div class="literalblock">
+<div class="content">
+<pre>// 2022-3-23, issue #374</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>

@@ -22067,11 +22067,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-15 23:53:09 +0000">10/15/2021</time>
+    <time datetime="2022-03-24 13:19:16 +0000">03/24/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" href="https://github.com/netapp-barbe">
     <img  class="avatar avatar-small"
           alt="netapp-barbe"
@@ -22099,37 +22107,25 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Enter the advanced privilege mode:</p>
-<div class="paragraph">
-<p><code><strong>set advanced</strong></code></p>
-</div>
+<p>Enter the advanced privilege mode:<br>
+<code><strong>set advanced</strong></code></p>
 </li>
 <li>
-<p>Enable a security protocol (RSH or Telnet):</p>
-<div class="paragraph">
-<p><code><strong>security protocol modify -application <em>security_protocol</em> -enabled true</strong></code></p>
-</div>
+<p>Enable a security protocol (RSH or Telnet):<br>
+<code><strong>security protocol modify -application <em>security_protocol</em> -enabled true</strong></code></p>
 </li>
 <li>
-<p>Create a new management firewall policy based on the <code>mgmt</code> management firewall policy:</p>
-<div class="paragraph">
-<p><code><strong>system services firewall policy clone -policy mgmt -new-policy-name <em>policy-name</em></strong></code></p>
-</div>
+<p>Create a new management firewall policy based on the <code>mgmt</code> management firewall policy:<br>
+<code><strong>system services firewall policy clone -policy mgmt -destination-policy <em>policy-name</em></strong></code></p>
 </li>
 <li>
-<p>Enable Telnet or RSH in the new management firewall policy:</p>
-<div class="paragraph">
-<p><code><strong>system services firewall policy create -policy <em>policy-name</em> -service <em>security_protocol</em> -action allow -ip-list <em>ip_address/netmask</em></strong></code></p>
-</div>
-<div class="paragraph">
-<p>To allow all IP addresses, you should specify <code>-ip-list 0.0.0.0/0</code></p>
-</div>
+<p>Enable Telnet or RSH in the new management firewall policy:<br>
+<code><strong>system services firewall policy create -policy <em>policy-name</em> -service <em>security_protocol</em> -action allow -ip-list <em>ip_address/netmask</em></strong></code><br>
+To allow all IP addresses, you should specify <code>-ip-list 0.0.0.0/0</code></p>
 </li>
 <li>
-<p>Associate the new policy with the cluster management LIF:</p>
-<div class="paragraph">
-<p><code><strong>network interface modify -vserver <em>cluster_management_LIF</em> -lif cluster_mgmt -firewall-policy <em>policy-name</em></strong></code></p>
-</div>
+<p>Associate the new policy with the cluster management LIF:<br>
+<code><strong>network interface modify -vserver <em>cluster_management_LIF</em> -lif cluster_mgmt -firewall-policy <em>policy-name</em></strong></code></p>
 </li>
 </ol>
 </div>
