@@ -22038,11 +22038,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-03-25 20:33:09 +0000">03/25/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -22050,6 +22058,9 @@
 
 <div class="paragraph lead">
 <p>Every node must have a root aggregate for storage system configuration files. The root aggregate has the RAID type of the data aggregate.</p>
+</div>
+<div class="paragraph">
+<p>System Manager does not support root-data or root-data-data partitioning.</p>
 </div>
 <div class="paragraph">
 <p>A root aggregate of type RAID-DP typically consists of one data disk and two parity disks. That&#8217;s a significant &#8220;parity tax&#8221; to pay for storage system files, when the system is already reserving two disks as parity disks for each RAID group in the aggregate.</p>
