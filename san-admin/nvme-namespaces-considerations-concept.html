@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="To set up the NVMe protocol in your SAN environment, you must configure an SVM for NVMe, create namespaces and subsystems, configure an NVMe/FC LIF, and then...">
-  <meta name="keywords" content=" nvme, namespaces, considerations"><!-- Icons -->
+  <meta name="keywords" content=" nvme, namespaces, considerations, provisioning"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -21991,7 +21991,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/convert-ems-routing-to-notifications-task.html">
         Update EMS event mapping from deprecated ONTAP commands
       </a></li></ul></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/reference_legal_notices.html">
-        Legal Notices
+        Legal notices
       </a></li></ul>
 </div>
 <script>
@@ -22038,16 +22038,26 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-03-29 12:44:08 +0000">03/29/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-maireadn">
+    <img  class="avatar avatar-small"
+          alt="netapp-maireadn"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/93787149?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>To set up the NVMe protocol in your SAN environment, you must configure an SVM for NVMe, create namespaces and subsystems, configure an NVMe/FC LIF, and then map the namespaces to the subsystems. There are certain considerations you should be aware of when working with NVMe namespaces.</p>
 </div>
@@ -22091,6 +22101,72 @@
 </div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-nvme-namespaces">About NVMe namespaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An NVMe namespace is a quantity of non-volatile memory (NVM) that can be formatted into logical blocks. Namespaces are used when a storage virtual machine is configured with the NVMe protocol and are the equivalent of LUNs for FC and iSCSI protocols.</p>
+</div>
+<div class="paragraph">
+<p>One or more namespaces are provisioned and connected to an NVMe host. Each namespace can support various block sizes.</p>
+</div>
+<div class="paragraph">
+<p>The NVMe protocol provides access to namespaces through multiple controllers. Using NVMe drivers, which are supported on most operating systems, solid state drive (SSD) namespaces appear as standard-block devices on which file systems and applications can be deployed without any modification.</p>
+</div>
+<div class="paragraph">
+<p>A namespace ID (NSID) is an identifier used by a controller to provide access to a namespace. When setting the NSID for a host or host group, you also configure the accessibility to a volume by a host. A logical block can only be mapped to a single host group at a time, and a given host group does not have any duplicate NSIDs.</p>
+</div>
+<div class="sect2">
+<h3 id="nvme-subsystem-provisioning-for-nvme-namespaces">NVMe subsystem provisioning for NVMe namespaces</h3>
+<div class="paragraph">
+<p>An NVMe subsystem includes one or more NVMe controllers, namespaces, NVM subsystem ports, an NVM storage medium, and an interface between the controller and the NVM storage medium. When you create an NVMe namespace, you can choose to map an NVMe subsystem to the namespace, as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>None (default)</strong>
++
+No NVMe subsystems are mapped to the namespace.</p>
+</li>
+<li>
+<p><strong>Existing subsystem</strong>
++
+You can select an existing NVMe subsystem to map to the namespace. NVMe subsystems are listed based on the host OS and SVM fields. When you hover the pointer over the NVMe subsystem name, more details are shown about the subsystem.</p>
+</li>
+<li>
+<p><strong>New subsystem</strong>
++
+You can create a new NVMe subsystem and map it to the namespace. The subsystem is created on the host OS and SVM.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You provision a subsystem by providing the following details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>The NVMe subsystem name</strong>
++
+The NVMe subsystem name is case sensitive. It must contain 1 to 96 characters, and special characters are allowed.</p>
+</li>
+<li>
+<p><strong>Host OS</strong>
++
+The host OS type that the subsystem is being created on.</p>
+</li>
+<li>
+<p><strong>Host NQN</strong>
++
+The host NVMe qualification name attached to the controller. This column can contain comma-separated values because there can be from one to many hosts attached to a subsystem.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
     </article>

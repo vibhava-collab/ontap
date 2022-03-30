@@ -21991,7 +21991,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/convert-ems-routing-to-notifications-task.html">
         Update EMS event mapping from deprecated ONTAP commands
       </a></li></ul></li></ul></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/reference_legal_notices.html">
-        Legal Notices
+        Legal notices
       </a></li></ul>
 </div>
 <script>
@@ -22038,7 +22038,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 18:18:38 +0000">03/07/2022</time>
+    <time datetime="2022-03-29 18:34:12 +0000">03/29/2022</time>
     
   
 
@@ -22070,6 +22070,9 @@
 <p>There are limits for storage objects that you should consider when planning and managing your storage architecture.</p>
 </div>
 <div class="paragraph">
+<p>Limits are often platform dependent. Refer to the <a href="https://hwu.netapp.com/" target="_blank" rel="noopener">Hardware Universe</a> to learn the limits for your specific configuration.</p>
+</div>
+<div class="paragraph">
 <p>Limits are listed in the following sections:</p>
 </div>
 <div class="ulist">
@@ -22083,7 +22086,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Storage limits for Cloud Volumes ONTAP are documented in the <em>Cloud Volumes ONTAP Release Notes</em>.</p>
+<p>Storage limits for Cloud Volumes ONTAP are documented in the <a href="https://docs.netapp.com/us-en/cloud-volumes-ontap/" target="_blank" rel="noopener">Cloud Volumes ONTAP Release Notes</a>.</p>
 </div>
 </div>
 </div>
@@ -22092,11 +22095,10 @@
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <thead>
 <tr>
@@ -22104,7 +22106,6 @@
 <th class="tableblock halign-left valign-top">Limit</th>
 <th class="tableblock halign-left valign-top">Native storage</th>
 <th class="tableblock halign-left valign-top">Storage arrays</th>
-<th class="tableblock halign-left valign-top">Data ONTAP Edge</th>
 </tr>
 </thead>
 <tbody>
@@ -22121,9 +22122,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>N/A</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="paragraph">
@@ -22138,16 +22136,10 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>16 TB</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>16 TB</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Maximum per volume<sup>3</sup></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Volume size dependent, up to 2 billion</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Volume size dependent, up to 2 billion</p>
@@ -22169,9 +22161,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>499</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>499</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="paragraph">
@@ -22186,9 +22175,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>200</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -22199,9 +22185,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>200</p>
 </div></div></td>
 </tr>
 <tr>
@@ -22214,16 +22197,10 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>20 MB</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>20 MB</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Maximum size<sup>1</sup></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Model-dependent</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
@@ -22245,9 +22222,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Model-dependent</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -22255,9 +22229,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Minimum size<sup>1</sup></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Model-dependent</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
@@ -22279,9 +22250,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1,024</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -22292,9 +22260,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1,024</p>
 </div></div></td>
 </tr>
 <tr>
@@ -22307,16 +22272,10 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>512</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Maximum size</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>16 TB</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>16 TB</p>
@@ -22338,9 +22297,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>4,995</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>4,995</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -22348,9 +22304,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Maximum per volume<sup>6</sup></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>255/1023</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>255/1023</p>
@@ -22372,9 +22325,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>12,000</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>200</p>
-</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -22385,9 +22335,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Model-dependent</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>200</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -22430,26 +22377,21 @@
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Limit</th>
 <th class="tableblock halign-left valign-top">Native storage</th>
 <th class="tableblock halign-left valign-top">Storage arrays</th>
-<th class="tableblock halign-left valign-top">Data ONTAP Edge</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Maximum per file or LUN<sup>1</sup></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>32,767</p>
+<p><strong>Maximum per file or LUN</strong><sup>1</sup></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>32,767</p>
@@ -22467,9 +22409,6 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>640 TB</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>100 TB</p>
 </div></div></td>
 </tr>
 </tbody>
