@@ -22038,11 +22038,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-03-31 15:22:33 +0000">03/31/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-forry">
+    <img  class="avatar avatar-small"
+          alt="netapp-forry"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -22079,16 +22087,57 @@ vs3      vol3
 </div>
 </li>
 <li>
-<p>Use the <code>volume snapshot delete</code> command to delete all of the Snapshot copies.</p>
+<p>Use the <code>volume snapshot delete</code> command to delete Snapshot copies.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">If you want to&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Enter this command&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Delete a single Snapshot copy</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>volume snapshot delete -vserver <em>svm_name</em> -volume <em>vol_name</em> -snapshot <em>snapshot_name</em></code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Delete multiple Snapshot copies</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>volume snapshot delete -vserver <em>svm_name</em> -volume <em>vol_name</em> -snapshot <em>snapshot_name1</em>[,<em>snapshot_name2</em>,&#8230;&#8203;]</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Delete all Snapshot copies</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>volume snapshot delete -vserver <em>svm_name</em> -volume <em>vol_name</em> -snapshot *</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following example deletes all Snapshot copies on the volume vol3.</p>
+</div>
+</li>
+</ol>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>cluster::&gt; volume snapshot delete -vserver vs3 -volume vol3 *
 
 10 entries were acted on.</pre>
 </div>
-</div>
-</li>
-</ol>
 </div>
 
     </article>
