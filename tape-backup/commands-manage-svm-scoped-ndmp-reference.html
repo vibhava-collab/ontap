@@ -45,12 +45,52 @@
   <link rel="stylesheet" href='/us-en/ontap/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/us-en/ontap/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/ontap/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/ontap/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/us-en/ontap/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
@@ -60,15 +100,6 @@
 
   <script src='/us-en/ontap/js/na-utility.js'></script>
   <script src='/us-en/ontap/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/us-en/ontap/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/ontap/js/toc.js'></script>
@@ -121,16 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/us-en/ontap/js/version-dropdown.js'></script>
+  <script src='/us-en/ontap/js/custom-dropdown.js'></script>
   <script src='/us-en/ontap/js/FileSaver.min.js'></script>
   <script src='/us-en/ontap/js/jszip-utils.min.js'></script>
   <script src='/us-en/ontap/js/jszip.min.js'></script>
@@ -138,20 +161,15 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Commands for managing SVM-scoped NDMP mode](https://docs.netapp.com/us-en/ontap/tape-backup/commands-manage-svm-scoped-ndmp-reference.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/tape-backup/commands-manage-svm-scoped-ndmp-reference.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Commands for managing SVM-scoped NDMP mode](https://docs.netapp.com/us-en/ontap/tape-backup/commands-manage-svm-scoped-ndmp-reference.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/tape-backup/commands-manage-svm-scoped-ndmp-reference.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -161,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -244,7 +263,8 @@
           data-did-you-mean="Search for {suggestion}." 
           data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
           data-results-found="{hitCount} results found"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -333,6 +353,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/us-en/ontap/pdfs/fullsite-sidebar/ONTAP_9_Documentation.pdf" >
           <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
 
@@ -343,6 +366,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Introduction_and_concepts.pdf" 
@@ -356,6 +382,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_concepts.pdf" 
@@ -379,6 +408,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Network_architecture.pdf" 
@@ -411,6 +443,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Disks_and_aggregates.pdf" 
@@ -441,6 +476,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Storage_virtualization.pdf" 
@@ -471,6 +509,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Path_failover.pdf" 
@@ -501,6 +542,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Replication.pdf" 
@@ -535,6 +579,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Storage_efficiency.pdf" 
@@ -565,6 +612,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Security.pdf" 
@@ -608,6 +658,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_and_the_cloud.pdf" 
@@ -623,6 +676,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_and_the_cloud.pdf" 
@@ -655,6 +711,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Move_entire_workloads_to_the_cloud.pdf" 
@@ -668,6 +727,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Storage_protocols.pdf" 
@@ -709,6 +771,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Performance_and_efficiency_in_the_cloud.pdf" 
@@ -737,6 +802,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_ONTAP_in_the_cloud.pdf" 
@@ -769,6 +837,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Compliance_and_the_cloud.pdf" 
@@ -817,6 +888,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up__upgrade_and_revert_ONTAP.pdf" 
@@ -830,6 +904,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Setup_ONTAP.pdf" 
@@ -847,6 +924,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_a_cluster_with_the_CLI.pdf" 
@@ -892,6 +972,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Upgrade_ONTAP.pdf" 
@@ -911,6 +994,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Upgrade_without_Upgrade_Advisor.pdf" 
@@ -928,6 +1014,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_should_I_verify_before_I_upgrade_without_Upgrade_Advisor_.pdf" 
@@ -967,6 +1056,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_should_I_verify_before_I_upgrade_with_or_without_Upgrade_Advisor_.pdf" 
@@ -996,6 +1088,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Special_considerations.pdf" 
@@ -1015,6 +1110,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/MetroCluster_configurations.pdf" 
@@ -1045,6 +1143,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SnapMirror.pdf" 
@@ -1103,6 +1204,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Which_upgrade_method_should_I_use_.pdf" 
@@ -1124,6 +1228,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manual_nondisruptive_using_the_CLI.pdf" 
@@ -1139,6 +1246,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/MetroCluster_configurations.pdf" 
@@ -1185,6 +1295,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_should_I_do_after_my_upgrade_.pdf" 
@@ -1204,6 +1317,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Verify_special_configurations.pdf" 
@@ -1266,6 +1382,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Revert_ONTAP.pdf" 
@@ -1285,6 +1404,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_should_I_read_before_I_revert_.pdf" 
@@ -1313,6 +1435,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_else_should_I_check_before_I_revert_.pdf" 
@@ -1328,6 +1453,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SnapMirror.pdf" 
@@ -1383,6 +1511,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_should_I_do_after_reverting_my_cluster_.pdf" 
@@ -1439,6 +1570,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cluster_administration.pdf" 
@@ -1452,6 +1586,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cluster_management_with_System_Manager.pdf" 
@@ -1481,6 +1618,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_nodes.pdf" 
@@ -1516,6 +1656,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cluster_management_with_the_CLI.pdf" 
@@ -1531,6 +1674,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cluster_and_SVM_administrators.pdf" 
@@ -1561,6 +1707,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_management_interface_basics.pdf" 
@@ -1574,6 +1723,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Access_the_cluster_by_using_the_CLI__cluster_administrators_only_.pdf" 
@@ -1608,6 +1760,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_the_ONTAP_command_line_interface.pdf" 
@@ -1623,6 +1778,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_the_different_shells_for_CLI_commands__cluster_administrators_only_.pdf" 
@@ -1684,6 +1842,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_CLI_sessions__cluster_administrators_only_.pdf" 
@@ -1697,6 +1858,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_records_of_CLI_sessions.pdf" 
@@ -1745,6 +1909,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_the_ONTAP_command_line_interface.pdf" 
@@ -1758,6 +1925,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_the_different_shells_for_CLI_commands__cluster_administrators_only_.pdf" 
@@ -1817,6 +1987,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cluster_management_basics__cluster_administrators_only_.pdf" 
@@ -1851,6 +2024,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_nodes.pdf" 
@@ -1878,6 +2054,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Rules_governing_node_root_volumes_and_root_aggregates.pdf" 
@@ -1906,6 +2085,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Start_or_stop_a_node.pdf" 
@@ -1938,6 +2120,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_a_node_remotely_using_the_SP_BMC.pdf" 
@@ -1957,6 +2142,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_the_SP_BMC_network.pdf" 
@@ -1993,6 +2181,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Access_the_SP_BMC.pdf" 
@@ -2057,6 +2248,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_audit_logging_for_management_activities.pdf" 
@@ -2091,6 +2285,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_the_banner_and_MOTD.pdf" 
@@ -2123,6 +2320,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_licenses__cluster_administrators_only_.pdf" 
@@ -2151,6 +2351,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_jobs_and_schedules.pdf" 
@@ -2179,6 +2382,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Back_up_and_restore_cluster_configurations__cluster_administrators_only_.pdf" 
@@ -2194,6 +2400,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_configuration_backups.pdf" 
@@ -2222,6 +2431,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Recovering_a_node_configuration.pdf" 
@@ -2248,6 +2460,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Recover_a_cluster_configuration.pdf" 
@@ -2289,6 +2504,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Monitor_a_storage_system.pdf" 
@@ -2306,6 +2524,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_AutoSupport_with_the_CLI.pdf" 
@@ -2359,6 +2580,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Troubleshoot_AutoSupport.pdf" 
@@ -2398,6 +2622,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Monitor_the_health_of_your_system.pdf" 
@@ -2455,6 +2682,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_access_to_web_services.pdf" 
@@ -2474,6 +2704,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SAML_authentication_for_web_services.pdf" 
@@ -2502,6 +2735,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_web_services.pdf" 
@@ -2547,6 +2783,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Verify_the_identity_of_remote_servers_using_certificates.pdf" 
@@ -2566,6 +2805,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Mutually_authenticating_the_cluster_and_a_KMIP_server.pdf" 
@@ -2614,6 +2856,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Disk_and_aggregate_management_with_the_CLI.pdf" 
@@ -2629,6 +2874,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Aggregate_creation.pdf" 
@@ -2663,6 +2911,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Aggregate_expansion.pdf" 
@@ -2695,6 +2946,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Managing_aggregates.pdf" 
@@ -2716,6 +2970,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Relocate_aggregate_ownership_within_an_HA_pair.pdf" 
@@ -2763,6 +3020,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Work_with_Flash_Pool_aggregates.pdf" 
@@ -2776,6 +3036,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Flash_Pool_caching_policies_and_SSD_partitioning.pdf" 
@@ -2806,6 +3069,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_a_Flash_Pool_aggregate_using_SSD_storage_pools.pdf" 
@@ -2840,6 +3106,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Determine_whether_to_modify_the_caching_policy_of_Flash_Pool_aggregates.pdf" 
@@ -2877,6 +3146,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Managing_disks.pdf" 
@@ -2898,6 +3170,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manually_assign_ownership_of_partitioned_disks.pdf" 
@@ -2936,6 +3211,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Disk_sanitization.pdf" 
@@ -2987,6 +3265,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Managing_RAID_groups.pdf" 
@@ -3017,6 +3298,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Mirrored_and_unmirrored_aggregates.pdf" 
@@ -3054,6 +3338,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/FabricPool_tier_management_with_System_Manager.pdf" 
@@ -3090,6 +3377,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/FabricPool_tier_management_with_the_CLI.pdf" 
@@ -3113,6 +3403,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_FabricPool.pdf" 
@@ -3126,6 +3419,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Prepare_for_FabricPool_configuration.pdf" 
@@ -3149,6 +3445,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_an_object_store_as_the_cloud_tier_for_FabricPool.pdf" 
@@ -3172,6 +3471,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/AWS_S3_as_the_cloud_tier.pdf" 
@@ -3235,6 +3537,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_FabricPool.pdf" 
@@ -3252,6 +3557,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Add_or_move_volumes_to_FabricPool_as_needed.pdf" 
@@ -3278,6 +3586,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Object_tagging_using_user_created_custom_tags.pdf" 
@@ -3320,6 +3631,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Promote_data_to_the_performance_tier.pdf" 
@@ -3361,6 +3675,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_FabricPool_mirrors.pdf" 
@@ -3410,6 +3727,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SVM_data_mobility.pdf" 
@@ -3446,6 +3766,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/High_availability_management.pdf" 
@@ -3488,6 +3811,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Rest_API_management_with_System_Manager.pdf" 
@@ -3523,6 +3849,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Volume_administration.pdf" 
@@ -3536,6 +3865,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Volume_and_LUN_management_with_System_Manager.pdf" 
@@ -3590,6 +3922,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Logical_storage_management_with_the_CLI.pdf" 
@@ -3605,6 +3940,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_and_manage_volumes.pdf" 
@@ -3620,6 +3958,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_volumes.pdf" 
@@ -3672,6 +4013,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Delete_directories.pdf" 
@@ -3713,6 +4057,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Move_and_copy_volumes.pdf" 
@@ -3747,6 +4094,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_FlexClone_volumes_to_create_efficient_copies_of_your_FlexVol_volumes.pdf" 
@@ -3779,6 +4129,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_FlexClone_files_and_FlexClone_LUNs_to_create_efficient_copies_of_files_and_LUNs.pdf" 
@@ -3802,6 +4155,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_a_FlexVol_volume_can_reclaim_free_space_with_autodelete_setting.pdf" 
@@ -3841,6 +4197,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_qtrees_to_partition_your_FlexVol_volumes.pdf" 
@@ -3860,6 +4219,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Convert_a_directory_to_a_qtree.pdf" 
@@ -3899,6 +4261,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Logical_space_reporting_and_enforcement_for_volumes.pdf" 
@@ -3929,6 +4294,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_quotas_to_restrict_or_track_resource_usage.pdf" 
@@ -3942,6 +4310,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Overview_of_the_quota_process.pdf" 
@@ -3967,6 +4338,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Special_kinds_of_quotas.pdf" 
@@ -4001,6 +4375,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_quotas_work_with_users_and_groups.pdf" 
@@ -4045,6 +4422,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_tree_quotas_work.pdf" 
@@ -4075,6 +4455,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_qtree_changes_affect_quotas.pdf" 
@@ -4105,6 +4488,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_quotas_are_activated.pdf" 
@@ -4133,6 +4519,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_you_can_view_quota_information.pdf" 
@@ -4167,6 +4556,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Difference_in_space_usage_displayed_by_a_quota_report_and_a_UNIX_client.pdf" 
@@ -4229,6 +4621,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_deduplication__data_compression__and_data_compaction_to_increase_storage_efficiency.pdf" 
@@ -4276,6 +4671,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_a_volume_efficiency_policy_to_run_efficiency_operations.pdf" 
@@ -4310,6 +4708,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_volume_efficiency_operations_manually.pdf" 
@@ -4342,6 +4743,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_volume_efficiency_operations_using_schedules.pdf" 
@@ -4368,6 +4772,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Monitor_volume_efficiency_operations.pdf" 
@@ -4409,6 +4816,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Rehost_a_volume_from_one_SVM_to_another_SVM.pdf" 
@@ -4445,6 +4855,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Recommended_volume_and_file_or_LUN_configuration_combinations.pdf" 
@@ -4477,6 +4890,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cautions_and_considerations_for_changing_file_or_directory_capacity.pdf" 
@@ -4507,6 +4923,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Features_supported_with_FlexClone_files_and_FlexClone_LUNs.pdf" 
@@ -4562,6 +4981,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/FlexGroup_volumes_management_with_the_CLI.pdf" 
@@ -4581,6 +5003,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/FlexGroup_volume_setup.pdf" 
@@ -4611,6 +5036,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_FlexGroup_volumes.pdf" 
@@ -4655,6 +5083,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_for_FlexGroup_volumes.pdf" 
@@ -4697,6 +5128,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_data_protection_operations_for_FlexGroup_volumes.pdf" 
@@ -4710,6 +5144,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Disaster_recovery_for_FlexGroup_volumes.pdf" 
@@ -4740,6 +5177,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Expand_FlexGroup_volumes_in_a_SnapMirror_relationship.pdf" 
@@ -4785,6 +5225,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Convert_FlexVol_volumes_to_FlexGroup_volumes.pdf" 
@@ -4824,6 +5267,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/FlexCache_volumes_management_with_the_CLI.pdf" 
@@ -4845,6 +5291,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/FlexCache_volume_creation.pdf" 
@@ -4862,6 +5311,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Process_to_create_a_FlexCache_volume.pdf" 
@@ -4899,6 +5351,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_a_FlexCache_relationship.pdf" 
@@ -4951,6 +5406,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Network_management.pdf" 
@@ -4964,6 +5422,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_your_network_with_System_Manager.pdf" 
@@ -4994,6 +5455,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_NAS_path_failover_with_the_CLI.pdf" 
@@ -5007,6 +5471,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_9_8_and_later.pdf" 
@@ -5022,6 +5489,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Workflow_NAS_path_failover.pdf" 
@@ -5069,6 +5539,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_9_7_and_earlier.pdf" 
@@ -5084,6 +5557,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Workflow_NAS_path_failover.pdf" 
@@ -5146,6 +5622,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_your_network_with_the_CLI.pdf" 
@@ -5161,6 +5640,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Upgrade_considerations.pdf" 
@@ -5187,6 +5669,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Networking_components_of_a_cluster.pdf" 
@@ -5215,6 +5700,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_network_ports__cluster_administrators_only_.pdf" 
@@ -5257,6 +5745,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_IPspaces__cluster_administrators_only_.pdf" 
@@ -5291,6 +5782,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_broadcast_domains__cluster_administrators_only_.pdf" 
@@ -5304,6 +5798,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_9_8_and_later.pdf" 
@@ -5342,6 +5839,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_9_7_and_earlier.pdf" 
@@ -5391,6 +5891,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_failover_groups_and_policies_for_LIFs.pdf" 
@@ -5421,6 +5924,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_subnets__cluster_administrators_only_.pdf" 
@@ -5455,6 +5961,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_LIFs__cluster_administrators_only_.pdf" 
@@ -5501,6 +6010,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_host_name_resolution.pdf" 
@@ -5529,6 +6041,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Balance_network_loads_to_optimize_user_traffic__cluster_administrators_only_.pdf" 
@@ -5559,6 +6074,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_your_network.pdf" 
@@ -5589,6 +6107,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_QoS_marking__cluster_administrators_only_.pdf" 
@@ -5619,6 +6140,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SNMP_on_the_cluster__cluster_administrators_only_.pdf" 
@@ -5655,6 +6179,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_routing_in_an_SVM.pdf" 
@@ -5689,6 +6216,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/ONTAP_port_usage_on_a_storage_system.pdf" 
@@ -5715,6 +6245,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/View_network_information.pdf" 
@@ -5783,6 +6316,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NAS_storage_management.pdf" 
@@ -5796,6 +6332,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NAS_protocols_with_System_Manager.pdf" 
@@ -5833,6 +6372,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Enable_NAS_storage.pdf" 
@@ -5870,6 +6412,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NFS_with_the_CLI.pdf" 
@@ -5887,6 +6432,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Preparation.pdf" 
@@ -5917,6 +6465,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NFS_access_to_an_SVM.pdf" 
@@ -5942,6 +6493,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_name_services.pdf" 
@@ -5959,6 +6513,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_local_UNIX_users_and_groups.pdf" 
@@ -5993,6 +6550,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Work_with_netgroups.pdf" 
@@ -6023,6 +6583,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_LDAP.pdf" 
@@ -6066,6 +6629,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_Kerberos_with_NFS_for_strong_security.pdf" 
@@ -6107,6 +6673,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Add_storage_capacity_to_an_NFS_enabled_SVM.pdf" 
@@ -6126,6 +6695,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_a_volume_or_qtree_storage_container.pdf" 
@@ -6152,6 +6724,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_NFS_access_using_export_policies.pdf" 
@@ -6197,6 +6772,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_ONTAP_exports_differ_from_7_Mode_exports.pdf" 
@@ -6234,6 +6812,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NFS_with_the_CLI.pdf" 
@@ -6249,6 +6830,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Understand_NAS_file_access.pdf" 
@@ -6262,6 +6846,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Namespaces_and_junction_points.pdf" 
@@ -6288,6 +6875,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_ONTAP_controls_access_to_files.pdf" 
@@ -6316,6 +6906,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_ONTAP_handles_NFS_client_authentication.pdf" 
@@ -6355,6 +6948,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_and_manage_data_volumes_in_NAS_namespaces.pdf" 
@@ -6385,6 +6981,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_security_styles.pdf" 
@@ -6398,6 +6997,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_security_styles_affect_data_access.pdf" 
@@ -6447,6 +7049,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_file_access_using_NFS.pdf" 
@@ -6462,6 +7067,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_NFS_access_using_export_policies.pdf" 
@@ -6508,6 +7116,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Using_Kerberos_with_NFS_for_strong_security.pdf" 
@@ -6536,6 +7147,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_name_services.pdf" 
@@ -6551,6 +7165,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_LDAP.pdf" 
@@ -6596,6 +7213,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_name_mappings.pdf" 
@@ -6645,6 +7265,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_file_access_using_NFS.pdf" 
@@ -6716,6 +7339,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_the_NFS_credential_cache.pdf" 
@@ -6742,6 +7368,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_export_policy_caches.pdf" 
@@ -6772,6 +7401,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_file_locks.pdf" 
@@ -6808,6 +7440,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NFSv4_ACLs.pdf" 
@@ -6842,6 +7477,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NFSv4_file_delegations.pdf" 
@@ -6868,6 +7506,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NFSv4_file_and_record_locking.pdf" 
@@ -6929,6 +7570,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Appendix__Supported_NFS_versions_and_clients.pdf" 
@@ -6965,6 +7609,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Appendix__NFS_and_SMB_file_and_directory_naming_dependencies.pdf" 
@@ -7010,6 +7657,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NFS_over_RDMA.pdf" 
@@ -7040,6 +7690,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SMB_with_the_CLI.pdf" 
@@ -7057,6 +7710,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Preparation.pdf" 
@@ -7087,6 +7743,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SMB_access_to_an_SVM.pdf" 
@@ -7112,6 +7771,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_an_SMB_server_in_an_Active_Directory_domain.pdf" 
@@ -7142,6 +7804,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_an_SMB_server_in_a_workgroup.pdf" 
@@ -7187,6 +7852,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SMB_client_access_to_shared_storage.pdf" 
@@ -7202,6 +7870,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_a_volume_or_qtree_storage_container.pdf" 
@@ -7258,6 +7929,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SMB_with_the_CLI.pdf" 
@@ -7273,6 +7947,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SMB_server_support.pdf" 
@@ -7305,6 +7982,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SMB_servers.pdf" 
@@ -7320,6 +8000,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_options_to_customize_CIFS_servers.pdf" 
@@ -7341,6 +8024,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_how_file_security_is_presented_to_SMB_clients_for_UNIX_security_style_data.pdf" 
@@ -7380,6 +8066,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SMB_server_security_settings.pdf" 
@@ -7409,6 +8098,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_SMB_signing_to_enhance_network_security.pdf" 
@@ -7447,6 +8139,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_required_SMB_encryption_on_SMB_servers_for_data_transfers_over_SMB.pdf" 
@@ -7479,6 +8174,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_LDAP_session_communication.pdf" 
@@ -7496,6 +8194,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_LDAP_over_TLS.pdf" 
@@ -7544,6 +8245,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_default_Windows_user_to_UNIX_user_mappings_on_the_SMB_server.pdf" 
@@ -7576,6 +8280,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Improve_client_performance_with_traditional_and_lease_oplocks.pdf" 
@@ -7610,6 +8317,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Apply_Group_Policy_Objects_to_SMB_servers.pdf" 
@@ -7631,6 +8341,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_GPOs_are_updated_on_the_SMB_server.pdf" 
@@ -7678,6 +8391,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_domain_controller_connections.pdf" 
@@ -7714,6 +8430,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_null_sessions_to_access_storage_in_non_Kerberos_environments.pdf" 
@@ -7742,6 +8461,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NetBIOS_aliases_for_SMB_servers.pdf" 
@@ -7774,6 +8496,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_miscellaneous_SMB_server_tasks.pdf" 
@@ -7810,6 +8535,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_IPv6_for_SMB_access_and_SMB_services.pdf" 
@@ -7853,6 +8581,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_file_access_using_SMB.pdf" 
@@ -7866,6 +8597,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_security_styles.pdf" 
@@ -7879,6 +8613,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_security_styles_affect_data_access.pdf" 
@@ -7928,6 +8665,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_and_manage_data_volumes_in_NAS_namespaces.pdf" 
@@ -7960,6 +8700,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_name_mappings.pdf" 
@@ -7996,6 +8739,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_multidomain_name_mapping_searches.pdf" 
@@ -8028,6 +8774,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_and_configure_SMB_shares.pdf" 
@@ -8049,6 +8798,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_SMB_share_properties.pdf" 
@@ -8092,6 +8844,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_file_access_by_using_SMB_share_ACLs.pdf" 
@@ -8120,6 +8875,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_file_access_by_using_file_permissions.pdf" 
@@ -8148,6 +8906,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_file_access_by_using_Dynamic_Access_Control__DAC_.pdf" 
@@ -8188,6 +8949,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_SMB_access_using_export_policies.pdf" 
@@ -8218,6 +8982,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Secure_file_access_by_using_Storage_Level_Access_Guard.pdf" 
@@ -8263,6 +9030,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_file_access_using_SMB.pdf" 
@@ -8276,6 +9046,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_local_users_and_groups_for_authentication_and_authorization.pdf" 
@@ -8289,6 +9062,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_ONTAP_uses_local_users_and_groups.pdf" 
@@ -8327,6 +9103,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_local_privileges_are.pdf" 
@@ -8359,6 +9138,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Enable_or_disable_local_users_and_groups_functionality.pdf" 
@@ -8387,6 +9169,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_local_user_accounts.pdf" 
@@ -8421,6 +9206,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_local_groups.pdf" 
@@ -8455,6 +9243,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_local_privileges.pdf" 
@@ -8494,6 +9285,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_bypass_traverse_checking.pdf" 
@@ -8522,6 +9316,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Display_information_about_file_security_and_audit_policies.pdf" 
@@ -8558,6 +9355,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NTFS_file_security__NTFS_audit_policies__and_Storage_Level_Access_Guard_on_SVMs_using_the_CLI.pdf" 
@@ -8581,6 +9381,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_and_apply_file_security_on_NTFS_files_and_folders_using_the_CLI.pdf" 
@@ -8617,6 +9420,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_and_apply_audit_policies_to_NTFS_files_and_folders_using_the_CLI.pdf" 
@@ -8676,6 +9482,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_the_metadata_cache_for_SMB_shares.pdf" 
@@ -8704,6 +9513,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_file_locks.pdf" 
@@ -8736,6 +9548,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Monitor_SMB_activity.pdf" 
@@ -8775,6 +9590,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Deploy_SMB_client_based_services.pdf" 
@@ -8788,6 +9606,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_offline_files_to_allow_caching_of_files_for_offline_use.pdf" 
@@ -8820,6 +9641,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_roaming_profiles_to_store_user_profiles_centrally_on_a_SMB_server_associated_with_the_SVM.pdf" 
@@ -8848,6 +9672,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_folder_redirection_to_store_data_on_a_SMB_server.pdf" 
@@ -8878,6 +9705,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Recover_files_and_folders_using_Previous_Versions.pdf" 
@@ -8921,6 +9751,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Deploy_SMB_server_based_services.pdf" 
@@ -8934,6 +9767,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_home_directories.pdf" 
@@ -8949,6 +9785,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Home_directory_shares.pdf" 
@@ -9000,6 +9839,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SMB_client_access_to_UNIX_symbolic_links.pdf" 
@@ -9034,6 +9876,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_BranchCache_to_cache_SMB_share_content_at_a_branch_office.pdf" 
@@ -9049,6 +9894,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Requirements_and_guidelines.pdf" 
@@ -9083,6 +9931,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_BranchCache.pdf" 
@@ -9113,6 +9964,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_BranchCache_enabled_SMB_shares.pdf" 
@@ -9141,6 +9995,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_and_monitor_the_BranchCache_configuration.pdf" 
@@ -9179,6 +10036,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Disable_BranchCache_on_SMB_shares.pdf" 
@@ -9207,6 +10067,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Disable_or_enable_BranchCache_on_the_SVM.pdf" 
@@ -9233,6 +10096,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Delete_the_BranchCache_configuration_on_SVMs.pdf" 
@@ -9270,6 +10136,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Improve_Microsoft_remote_copy_performance.pdf" 
@@ -9304,6 +10173,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Improve_client_response_time_by_providing_SMB_automatic_node_referrals_with_Auto_Location.pdf" 
@@ -9338,6 +10210,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Provide_folder_security_on_shares_with_access_based_enumeration.pdf" 
@@ -9375,6 +10250,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NFS_and_SMB_file_and_directory_naming_dependencies.pdf" 
@@ -9420,6 +10298,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SMB_configuration_for_Microsoft_Hyper_V_and_SQL_Server.pdf" 
@@ -9437,6 +10318,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Nondisruptive_operations_for_Hyper_V_and_SQL_Server_over_SMB.pdf" 
@@ -9471,6 +10355,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Share_based_backups_with_Remote_VSS.pdf" 
@@ -9503,6 +10390,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configuration_requirements_and_considerations.pdf" 
@@ -9543,6 +10433,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Plan_the_Hyper_V_or_SQL_Server_over_SMB_configuration.pdf" 
@@ -9569,6 +10462,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_ONTAP_configurations_for_nondisruptive_operations_with_Hyper_V_and_SQL_Server_over_SMB.pdf" 
@@ -9611,6 +10507,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_Hyper_V_and_SQL_Server_over_SMB_configurations.pdf" 
@@ -9637,6 +10536,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_statistics_to_monitor_Hyper_V_and_SQL_Server_over_SMB_activity.pdf" 
@@ -9663,6 +10565,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Verify_that_the_configuration_is_capable_of_nondisruptive_operations.pdf" 
@@ -9684,6 +10589,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Determine_whether_SMB_sessions_are_continuously_available.pdf" 
@@ -9737,6 +10645,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_storage_management.pdf" 
@@ -9750,6 +10661,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_management_with_System_Manager.pdf" 
@@ -9763,6 +10677,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_storage.pdf" 
@@ -9803,6 +10720,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NVMe_storage.pdf" 
@@ -9840,6 +10760,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_management_with_the_CLI.pdf" 
@@ -9855,6 +10778,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_LUNs_for_FC_and_iSCSI.pdf" 
@@ -9895,6 +10821,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_namespaces_for_NVMe.pdf" 
@@ -9925,6 +10854,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_LUNs_for_FC_and_iSCSi.pdf" 
@@ -9971,6 +10903,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Recommended_volume_and_file_or_LUN_configuration_combinations.pdf" 
@@ -10005,6 +10940,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Selective_LUN_Map.pdf" 
@@ -10035,6 +10973,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_iSCSI_protocol.pdf" 
@@ -10071,6 +11012,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_FC_protocol.pdf" 
@@ -10097,6 +11041,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_systems_with_FC_adapters.pdf" 
@@ -10141,6 +11088,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NVMe_protocol.pdf" 
@@ -10171,6 +11121,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_LIFs_for_all_SAN_protocols.pdf" 
@@ -10209,6 +11162,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_methods_in_SAN_environments.pdf" 
@@ -10224,6 +11180,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Effect_of_moving_or_copying_a_LUN_on_Snapshot_copies.pdf" 
@@ -10254,6 +11213,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_FlexClone_LUNs_to_protect_your_data.pdf" 
@@ -10290,6 +11252,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_and_use_SnapVault_backups_in_a_SAN_environment.pdf" 
@@ -10335,6 +11300,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_Concepts.pdf" 
@@ -10348,6 +11316,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_SAN_host_provisioning.pdf" 
@@ -10363,6 +11334,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/iSCSI_service_management.pdf" 
@@ -10388,6 +11362,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/iSNS_server_registration_requirement.pdf" 
@@ -10438,6 +11415,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_SAN_volumes.pdf" 
@@ -10470,6 +11450,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_host_side_space_management.pdf" 
@@ -10508,6 +11491,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Storage_virtualization_with_VMware_and_Microsoft_copy_offload.pdf" 
@@ -10529,6 +11515,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Microsoft_Offloaded_Data_Transfer__ODX_.pdf" 
@@ -10584,6 +11573,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SAN_configuration_reference.pdf" 
@@ -10599,6 +11591,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Considerations_for_iSCSI_configurations.pdf" 
@@ -10631,6 +11626,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Considerations_for_FC_configurations.pdf" 
@@ -10667,6 +11665,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_systems_with_FC_adapters.pdf" 
@@ -10696,6 +11697,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_X1143A_R6_adapters.pdf" 
@@ -10739,6 +11743,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Ways_to_Configure_FCoE.pdf" 
@@ -10767,6 +11774,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Fibre_Channel_and_FCoE_zoning.pdf" 
@@ -10803,6 +11813,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Host_support_for_multipathing.pdf" 
@@ -10831,6 +11844,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configuration_limits.pdf" 
@@ -10885,6 +11901,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/S3_object_storage_management.pdf" 
@@ -10898,6 +11917,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
@@ -10932,6 +11954,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
@@ -10947,6 +11972,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/S3_support_in_ONTAP_9.pdf" 
@@ -10977,6 +12005,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_the_S3_configuration_process.pdf" 
@@ -11007,6 +12038,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_S3_access_to_an_SVM.pdf" 
@@ -11041,6 +12075,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Add_storage_capacity_to_an_S3_enabled_SVM.pdf" 
@@ -11060,6 +12097,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_or_modify_access_policy_statements.pdf" 
@@ -11088,6 +12128,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Enable_client_access_to_S3_object_storage.pdf" 
@@ -11136,6 +12179,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Protect_buckets_with_S3_SnapMirror.pdf" 
@@ -11151,6 +12197,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Mirror_and_backup_protection_on_a_remote_cluster.pdf" 
@@ -11181,6 +12230,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Mirror_and_backup_protection_on_the_local_cluster.pdf" 
@@ -11211,6 +12263,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Backup_protection_with_cloud_targets.pdf" 
@@ -11252,6 +12307,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Audit_S3_events.pdf" 
@@ -11295,6 +12353,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Security_and_data_encryption.pdf" 
@@ -11308,6 +12369,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_security_with_System_Manager.pdf" 
@@ -11340,6 +12404,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_administrator_authentication_and_RBAC_with_the_CLI.pdf" 
@@ -11359,6 +12426,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_login_accounts.pdf" 
@@ -11374,6 +12444,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Enable_local_account_access.pdf" 
@@ -11421,6 +12494,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_access_control_roles.pdf" 
@@ -11453,6 +12529,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_administrator_accounts.pdf" 
@@ -11470,6 +12549,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Generate_and_install_a_CA_signed_server_certificate.pdf" 
@@ -11498,6 +12580,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_Active_Directory_domain_controller_access.pdf" 
@@ -11526,6 +12611,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_LDAP_or_NIS_server_access.pdf" 
@@ -11582,6 +12670,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Ransomware_protection.pdf" 
@@ -11618,6 +12709,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Antivirus_configuration.pdf" 
@@ -11633,6 +12727,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_NetApp_antivirus_protection.pdf" 
@@ -11663,6 +12760,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_scanner_pools.pdf" 
@@ -11697,6 +12797,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_on_access_scanning.pdf" 
@@ -11727,6 +12830,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_on_demand_scanning.pdf" 
@@ -11765,6 +12871,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Troubleshoot_connectivity_issues.pdf" 
@@ -11800,6 +12909,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NAS_auditing_and_security_tracing.pdf" 
@@ -11815,6 +12927,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Audit_NAS_events_on_SVMs.pdf" 
@@ -11830,6 +12945,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_auditing_works.pdf" 
@@ -11864,6 +12982,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SMB_events_that_can_be_audited.pdf" 
@@ -11898,6 +13019,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_a_file_and_directory_auditing_configuration_on_SVMs.pdf" 
@@ -11926,6 +13050,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_file_and_folder_audit_policies.pdf" 
@@ -11954,6 +13081,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Display_information_about_audit_policies_applied_to_files_and_directories.pdf" 
@@ -11982,6 +13112,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/CLI_change_events_that_can_be_audited.pdf" 
@@ -12016,6 +13149,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_auditing_configurations.pdf" 
@@ -12061,6 +13197,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_FPolicy_for_file_monitoring_and_management_on_SVMs.pdf" 
@@ -12074,6 +13213,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_FPolicy_works.pdf" 
@@ -12093,6 +13235,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/How_FPolicy_works_with_external_FPolicy_servers.pdf" 
@@ -12148,6 +13293,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Plan_the_FPolicy_configuration.pdf" 
@@ -12161,6 +13309,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Plan_the_FPolicy_external_engine_configuration.pdf" 
@@ -12191,6 +13342,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Plan_the_FPolicy_event_configuration.pdf" 
@@ -12223,6 +13377,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Plan_the_FPolicy_policy_configuration.pdf" 
@@ -12251,6 +13408,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Plan_the_FPolicy_scope_configuration.pdf" 
@@ -12286,6 +13446,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_the_FPolicy_configuration.pdf" 
@@ -12318,6 +13481,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Modify_FPolicy_configurations.pdf" 
@@ -12344,6 +13510,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Display_information_about_FPolicy_configurations.pdf" 
@@ -12374,6 +13543,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_FPolicy_server_connections.pdf" 
@@ -12413,6 +13585,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_security_tracing_to_verify_or_troubleshoot_file_and_directory_access.pdf" 
@@ -12432,6 +13607,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Perform_security_traces.pdf" 
@@ -12492,6 +13670,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_encryption_with_System_Manager.pdf" 
@@ -12518,6 +13699,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_encryption_with_the_CLI.pdf" 
@@ -12533,6 +13717,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NetApp_Volume_Encryption.pdf" 
@@ -12550,6 +13737,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NVE.pdf" 
@@ -12567,6 +13757,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_external_key_management.pdf" 
@@ -12614,6 +13807,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Encrypt_volume_data_with_NVE.pdf" 
@@ -12657,6 +13853,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NetApp_hardware_based_encryption.pdf" 
@@ -12674,6 +13873,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_external_key_management.pdf" 
@@ -12712,6 +13914,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_onboard_key_management.pdf" 
@@ -12753,6 +13958,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_NetApp_encryption.pdf" 
@@ -12780,6 +13988,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Securely_purge_data_on_an_encrypted_volume.pdf" 
@@ -12822,6 +14033,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Make_data_on_a_FIPS_drive_or_SED_inaccessible.pdf" 
@@ -12895,6 +14109,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_and_disaster_recovery.pdf" 
@@ -12908,6 +14125,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_with_System_Manager.pdf" 
@@ -12968,6 +14188,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Cluster_and_SVM_peering_with_the_CLI.pdf" 
@@ -12983,6 +14206,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Prepare_for_cluster_and_SVM_peering.pdf" 
@@ -13013,6 +14239,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_intercluster_LIFs.pdf" 
@@ -13041,6 +14270,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_peer_relationships__ONTAP_9_3_and_later_.pdf" 
@@ -13069,6 +14301,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_peer_relationships__ONTAP_9_2_and_earlier_.pdf" 
@@ -13110,6 +14345,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_with_the_CLI.pdf" 
@@ -13125,6 +14363,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_local_Snapshot_copies.pdf" 
@@ -13140,6 +14381,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_custom_Snapshot_policies.pdf" 
@@ -13170,6 +14414,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_the_Snapshot_copy_reserve.pdf" 
@@ -13206,6 +14453,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Restore_files_from_Snapshot_copies.pdf" 
@@ -13247,6 +14497,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SnapMirror_volume_replication.pdf" 
@@ -13278,6 +14531,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SnapMirror_licensing.pdf" 
@@ -13315,6 +14571,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SnapMirror_volume_replication.pdf" 
@@ -13332,6 +14591,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_a_replication_relationship_one_step_at_a_time.pdf" 
@@ -13349,6 +14611,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Customize_a_replication_policy.pdf" 
@@ -13398,6 +14663,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Serve_data_from_a_SnapMirror_DR_destination_volume.pdf" 
@@ -13426,6 +14694,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Restore_files_from_a_SnapMirror_destination_volume.pdf" 
@@ -13473,6 +14744,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SnapMirror_SVM_replication.pdf" 
@@ -13486,6 +14760,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Replicate_SVM_configurations.pdf" 
@@ -13524,6 +14801,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Serve_data_from_an_SVM_DR_destination.pdf" 
@@ -13550,6 +14830,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Reactivate_the_source_SVM.pdf" 
@@ -13591,6 +14874,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SnapMirror_root_volume_replication.pdf" 
@@ -13621,6 +14907,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SnapMirror_technical_details.pdf" 
@@ -13662,6 +14951,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Archive_and_compliance_using_SnapLock_technology.pdf" 
@@ -13681,6 +14973,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SnapLock.pdf" 
@@ -13704,6 +14999,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_the_retention_time.pdf" 
@@ -13745,6 +15043,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Commit_files_to_WORM.pdf" 
@@ -13781,6 +15082,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_the_privileged_delete_feature.pdf" 
@@ -13813,6 +15117,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Move_a_SnapLock_volume.pdf" 
@@ -13850,6 +15157,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Consistency_Groups_management.pdf" 
@@ -13873,6 +15183,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SnapMirror_Business_Continuity.pdf" 
@@ -13890,6 +15203,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Planning.pdf" 
@@ -13924,6 +15240,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SnapMirror_for_Business_Continuity_using_System_Manager.pdf" 
@@ -13952,6 +15271,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Installation_and_setup_using_the_ONTAP_CLI.pdf" 
@@ -13986,6 +15308,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Administration.pdf" 
@@ -14028,6 +15353,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Troubleshooting.pdf" 
@@ -14090,6 +15418,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Mediator_service_for_MetroCluster_and_SnapMirror_Business_Continuity.pdf" 
@@ -14116,6 +15447,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_MetroCluster_sites_with_System_Manager.pdf" 
@@ -14152,6 +15486,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Data_protection_using_tape_backup.pdf" 
@@ -14171,6 +15508,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_tape_drives.pdf" 
@@ -14207,6 +15547,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_tape_drives.pdf" 
@@ -14226,6 +15569,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Tape_devices_overview.pdf" 
@@ -14254,6 +15600,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Tape_aliasing.pdf" 
@@ -14297,6 +15646,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Transfer_data_using_ndmpcopy.pdf" 
@@ -14323,6 +15675,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NDMP_for_FlexVol_volumes.pdf" 
@@ -14338,6 +15693,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_NDMP_modes_of_operation.pdf" 
@@ -14366,6 +15724,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Environment_variable.pdf" 
@@ -14417,6 +15778,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_node_scoped_NDMP_mode_for_FlexVol_volumes.pdf" 
@@ -14445,6 +15809,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_SVM_scoped_NDMP_mode_for_FlexVol_volumes.pdf" 
@@ -14496,6 +15863,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_dump_engine_for_FlexVol_volumes.pdf" 
@@ -14556,6 +15926,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/About_SMTape_engine_for_FlexVol_volumes.pdf" 
@@ -14600,6 +15973,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Monitor_tape_backup_and_restore_operations_for_FlexVol_volumes.pdf" 
@@ -14617,6 +15993,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/What_the_dump_and_restore_event_log_message_format_is.pdf" 
@@ -14658,6 +16037,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Error_messages_for_tape_backup_and_restore_of_FlexVol_volumes.pdf" 
@@ -14671,6 +16053,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Backup_and_restore_error_messages.pdf" 
@@ -14725,6 +16110,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NDMP_error_messages.pdf" 
@@ -14769,6 +16157,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Dump_error_messages.pdf" 
@@ -14811,6 +16202,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/SMTape_error_messages.pdf" 
@@ -14917,6 +16311,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/NDMP_configuration.pdf" 
@@ -14940,6 +16337,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_NDMP_at_the_SVM_level_or_the_node_level.pdf" 
@@ -14955,6 +16355,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_SVM_scoped_NDMP.pdf" 
@@ -14985,6 +16388,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_node_scoped_NDMP.pdf" 
@@ -15031,6 +16437,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Replication_between_NetApp_Element_software_and_ONTAP.pdf" 
@@ -15048,6 +16457,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Enable_SnapMirror_in_Element_software.pdf" 
@@ -15076,6 +16488,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_a_replication_relationship.pdf" 
@@ -15091,6 +16506,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Customize_a_replication_policy.pdf" 
@@ -15117,6 +16535,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Create_a_replication_relationship.pdf" 
@@ -15154,6 +16575,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Serve_data_from_a_SnapMirror_DR_destination_volume.pdf" 
@@ -15204,6 +16628,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Event_and_performance_monitoring.pdf" 
@@ -15217,6 +16644,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/View_cluster_performance_with_System_Manager.pdf" 
@@ -15249,6 +16679,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Performance_monitoring_setup_with_the_CLI.pdf" 
@@ -15264,6 +16697,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Performance_monitoring.pdf" 
@@ -15283,6 +16719,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Install_Active_IQ_Unified_Manager.pdf" 
@@ -15311,6 +16750,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_basic_monitoring_tasks.pdf" 
@@ -15328,6 +16770,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Use_performance_thresholds_to_generate_event_notifications.pdf" 
@@ -15385,6 +16830,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Performance_management_with_the_CLI.pdf" 
@@ -15400,6 +16848,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Monitor_performance.pdf" 
@@ -15419,6 +16870,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Install_Active_IQ_Unified_Manager.pdf" 
@@ -15447,6 +16901,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Set_up_basic_monitoring_tasks.pdf" 
@@ -15492,6 +16949,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_performance_issues.pdf" 
@@ -15507,6 +16967,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Perform_basic_infrastructure_checks.pdf" 
@@ -15520,6 +16983,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Check_protocol_settings_on_the_storage_system.pdf" 
@@ -15567,6 +17033,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Manage_workloads.pdf" 
@@ -15584,6 +17053,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Guarantee_throughput_with_QoS.pdf" 
@@ -15649,6 +17121,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/File_System_Analytics.pdf" 
@@ -15683,6 +17158,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/EMS_configuration.pdf" 
@@ -15700,6 +17178,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Configure_EMS_event_notifications_with_the_CLI.pdf" 
@@ -15734,6 +17215,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/us-en/ontap/pdfs/sidebar/Update_deprecated_EMS_event_mapping.pdf" 
@@ -22004,6 +23488,7 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
@@ -22219,98 +23704,122 @@
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/ontap/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
-  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Have feedback for our website?</span>
+              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/ontap/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
       </div><!-- Elasticsearch JS -->
