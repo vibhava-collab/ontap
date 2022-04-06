@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Beginning with ONTAP 9.8, you can enable an Amazon Simple Storage Service (S3) object storage server in an ONTAP cluster.">
-  <meta name="keywords" content=" netapp, ontap, System Manager, StorageGRID, Amazon Simple Storage Service, S3, storage, object, object storage, object storage server, object provision, overview, on-premises, FabricPool, AFF, tier, tiering, bucket, remote, local, cluster, clusters, cloud tier, self-tiering, deployments, performance, throughput, capacity, latency, QoS"><!-- Icons -->
+  <meta name="keywords" content=" StorageGRID, Amazon Simple Storage Service, S3, storage, object, object storage, object storage server, object provision, overview, on-premises, FabricPool, AFF, tier, tiering, bucket, remote, local, cluster, clusters, cloud tier, self-tiering, deployments, performance, throughput, capacity, latency, QoS"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -11720,8 +11720,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -21492,8 +21490,6 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/san-config/supported-port-config-x1143a-r6-adapter-concept.html">
         Overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/san-config/port-config-options-x1143a-r6-adapter-concept.html">
-        Port configuration options for the X1143A-R6 adapter
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/san-config/configure-ports-task.html">
         Configure the ports
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/san-config/change-uta2-port-cna-mode-fc-task.html">
@@ -22734,7 +22730,7 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_install_high_level_deployment_workflow.html">
         High level deployment workflow
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc-install-confirm-ontap-cluster.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_install_confirm_ontap_cluster.html">
         Install ONTAP Mediator Service and confirm the ONTAP cluster configuration
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smbc/smbc_install_initialize_the_ontap_mediator.html">
         Initialize the ONTAP Mediator
@@ -23523,7 +23519,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-17 20:19:19 +0000">02/17/2022</time>
+    <time datetime="2022-04-05 21:17:06 +0000">04/05/2022</time>
     
   
 
@@ -23633,7 +23629,7 @@ ONTAP S3 is appropriate if you want S3 capabilities on existing clusters without
 <p>If you select <strong>Use for tiering</strong>, no performance service levels are selected, and the system tries to select low-cost media with optimal performance for the tiered data.</p>
 </div>
 <div class="paragraph">
-<p>See also: <a href="../performance-admin/adaptive-qos-policy-groups-task.html">Use adaptive QoS policy groups</a>.</p>
+<p>See also: <a href="./performance-admin/adaptive-qos-policy-groups-task.html">Use adaptive QoS policy groups</a>.</p>
 </div>
 <div class="paragraph">
 <p>ONTAP tries to provision this bucket on local tiers that have the most appropriate disks, satisfying the chosen service level. However, if you need to specify which disks to include in the bucket, consider configuring S3 object storage from the CLI by specifying the local tiers (aggregate). If you configure the S3 server from the CLI, you can still manage it with System Manager if desired. For more information, see the documentation for <a href="s3-config/index.html">S3 configuration with the CLI</a>.</p>
