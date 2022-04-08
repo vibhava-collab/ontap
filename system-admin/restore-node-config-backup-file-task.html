@@ -23519,11 +23519,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-19 18:27:41 +0000">10/19/2021</time>
+    <time datetime="2022-04-07 21:10:50 +0000">04/07/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-barbe">
     <img  class="avatar avatar-small"
           alt="netapp-barbe"
@@ -23548,26 +23556,29 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>If the node is healthy, then at the advanced privilege level of a different node, use the <code>cluster modify</code> command with the <code>-node</code> and <code>-eligibility</code> parameters to mark it ineligible and isolate it from the cluster.</p>
-<div class="paragraph">
-<p>If the node is not healthy, then you should skip this step.</p>
-</div>
-<div class="paragraph">
-<p>This example modifies node2 to be ineligible to participate in the cluster so that its configuration can be restored:</p>
+<p>Change to the advanced privilege level:<br>
+<code>set -privilege advanced</code></p>
+</li>
+<li>
+<p>If the node is healthy, then at the advanced privilege level of a different node, use the <code>cluster modify</code> command with the <code>-node</code> and <code>-eligibility</code> parameters to mark it ineligible and isolate it from the cluster.<br>
+If the node is not healthy, then you should skip this step.<br>
+This example modifies node2 to be ineligible to participate in the cluster so that its configuration can be restored:</p>
+</li>
+</ol>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::*&gt; cluster modify -node node2 -eligibility false</pre>
 </div>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Use the <code>system configuration recovery node restore</code> command at the advanced privilege level to restore the node&#8217;s configuration from a configuration backup file.</p>
-<div class="paragraph">
-<p>If the node lost its identity, including its name, then you should use the <code>-nodename-in-backup</code> parameter to specify the node name in the configuration backup file.</p>
-</div>
-<div class="paragraph">
-<p>This example restores the node&#8217;s configuration using one of the configuration backup files stored on the node:</p>
+<p>Use the <code>system configuration recovery node restore</code> command at the advanced privilege level to restore the node&#8217;s configuration from a configuration backup file.<br>
+If the node lost its identity, including its name, then you should use the <code>-nodename-in-backup</code> parameter to specify the node name in the configuration backup file.<br>
+This example restores the node&#8217;s configuration using one of the configuration backup files stored on the node:</p>
+</li>
+</ol>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -23584,7 +23595,8 @@ Do you want to continue? {y|n}: y</pre>
 <div class="paragraph">
 <p>The configuration is restored, and the node reboots.</p>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>If you marked the node ineligible, then use the <code>system configuration recovery cluster sync</code> command to mark the node as eligible and synchronize it with the cluster.</p>
 </li>
