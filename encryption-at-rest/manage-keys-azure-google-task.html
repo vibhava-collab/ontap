@@ -23519,7 +23519,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-18 20:44:26 +0000">01/18/2022</time>
+    <time datetime="2022-04-14 21:42:21 +0000">04/14/2022</time>
     
   
 
@@ -23587,19 +23587,20 @@
 <div class="sect1">
 <h2 id="enable-external-key-management-with-the-cli">Enable external key management with the CLI</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Enabling external key management depends on the specific key manager you use. If you are enabling AKV in a Cloud Volumes ONTAP, note that there is a separate procedure. Choose the tab of the key manager and environment that suits your needs:</p>
+</div>
 <div class="exampleblock tabbed-block">
 <div class="content">
 <div class="openblock">
-<div class="title">Azure</div>
+<div class="title">Azure for ONTAP</div>
 <div class="content">
 <div class="olist arabic">
-<div class="title">Enable AKV with the CLI</div>
+<div class="title">Enable Azure Key Vault for ONTAP</div>
 <ol class="arabic">
 <li>
-<p>Before you begin, you need to obtain the appropriate authentication credentials from your Azure account, either a client secret or certificate.</p>
-<div class="paragraph">
-<p>You must also ensure all nodes in the cluster are healthy. You can check this with the command <code>cluster show</code>.</p>
-</div>
+<p>Before you begin, you need to obtain the appropriate authentication credentials from your Azure account, either a client secret or certificate.<br>
+You must also ensure all nodes in the cluster are healthy. You can check this with the command <code>cluster show</code>.</p>
 </li>
 <li>
 <p>Set privileged level to advanced<br>
@@ -23607,9 +23608,47 @@
 </li>
 <li>
 <p>Enable AKV on the SVM<br>
-<code>security key-manager external azure enable -client-id <em>client_id</em> -tenant-id <em>tenant_id</em> -name -key-id <em>key_id</em> -authentication-method {certificate|client-secret}</code></p>
-<div class="paragraph">
-<p>When prompted, enter either the client certificate or client secret from your Azure account.</p>
+<code>security key-manager external azure enable -client-id <em>client_id</em> -tenant-id <em>tenant_id</em> -name -key-id <em>key_id</em> -authentication-method {certificate|client-secret}</code><br>
+When prompted, enter either the client certificate or client secret from your Azure account.</p>
+</li>
+<li>
+<p>Verify AKV is enabled correctly:<br>
+<code>security key-manager external azure show vserver <em>vserver_name</em></code><br>
+If the service reachability is not OK, establish the connectivity to the AKV key management service via data vserver LIF.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Azure for Cloud Volumes ONTAP</div>
+<div class="content">
+<div class="olist arabic">
+<div class="title">Enable Azure Key Vault for Cloud Volumes ONTAP</div>
+<ol class="arabic">
+<li>
+<p>Before you begin, you need to obtain the appropriate authentication credentials from your Azure account, either a client secret or certificate.<br>
+You must also ensure all nodes in the cluster are healthy. You can check this with the command <code>cluster show</code>.</p>
+</li>
+<li>
+<p>Set privileged level to advanced<br>
+<code>set -priv advanced</code></p>
+</li>
+<li>
+<p>Enable AKV on the SVM<br>
+<code>security key-manager external azure enable -client-id <em>client_id</em> -tenant-id <em>tenant_id</em> -name -key-id <em>key_id</em> -authentication-method {certificate|client-secret}</code><br>
+When prompted, enter either the client certificate or client secret from your Azure account.</p>
+</li>
+<li>
+<p>Set up DNS for the data SVM:<br>
+<code>dns create -domains <em>domain_name</em> -name-servers <em>server_address</em> -vserver <em>vserver_name</em></code></p>
+</li>
+<li>
+<p>Go to the Azure portal for the subscription that contains your key vault. Select the <strong>Access policies</strong> menu. Provide the application the key permissions, secret permissions, and certificate permissions and then save.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../media/azure-key-vault-access-policies.png" alt="Azure access policies menu showing the permissions fields that must be provided">
+</div>
 </div>
 </li>
 <li>
@@ -23622,16 +23661,14 @@ If the service reachability is not OK, establish the connectivity to the AKV key
 </div>
 </div>
 <div class="openblock">
-<div class="title">Google Cloud</div>
+<div class="title">Google Cloud for ONTAP</div>
 <div class="content">
 <div class="olist arabic">
-<div class="title">Enable Cloud KMS with the CLI</div>
+<div class="title">Enable Cloud KMS with the CLI for ONTAP</div>
 <ol class="arabic">
 <li>
-<p>Before you begin, you need to obtain the private key for the Google Cloud KMS account key file in a JSON format. This can be found in your GCP account.</p>
-<div class="paragraph">
-<p>You must also ensure all nodes in the cluster are healthy. You can check this with the command <code>cluster show</code>.</p>
-</div>
+<p>Before you begin, you need to obtain the private key for the Google Cloud KMS account key file in a JSON format. This can be found in your GCP account.<br>
+You must also ensure all nodes in the cluster are healthy. You can check this with the command <code>cluster show</code>.</p>
 </li>
 <li>
 <p>Set privileged level to advanced<br>
@@ -23639,10 +23676,8 @@ If the service reachability is not OK, establish the connectivity to the AKV key
 </li>
 <li>
 <p>Enable Cloud KMS on the SVM<br>
-<code>security key-manager external gcp enable -vserver <em>data_svm_name</em> -project-id <em>project_id</em>-key-ring-name <em>key_ring_name</em> -key-ring-location <em>key_ring_location</em> -key-name <em>key_name</em></code></p>
-<div class="paragraph">
-<p>When prompted, enter the contents of the JSON file with the Service Account Private Key</p>
-</div>
+<code>security key-manager external gcp enable -vserver <em>data_svm_name</em> -project-id <em>project_id</em>-key-ring-name <em>key_ring_name</em> -key-ring-location <em>key_ring_location</em> -key-name <em>key_name</em></code><br>
+When prompted, enter the contents of the JSON file with the Service Account Private Key</p>
 </li>
 <li>
 <p>Verify that Cloud KMS is configured with the correct parameters:<br>
