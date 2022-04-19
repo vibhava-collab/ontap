@@ -23536,6 +23536,18 @@
 <div class="paragraph">
 <p>Consistency groups offer remote protection through SnapMirror Business Continuity (SM-BC) and local protection through Snapshot policies. In order to utilize remote protection, you must meet the requirements for <a href="../smbc/smbc_plan_prerequisites.html#licensing">SnapMirror Business Continuity deployments</a>. By default, consistency groups do not have a protection policy set and will not protect your data unless a policy is selected. See <a href="protect-task.html">“Protect a consistency group”</a> for more information.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+SM-BC relationships cannot be established on volumes mounted for NAS access.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
