@@ -23483,11 +23483,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-04-19 13:53:48 +0000">04/19/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23519,7 +23527,10 @@
 <p>When you create a quota using the <code>volume quota policy rule create</code> command, setting the <code>-target</code> parameter to an empty string ("") creates a default quota.</p>
 </li>
 <li>
-<p>In the output of the <code>volume quota policy rule show</code> command, a default quota appears with an empty string ("") as the Target.</p>
+<p>In the <code>volume quota policy rule create</code> command, the <code>-qtree</code> parameter specifies the name of the qtree to which the quota rule applies. This parameter is not applicable for tree type rules. For user or group type rules at the volume level, this parameter should contain "".</p>
+</li>
+<li>
+<p>In the output of the <code>volume quota policy rule show</code> command, a default quota appears with an empty string ("") as the target.</p>
 </li>
 <li>
 <p>In the output of the <code>volume quota report</code> command, a default quota appears with an asterisk (*) as the ID and Quota Specifier.</p>
