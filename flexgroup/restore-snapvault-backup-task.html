@@ -8014,11 +8014,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/Use_options_to_customize_CIFS_servers.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/Use_options_to_customize_SMB_servers.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            Use options to customize CIFS servers
+            Use options to customize SMB servers
           </a>
           
 
@@ -20114,14 +20114,14 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/modify-servers-task.html">
         Modify SMB servers
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Use options to customize CIFS servers</div>
+        <div class="na-navbar-padding"> Use options to customize SMB servers</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/server-options-reference.html">
         Available SMB server options
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/configure-server-options-task.html">
-        Configure CIFS server options
+        Configure SMB server options
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/configure-grant-unix-group-permission-users-task.html">
-        Configure the grant UNIX group permission to CIFS users
+        Configure the grant UNIX group permission to SMB users
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/configure-access-restrictions-anonymous-users-task.html">
         Configure access restrictions for anonymous users
       </a></li><li class="subfolders "><a href="#">
@@ -20829,7 +20829,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/requirements-configuring-branchcache-concept.html">
         Requirements for configuring BranchCache
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/configure-branchcache-task.html">
-        Configure BranchCache on the CIFS server
+        Configure BranchCache on the SMB server
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/smb-admin/configure-branchcache-remote-office-concept.html">
         Where to find information about configuring BranchCache at the remote office
       </a></li></ul></li><li class="subfolders "><a href="#">
@@ -23483,11 +23483,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-04-20 19:22:39 +0000">04/20/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23497,46 +23505,30 @@
 <p>You can perform a full-volume restore operation of FlexGroup volumes from a Snapshot copy in the SnapVault secondary volume. You can restore the FlexGroup volume either to the original source volume or to a new FlexGroup volume.</p>
 </div>
 <div class="paragraph">
-<div class="title">What you&#8217;ll need</div>
-<p>You must be aware of certain considerations for restoring FlexGroup volumes.</p>
-</div>
-<div class="paragraph">
-<p><a href="snapvault-restore-operations-concept.html">Considerations for SnapVault restore operations for FlexGroup volumes</a></p>
-</div>
-<div class="paragraph">
-<p>You must also be aware of certain considerations when you restore from SnapVault backups for FlexGroup volumes.</p>
+<div class="title">Before you begin</div>
+<p>You must be aware of certain considerations when you restore from SnapVault backups for FlexGroup volumes.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Only baseline restore is supported with partial Snapshot copies from a SnapVault backup.</p>
-<div class="paragraph">
-<p>The number of constituents in the destination volume must match the number of constituents in the source volume when the Snapshot copy was taken.</p>
-</div>
+<p>Only baseline restore is supported with partial Snapshot copies from a SnapVault backup.<br>
+The number of constituents in the destination volume must match the number of constituents in the source volume when the Snapshot copy was taken.</p>
 </li>
 <li>
-<p>If a restore operation fails, no other operations are allowed until the restore operation is complete.</p>
-<div class="paragraph">
-<p>You can either retry the restore operation or run the restore operation with the <code>cleanup</code> parameter.</p>
-</div>
+<p>If a restore operation fails, no other operations are allowed until the restore operation is complete.<br>
+You can either retry the restore operation or run the restore operation with the <code>cleanup</code> parameter.</p>
 </li>
 <li>
-<p>A FlexGroup volume can be the source volume of only one backup relationship or restore relationship.</p>
-<div class="paragraph">
-<p>A FlexGroup volume cannot be the source of two SnapVault relationships, two restore relationships, or a SnapVault relationship and a restore relationship.</p>
-</div>
+<p>A FlexGroup volume can be the source volume of only one backup relationship or restore relationship.<br>
+A FlexGroup volume cannot be the source of two SnapVault relationships, two restore relationships, or a SnapVault relationship and a restore relationship.</p>
 </li>
 <li>
-<p>SnapVault backup and restore operations cannot run in parallel.</p>
-<div class="paragraph">
-<p>When either a baseline restore operation or an incremental restore operation is in progress, you should quiesce the backup operations.</p>
-</div>
+<p>SnapVault backup and restore operations cannot run in parallel.<br>
+When either a baseline restore operation or an incremental restore operation is in progress, you should quiesce the backup operations.</p>
 </li>
 <li>
-<p>You must abort a restore operation of a partial Snapshot copy from the destination FlexGroup volume.</p>
-<div class="paragraph">
-<p>You cannot abort the restore operation of a partial Snapshot copy from the source volume.</p>
-</div>
+<p>You must abort a restore operation of a partial Snapshot copy from the destination FlexGroup volume.<br>
+You cannot abort the restore operation of a partial Snapshot copy from the source volume.</p>
 </li>
 <li>
 <p>If you abort a restore operation, you must restart the restore operation with the same Snapshot copy that was used for the previous restore operation.</p>
@@ -23554,10 +23546,8 @@
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
-<p>Restore the FlexGroup volume: <code>snapmirror restore -source-path src_svm:src_flexgroup -destination-path dest_svm:dest_flexgroup -snapshot snapshot_name</code></p>
-<div class="paragraph">
-<p><code>snapshot_name</code> is the Snapshot copy that is to be restored from the source volume to the destination volume. If the Snapshot copy is not specified, the destination volume is restored from the latest Snapshot copy.</p>
-</div>
+<p>Restore the FlexGroup volume: <code>snapmirror restore -source-path <em>src_svm:src_flexgroup</em> -destination-path <em>dest_svm:dest_flexgroup</em> -snapshot <em>snapshot_name</em></code><br>
+<code>snapshot_name</code> is the Snapshot copy that is to be restored from the source volume to the destination volume. If the Snapshot copy is not specified, the destination volume is restored from the latest Snapshot copy.</p>
 <div class="listingblock">
 <div class="content">
 <pre>vserverA::&gt; snapmirror restore -source-path vserverB:dstFG -destination-path vserverA:newFG -snapshot daily.2016-07-15_0010
