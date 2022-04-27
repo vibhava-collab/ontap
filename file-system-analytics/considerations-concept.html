@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/ontap/file-system-analytics/considerations-concept.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap/file-system-analytics/considerations-concept.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/ontap/file-system-analytics/considerations-concept.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap/file-system-analytics/considerations-concept.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -23483,7 +23483,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-21 21:37:25 +0000">12/21/2021</time>
+    <time datetime="2022-04-25 21:20:25 +0000">04/25/2022</time>
     
   
 
@@ -23530,6 +23530,69 @@
 </div>
 <div class="paragraph">
 <p>If you have enabled File System Analytics on volumes whose containing SVM is in a protection relationship, the analytics data is not replicated to the destination SVM. If the source SVM must be resynchronized in a recovery operation, you must manually reenable analytics on desired volumes after recovery.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rbac">RBAC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are user of System Manager or the ONTAP REST API <a href="../concepts/administrator-authentication-rbac-concept.html">RBAC</a> in your ONTAP set up, you will need to create a dedicated role to moderate access to Activity Tracking in File System Analytics.</p>
+</div>
+<div class="paragraph">
+<p>High Level
+1. Create a role that has access to all accept the “volume file show-disk-usage” command directory
+2. Create web access for the new role
+3. Create a user with the new role
+4. Login to System Manager or make REST calls using the new user</p>
+</div>
+<div class="olist arabic">
+<div class="title">Control access to Activity Tracking</div>
+<ol class="arabic">
+<li>
+<p>Create a default role to have access to all features. This needs to be done before creating the restrictive role to ensure the role is only restrictive on the Activity Tracking:</p>
+<div class="paragraph">
+<p><code>security login role create -cmddirname DEFAULT -access all -role storageAdmin</code></p>
+</div>
+</li>
+<li>
+<p>Create the restrictive role:</p>
+<div class="paragraph">
+<p><code>security login role create -cmddirname "volume file show-disk-usage" -access none -role storageAdmin</code></p>
+</div>
+</li>
+<li>
+<p>Authorize roles to access the SVM&#8217;s web services:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>rest</code> for REST API calls</p>
+</li>
+<li>
+<p><code>security</code> for password protection</p>
+</li>
+<li>
+<p><code>sysmgr</code> for System Manager access</p>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>vserver services web access create -vserver <em>svm-name</em> -name_ -name rest -role storageAdmin<br>
+vserver services web access create -vserver <em>svm-name</em> -name security -role storageAdmin<br>
+vserver services web access create -vserver <em>svm-name</em> -name sysmgr -role storageAdmin</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create a user. You must issue a distinct create command for each application you would like to apply to the user. Calling create multiple times on the same user simply applies all the applications to that one user and does not create a new user each time. The <code>http</code> parameter for application type applies for the ONTAP REST API and System Manager.</p>
+<div class="paragraph">
+<p><code>security login create -user-or-group-name storageUser -authentication-method password -application http -role storageAdmin</code></p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

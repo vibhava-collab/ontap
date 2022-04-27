@@ -296,9 +296,9 @@
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/ontap/data-protection/create-snapshot-policy-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap/data-protection/create-snapshot-policy-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/ontap/data-protection/create-snapshot-policy-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap/data-protection/create-snapshot-policy-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -23483,11 +23483,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-28 02:25:31 +0000">01/28/2022</time>
+    <time datetime="2022-04-27 15:45:58 +0000">04/27/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
     <img  class="avatar avatar-small"
           alt="netapp-lenida"
@@ -23530,7 +23538,7 @@ hourly.2017-05-15_1006/             hourly.2017-05-15_1306/</pre>
 <p><code>volume snapshot policy create -vserver <em>SVM</em> -policy <em>policy_name</em> -enabled true|false -schedule1 <em>schedule1_name</em> -count1 <em>copies_to_retain</em> -prefix1 <em>snapshot_prefix</em> -snapmirror-label1 <em>snapshot_label</em> &#8230;&#8203; -schedule1 <em>schedule5_name</em> -count5 <em>copies_to_retain</em>-prefix5 <em>snapshot_prefix</em> -snapmirror-label5 <em>snapshot_label</em></code></p>
 </div>
 <div class="paragraph">
-<p>The following example creates a Snapshot policy named <code>snap_policy_daily</code> that runs on a <code>daily</code> schedule. The policy has a maximum of five Snapshot copies, each with the name <code>daily</code><strong>.<code><em>timestamp</em></code></strong> and the SnapMirror label <code>daily</code>:</p>
+<p>The following example creates a Snapshot policy named <code>snap_policy_daily</code> that runs on a <code>daily</code> schedule. The policy has a maximum of five Snapshot copies, each with the name <code>daily</code>.<code><em>timestamp</em></code> and the SnapMirror label <code>daily</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
