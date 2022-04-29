@@ -23483,24 +23483,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-04 18:12:56 +0000">02/04/2022</time>
+    <time datetime="2022-04-28 20:43:37 +0000">04/28/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
-    <img  class="avatar avatar-small"
-          alt="netapp-forry"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/51911827?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
+    <img  class="avatar avatar-small"
+          alt="netapp-forry"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/51911827?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23590,12 +23590,15 @@
 <p>When prompted to continue, enter <code>y</code></p>
 </li>
 <li>
-<p>One by one, manually reboot each node in the cluster.</p>
+<p>If you are running ONTAP 9.8 or earlier manually reboot each node in the cluster one by one. Beginning in ONTAP 9.9.1, rebooting is not required.</p>
 </li>
 </ol>
 </div>
-<div class="literalblock">
+<div class="paragraph">
 <div class="title">Example</div>
+<p>If you are running ONTAP 9.9.1 or later, you will not see the warning message.</p>
+</div>
+<div class="literalblock">
 <div class="content">
 <pre>security config modify -interface SSL -is-fips-enabled true
 
@@ -23633,12 +23636,15 @@ Do you want to continue? {y|n}: y</pre>
 <p>When prompted to continue, enter <code>y</code>.</p>
 </li>
 <li>
-<p>Manually reboot each node in the cluster.</p>
+<p>If you are running ONTAP 9.8 or earlier, manually reboot each node in the cluster. Beginning in ONTAP 9.9.1, rebooting is not required.</p>
 </li>
 </ol>
 </div>
-<div class="literalblock">
+<div class="paragraph">
 <div class="title">Example</div>
+<p>If you are running ONTAP 9.9.1 or later, you will not see the warning message.</p>
+</div>
+<div class="literalblock">
 <div class="content">
 <pre>security config modify -interface SSL -supported-protocols SSLv3
 
