@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Send comments about documentation and receive update notifications</title>
+  <title>Halt or reboot a node without initiating takeover in a two-node cluster</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Send comments about documentation and receive update notifications" />
+  <meta property="og:title" content="Halt or reboot a node without initiating takeover in a two-node cluster" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.html" />
-	<meta property="og:description" content="You can help us to improve the quality of our documentation by sending us your feedback. You can receive automatic notification when production-level \(GA/FC..." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/high-availability/halt-reboot-node-wo-takeover-task.html" />
+	<meta property="og:description" content="If the -inhibit-takeover parameter is set to `true`, both nodes in an HA cluster will stop serving data unless you change specific configuration settings." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can help us to improve the quality of our documentation by sending us your feedback. You can receive automatic notification when production-level \(GA/FC...">
-  <meta name="keywords" content=" doccomments, quality documentation, high-quality documentation"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="If the -inhibit-takeover parameter is set to `true`, both nodes in an HA cluster will stop serving data unless you change specific configuration settings.">
+  <meta name="keywords" content=" high availability pair, hair, inhibit-takeover, reboot, epsilon, HA"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Send comments about documentation and receive update notifications](https://docs.netapp.com/us-en/ontap/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Halt or reboot a node without initiating takeover in a two-node cluster](https://docs.netapp.com/us-en/ontap/high-availability/halt-reboot-node-wo-takeover-task.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/high-availability/halt-reboot-node-wo-takeover-task.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/ontap/high-availability/halt-reboot-node-wo-takeover-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/ontap/high-availability/halt-reboot-node-wo-takeover-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/ontap/high-availability/halt-reboot-node-wo-takeover-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap/software_setup/concept_how_to_send_comments_about_documentation_and_receive_update_notifications_netapp_post_preface.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/ontap/high-availability/halt-reboot-node-wo-takeover-task.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -3796,6 +3796,17 @@
 
 
 
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/ontap/pdfs/pages/high-availability/halt-reboot-node-wo-takeover-task.pdf" >
+    <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -18515,6 +18526,8 @@
         Commands for monitoring an HA pair
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/high-availability/ha_commands_for_enabling_and_disabling_storage_failover.html">
         Commands for enabling and disabling storage failover
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/ontap/high-availability/halt-reboot-node-wo-takeover-task.html">
+        Halt or reboot a node without initiating takeover
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Rest API management with System Manager</div>
       </a>
@@ -23467,54 +23480,104 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Send comments about documentation and receive update notifications</h1>
+  <h1 class="n-doc__component-detail-heading">Halt or reboot a node without initiating takeover in a two-node cluster</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2021-10-22 16:28:10 +0000">10/22/2021</time>
+    <time datetime="2022-04-29 18:35:15 +0000">04/29/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
 </p>
 
 <div class="paragraph lead">
-<p>You can help us to improve the quality of our documentation by sending us your feedback. You can receive automatic notification when production-level (GA/FCS) documentation is initially released or important changes are made to existing production-level documents.</p>
+<p>In a two-node cluster, cluster high availability (HA) ensures that the failure of one node does not disable the cluster. If you halt or reboot a node in a two-node cluster without takeover by using the <code>-inhibit-takeover</code> parameter set to <code>true</code>, both nodes will stop serving data unless you change specific configuration settings.</p>
 </div>
 <div class="paragraph">
-<p>If you have suggestions for improving this document, send us your comments by email.</p>
+<p>Before a node in a cluster configured for cluster HA is rebooted or halted using the <code>-inhibit-takeover true</code> parameter, you must first disable cluster HA and then assign epsilon to the node that you want to remain online.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Halt or reboot a node</div>
+<ol class="arabic">
+<li>
+<p>Disable cluster HA:<br>
+<code>cluster ha modify -configured false</code><br>
+Note that this operation does not disable storage failover.</p>
+</li>
+<li>
+<p>Because disabling cluster HA automatically assigns epsilon to one of the two nodes, you must determine which node holds it, and if necessary, reassign it to the node that you wish to remain online.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Set the privilege level to advanced:<br>
+set -privilege advanced<br>
+Confirm when prompted to continue into advanced mode. The advanced mode prompt appears (*&gt;).</p>
+</li>
+<li>
+<p>Determine which node holds epsilon by using the following command:<br>
+cluster show<br>
+In the following example, Node1 holds epsilon:</p>
+<div class="listingblock">
+<div class="content">
+<pre>cluster::*&gt; cluster show
+Node         Health  Eligibility   Epsilon
+------------ ------- ------------  ------------
+Node1        true    true          true
+Node2        true    true          false</pre>
+</div>
 </div>
 <div class="paragraph">
-<p><a href="mailto:doccomments@netapp.com">doccomments@netapp.com</a></p>
+<p>If the node you wish to halt or reboot does not hold epsilon, proceed to step 3.</p>
 </div>
-<div class="paragraph">
-<p>To help us direct your comments to the correct division, include in the subject line the product name, version, and operating system.</p>
+</li>
+<li>
+<p>If the node you wish to halt or reboot holds epsilon, you must remove it from the node:<br>
+<code>cluster modify -node Node1 -epsilon false</code><br>
+At this point, neither node holds epsilon.</p>
+</li>
+<li>
+<p>Assign epsilon to the node that you wish to remain online (in this example, Node2):<br>
+<code>cluster modify -node Node2 -epsilon true</code></p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p>If you want to be notified automatically when production-level documentation is released or important changes are made to existing production-level documents, follow Twitter account @NetAppDoc.</p>
-</div>
-<div class="paragraph">
-<p>You can also contact us in the following ways:</p>
+</li>
+<li>
+<p>Halt or reboot and inhibit takeover of the node that does not hold epsilon (in this example, Node2) by using either of the following commands as appropriate:<br>
+<code>system node halt -node Node2 -inhibit-takeover true</code><br>
+<code>system node reboot -node Node2 -inhibit-takeover true</code></p>
+</li>
+<li>
+<p>After the halted or rebooted node is back online, you must enable cluster HA by using the following command:<br>
+<code>cluster ha modify -configured true</code><br>
+Enabling cluster HA automatically removes epsilon from both nodes.</p>
+</li>
+<li>
+<p>Return to the admin privilege level:<br>
+<code>set -privilege admin</code></p>
+</li>
+</ol>
 </div>
 <div class="ulist">
+<div class="title">Related information</div>
 <ul>
 <li>
-<p>NetApp, Inc., 1395 Crossman Ave., Sunnyvale, CA 94089 U.S.</p>
-</li>
-<li>
-<p>Telephone: +1 (408) 822-6000</p>
-</li>
-<li>
-<p>Fax: +1 (408) 822-4501</p>
-</li>
-<li>
-<p>Support telephone: +1 (888) 463-8277</p>
+<p><a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_halt_a_single_node_without_takeover_in_a_two-node__ONTAP_cluster" target="_blank" rel="noopener">How to halt a single node without takeover in a two-node ONTAP cluster</a></p>
 </li>
 </ul>
 </div>
