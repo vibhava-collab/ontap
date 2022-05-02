@@ -23487,7 +23487,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-16 13:30:23 +0000">03/16/2022</time>
+    <time datetime="2022-03-16 17:47:44 +0000">03/16/2022</time>
     
   
 
@@ -23505,14 +23505,46 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>In ONTAP 9.7, S3 object storage was introduced as a public preview. That version was not intended for production environments and will no longer be updated as of ONTAP 9.8. Only ONTAP 9.8 and later releases support S3 object storage in production environments.</p>
 </div>
 <div class="paragraph">
 <p>S3 buckets created with the 9.7 public preview can be used in ONTAP 9.8 and later, but cannot take advantage of feature enhancements. If you have buckets created with the 9.7 public preview, you should migrate the contents of those buckets to 9.8 buckets for feature support, security, and performance enhancements.</p>
 </div>
-<div class="paragraph">
-<p>In ONTAP 9.9.1 and later releases, ONTAP S3 is supported with Cloud Volumes ONTAP for Azure, but not for AWS or Google Cloud.</p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="s3-support-with-cloud-volumes-ontap">S3 support with Cloud Volumes ONTAP</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cloud Provider</th>
+<th class="tableblock halign-left valign-top">ONTAP Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.9.1 and later</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ONTAP 9.11.0 and later</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not currently supported</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
     </article>
