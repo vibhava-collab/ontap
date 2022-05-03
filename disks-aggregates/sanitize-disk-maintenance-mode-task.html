@@ -23487,7 +23487,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-31 19:45:18 +0000">01/31/2022</time>
+    <time datetime="2022-05-02 19:18:32 +0000">05/02/2022</time>
     
   
 
@@ -23548,7 +23548,7 @@
 <p>Starting with ONTAP 9.6, you can perform disk sanitization in maintenance mode.</p>
 </div>
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">Before you begin</div>
 <ul>
 <li>
 <p>The disks cannot be self-encrypting disks (SED).</p>
@@ -23569,6 +23569,20 @@
 </li>
 <li>
 <p>If the disks you want to sanitize are partitioned, unpartition each disk:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The command to unpartition a disk is only available at the diag level and should be performed only under NetApp Support supervision. It is highly recommended that you contact NetApp Support before you proceed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p><code>disk unpartition disk_name</code></p>
 </div>
@@ -23585,9 +23599,7 @@
 <img src="/us-en/ontap/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Do not turn off power to the node, disrupt the storage connectivity, or remove target disks while sanitizing. If sanitizing is interrupted during the formatting phase, the formatting phase must be restarted and allowed to finish before the disks are sanitized and ready to be returned to the spare pool.     If you need to abort the sanitization process, you can do so by using the <code>disk sanitize abort</code> command. If the specified disks are undergoing the formatting phase of sanitization, the abort does not occur until the phase is complete.</p>
-</div>
+Do not turn off power to the node, disrupt the storage connectivity, or remove target disks while sanitizing. If sanitizing is interrupted during the formatting phase, the formatting phase must be restarted and allowed to finish before the disks are sanitized and ready to be returned to the spare pool. If you need to abort the sanitization process, you can do so by using the <code>disk sanitize abort</code> command. If the specified disks are undergoing the formatting phase of sanitization, the abort does not occur until the phase is complete.
 </td>
 </tr>
 </table>
@@ -23631,7 +23643,7 @@
 <p>When disk sanitization is enabled using nodeshell commands, it disables some low-level ONTAP commands. After disk sanitization is enabled on a node, it cannot be disabled.</p>
 </div>
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">Before you  begin</div>
 <ul>
 <li>
 <p>The disks must be spare disks; they must be owned by a node, but not used in an aggregate.</p>
@@ -23659,7 +23671,7 @@
 <li>
 <p>Enter the nodeshell for the node that owns the disks you want to sanitize:</p>
 <div class="paragraph">
-<p><code>system node run -node node_name</code></p>
+<p><code>system node run -node <em>node_name</em></code></p>
 </div>
 </li>
 <li>
@@ -23679,8 +23691,22 @@
 </li>
 <li>
 <p>If the disks you want to sanitize are partitioned, unpartition each disk:</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
 <div class="paragraph">
-<p><code>disk unpartition disk_name</code></p>
+<p>The command to unpartition a disk is only available at the diag level and should be performed only under NetApp Support supervision. It is highly recommended that you contact NetApp Support before you proceed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>disk unpartition <em>disk_name</em></code></p>
 </div>
 </li>
 <li>
@@ -23791,13 +23817,13 @@ third pass.</p>
 <li>
 <p>Assign the unassigned sanitized disks to the appropriate node for each disk:</p>
 <div class="paragraph">
-<p><code>storage disk assign -disk disk_name -owner node_name</code></p>
+<p><code>storage disk assign -disk <em>disk_name</em> -owner <em>node_name</em></code></p>
 </div>
 </li>
 <li>
 <p>Return the disks to spare status for each disk:</p>
 <div class="paragraph">
-<p><code>storage disk unfail -disk disk_name -s -q</code></p>
+<p><code>storage disk unfail -disk <em>disk_name</em> -s -q</code></p>
 </div>
 </li>
 <li>
