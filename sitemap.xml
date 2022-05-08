@@ -573,6 +573,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/san-admin/asa-iscsi-lif-fo-task.html</loc>
+      
+      <lastmod>2022-05-06T18:18:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/nfs-config/assess-networking-requirements-task.html</loc>
       
       <lastmod>2021-10-14T21:50:12+00:00</lastmod>
@@ -3872,7 +3879,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/snaplock/create-audit-log-task.html</loc>
       
-      <lastmod>2021-10-25T16:49:50+00:00</lastmod>
+      <lastmod>2022-05-06T21:08:31+00:00</lastmod>
       
     </url>
   
@@ -8161,6 +8168,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/us-en/ontap/system-admin/system-manager-independent-update-task.html</loc>
+      
+      <lastmod>2022-05-06T18:18:53+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/us-en/ontap/task_admin_expand_volumes_and_luns.html</loc>
       
       <lastmod>2022-04-06T20:00:43+00:00</lastmod>
@@ -10005,6 +10019,13 @@
       <loc>https://docs.netapp.com/us-en/ontap/multi-admin-verify/manage-rules-task.html</loc>
       
       <lastmod>2022-04-27T18:36:55+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/ontap/system-management/manage-san-initiators-task.html</loc>
+      
+      <lastmod>2022-05-06T18:30:17+00:00</lastmod>
       
     </url>
   
@@ -13322,7 +13343,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap//search.html</loc>
       
-      <lastmod>2022-05-06T18:35:05+00:00</lastmod>
+      <lastmod>2022-05-07T23:03:09+00:00</lastmod>
       
     </url>
   
@@ -14155,7 +14176,7 @@
     <url>
       <loc>https://docs.netapp.com/us-en/ontap/snaplock/snaplock-concept.html</loc>
       
-      <lastmod>2022-05-05T20:54:24+00:00</lastmod>
+      <lastmod>2022-05-06T21:08:31+00:00</lastmod>
       
     </url>
   
