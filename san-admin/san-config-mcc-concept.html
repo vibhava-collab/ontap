@@ -23621,6 +23621,9 @@
 <p>When using SAN client configurations, you must check whether any special considerations for MetroCluster configurations are included in the notes that are provided in the Interoperability Matrix Tool (IMT).</p>
 </li>
 <li>
+<p>Operating systems and applications must provide an I/O resiliency of 120 seconds to support MetroCluster automatic unplanned switchover and Tiebreaker or Mediator-initiated switchover.</p>
+</li>
+<li>
 <p>The MetroCluster is using the same WWPNs on both sides of the front-end SAN.</p>
 </li>
 </ul>
@@ -23636,6 +23639,19 @@ During switchover, the FC port on the surviving site might log in to the fabric 
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>To learn more, see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html">Understanding MetroCluster data protection and disaster recovery</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/manage/task_perform_switchover_for_tests_or_maintenance.html">Performing switchover for tests or maintenance</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <div class="title">Steps</div>

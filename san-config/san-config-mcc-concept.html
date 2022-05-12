@@ -23585,11 +23585,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-02 22:19:58 +0000">12/02/2021</time>
+    <time datetime="2022-04-28 10:16:20 +0000">04/28/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aoife">
+    <img  class="avatar avatar-small"
+          alt="netapp-aoife"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/92876203?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -23621,6 +23629,9 @@
 <p>When using SAN client configurations, you must check whether any special considerations for MetroCluster configurations are included in the notes that are provided in the Interoperability Matrix Tool (IMT).</p>
 </li>
 <li>
+<p>Operating systems and applications must provide an I/O resiliency of 120 seconds to support MetroCluster automatic unplanned switchover and Tiebreaker or Mediator-initiated switchover.</p>
+</li>
+<li>
 <p>The MetroCluster is using the same WWPNs on both sides of the front-end SAN.</p>
 </li>
 </ul>
@@ -23636,6 +23647,19 @@ During switchover, the FC port on the surviving site might log in to the fabric 
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>To learn more, see:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/manage/concept_understanding_mcc_data_protection_and_disaster_recovery.html">Understanding MetroCluster data protection and disaster recovery</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap-metrocluster/manage/task_perform_switchover_for_tests_or_maintenance.html">Performing switchover for tests or maintenance</a></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <div class="title">Steps</div>

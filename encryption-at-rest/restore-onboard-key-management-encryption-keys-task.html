@@ -23585,11 +23585,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-21 13:19:00 +0000">01/21/2022</time>
+    <time datetime="2022-05-12 16:50:40 +0000">05/12/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
     <img  class="avatar avatar-small"
           alt="netapp-forry"
@@ -23617,7 +23625,7 @@
 <p>If need to restore an onboard key management encryption key, you first verify that a key needs to be restored, then you can set up the Onboard Key Manager to restore the key.</p>
 </div>
 <div class="ulist">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">Before you begin</div>
 <ul>
 <li>
 <p>If you are using NSE with an external key management (KMIP) server, you must have deleted
@@ -23705,7 +23713,7 @@ Enter the cluster-wide passphrase for onboard key management in Vserver "cluster
 <h2 id="root_volume_encrypted">Steps if the root volume is encrypted</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you are running ONTAP 9.8 and later, and your root volume is encrypted, you must set an onboard key management recovery passphrase with the boot menu.</p>
+<p>If you are running ONTAP 9.8 and later, and your root volume is encrypted, you must set an onboard key management recovery passphrase with the boot menu. This process is also necessary if you do a boot media replacement.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

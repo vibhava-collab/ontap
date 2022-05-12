@@ -23585,11 +23585,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-11 12:19:26 +0000">01/11/2022</time>
+    <time datetime="2022-05-11 16:58:02 +0000">05/11/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aoife">
+    <img  class="avatar avatar-small"
+          alt="netapp-aoife"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/92876203?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
     <img  class="avatar avatar-small"
           alt="netapp-forry"
@@ -23637,20 +23645,20 @@
 </div>
 </li>
 <li>
-<p>Change the MTU port setting to 9000:</p>
+<p>Change the MTU on the broadcast domain used by the ports:</p>
 <div class="paragraph">
-<p><code>network port modify -node <em>nodename</em> -port <em>port</em> -mtu 9000</code></p>
+<p><code>network port broadcast-domain modify -ipspace <em>ipspace</em> -broadcast-domain <em>broadcast_domain</em> -mtu <em>new _mtu</em></code></p>
 </div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <div class="title">Example</div>
-<p>The following example changes the MTU port setting for <code>e0a</code> to 9000:</p>
+<p>The following example changes the MTU port setting to 9000:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster1::*&gt; network port modify -node node0 -port e0a -mtu 9000</pre>
+<pre>network port broadcast-domain modify -ipspace Cluster -broadcast-domain Cluster -mtu 9000</pre>
 </div>
 </div>
 </div>
