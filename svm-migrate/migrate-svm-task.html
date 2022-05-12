@@ -23585,7 +23585,7 @@
 <p class="page-details">
   
     
-    <time datetime="2021-11-09 18:56:37 +0000">11/09/2021</time>
+    <time datetime="2022-05-11 19:49:03 +0000">05/11/2022</time>
     
   
 
@@ -23595,6 +23595,14 @@
           alt="netapp-lenida"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23619,7 +23627,7 @@
 <li>
 <p>You can use the advance privilege <code>-auto-source-cleanup false</code> option to disable the removal of the source SVM after cutover and then trigger source cleanup manually later, after cutover.</p>
 <div class="paragraph">
-<p><a href="manual-source-remove-task.html">Manually remove source SVM after cutover</a></p>
+<p><a href="manual-source-removal-task.html">Manually remove source SVM after cutover</a></p>
 </div>
 </li>
 </ul>
@@ -23638,13 +23646,13 @@
 <li>
 <p>From the destination cluster, run the migration prechecks:</p>
 <div class="paragraph">
-<p><code>dest_cluster&gt; vserver migrate start -vserver &lt;vserver name&gt; -source-cluster &lt;cluster name&gt; -check-only true</code></p>
+<p><code>dest_cluster&gt; vserver migrate start -vserver <em>SVM_name</em> -source-cluster <em>cluster_name</em> -check-only true</code></p>
 </div>
 </li>
 <li>
 <p>From the destination cluster, start the SVM migration:</p>
 <div class="paragraph">
-<p><code>dest_cluster&gt; vserver migrate start -vserver &lt;vserver name&gt; -source-cluster &lt;cluster name&gt;</code></p>
+<p><code>dest_cluster&gt; vserver migrate start -vserver <em>SVM_name</em> -source-cluster <em>cluster_name</em></code></p>
 </div>
 </li>
 <li>
@@ -23672,13 +23680,13 @@
 <li>
 <p>From the destination cluster, run the migration prechecks:</p>
 <div class="paragraph">
-<p><code>dest_cluster&gt; vserver migrate start -vserver &lt;vserver name&gt; -source-cluster &lt;cluster name&gt; -check-only true</code></p>
+<p><code>dest_cluster&gt; vserver migrate start -vserver <em>SVM_name</em> -source-cluster <em>cluster_name</em> -check-only true</code></p>
 </div>
 </li>
 <li>
 <p>From the destination cluster, start the SVM migration:</p>
 <div class="paragraph">
-<p><code>dest_cluster&gt; vserver migrate start -vserver &lt;vserver name&gt; -source-cluster &lt;cluster name&gt; -auto-cutover false</code></p>
+<p><code>dest_cluster&gt; vserver migrate start -vserver <em>SVM_name</em> -source-cluster <em>cluster_name</em> -auto-cutover false</code></p>
 </div>
 </li>
 <li>
@@ -23704,13 +23712,13 @@ The status displays ready-for-cutover when SVM migration completes the asynchron
 <li>
 <p>From the destination cluster, run the migration prechecks:</p>
 <div class="paragraph">
-<p><code>dest_cluster*&gt; vserver migrate start -vserver &lt;vserver name&gt; -source-cluster &lt;cluster name&gt; -check-only true</code></p>
+<p><code>dest_cluster*&gt; vserver migrate start -vserver <em>SVM_name</em> -source-cluster <em>cluster_name</em> -check-only true</code></p>
 </div>
 </li>
 <li>
 <p>From the destination cluster, start the SVM migration:</p>
 <div class="paragraph">
-<p><code>dest_cluster*&gt; vserver migrate start -vserver &lt;vserver name&gt; -source-cluster &lt;cluster name&gt; -auto-source-cleanup false</code></p>
+<p><code>dest_cluster*&gt; vserver migrate start -vserver <em>SVM_name</em> -source-cluster <em>cluster_name</em> -auto-source-cleanup false</code></p>
 </div>
 </li>
 <li>

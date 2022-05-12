@@ -23585,7 +23585,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-14 21:59:51 +0000">01/14/2022</time>
+    <time datetime="2022-05-11 19:49:03 +0000">05/11/2022</time>
     
   
 
@@ -23615,7 +23615,7 @@
 <p>To utilize NFS over RDMA, you must configure your LIFs to be RDMA compatible. Both the LIF and its failover pair must be RDMA capable.</p>
 </div>
 <div class="paragraph">
-<p>Beginning with ONTAP 9.10.1, there is a new rdma_protocols parameter on the network interface commands where you can configure support, along with setting an appropriate service policy.</p>
+<p>Beginning with ONTAP 9.10.1, there is a new <code>-rdma_protocols</code> parameter on the network interface commands where you can configure support, along with setting an appropriate service policy.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure to create a new LIF</div>
@@ -23623,7 +23623,7 @@
 <li>
 <p>Create a LIF:</p>
 <div class="paragraph">
-<p><code>network interface create -vserver <em>vserver_name</em> -lif <em>lif_name</em> -service-policy <em>service_policy_name</em> -home-node <em>node_name</em> -home-port <em>port_name</em> {-address <em>IP_address</em> -netmask <em>netmask_value</em> | -subnet-name <em>subnet_name</em>} -firewall-policy <em>policy_name</em> -auto-revert {true|false} -rdma-protocols roce</code></p>
+<p><code>network interface create -vserver <em>SVM_name</em> -lif <em>lif_name</em> -service-policy <em>service_policy_name</em> -home-node <em>node_name</em> -home-port <em>port_name</em> {-address <em>IP_address</em> -netmask <em>netmask_value</em> | -subnet-name <em>subnet_name</em>} -firewall-policy <em>policy_name</em> -auto-revert {true|false} -rdma-protocols roce</code></p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -23647,20 +23647,26 @@
 <li>
 <p>To modify the LIF, run:</p>
 <div class="paragraph">
-<p><code>network interface modify vserver <em>vserver_name</em> -lif <em>lif_name</em> -service-policy <em>service_policy_name</em> -home-node <em>node_name</em> -home-port <em>port_name</em> {-address <em>IP_address</em> -netmask <em>netmask_value</em> | -subnet-name <em>subnet_name</em>} -firewall-policy <em>policy_name</em> -auto-revert {true|false} -rdma-protocols roce</code></p>
+<p><code>network interface modify vserver <em>SVM_name</em> -lif <em>lif_name</em> -service-policy <em>service_policy_name</em> -home-node <em>node_name</em> -home-port <em>port_name</em> {-address <em>IP_address</em> -netmask <em>netmask_value</em> | -subnet-name <em>subnet_name</em>} -firewall-policy <em>policy_name</em> -auto-revert {true|false} -rdma-protocols roce</code></p>
 </div>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Modifying a LIF to require a particular offload protocol when the LIF is not currently assigned to a port that supports that protocol will produce an error.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Modifying a LIF to require a particular offload protocol when the LIF is not currently assigned to a port that supports that protocol will produce an error.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <div class="title">More Information</div>
 <p><a href="../networking/create_a_lif.html">Create a LIF</a></p>
-</div>
-<div class="paragraph">
-<p><a href="../networking/what_lifs_are.html">What LIFs are</a></p>
 </div>
 
     </article>
