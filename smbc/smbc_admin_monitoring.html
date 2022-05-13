@@ -23585,7 +23585,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-05 14:11:42 +0000">04/05/2022</time>
+    <time datetime="2022-05-13 18:07:03 +0000">05/13/2022</time>
     
   
 
@@ -23618,8 +23618,9 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="ontap-mediator">ONTAP mediator</h3>
+<div class="sect1">
+<h2 id="ontap-mediator">ONTAP mediator</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>During normal operation, the Mediator state should be connected. If it is in any other state, this might indicate an error condition. You can review the Event Management System (EMS) messages to determine the error and appropriate corrective actions.</p>
 </div>
@@ -23690,8 +23691,10 @@
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="planned-failover-operations">Planned failover operations</h3>
+</div>
+<div class="sect1">
+<h2 id="planned-failover-operations">Planned failover operations</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>You can monitor status and progress of a planned failover operation using the <code>snapmirror failover show</code> command. For example:</p>
 </div>
@@ -23734,8 +23737,10 @@
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="automatic-unplanned-failover-operations">Automatic unplanned failover operations</h3>
+</div>
+<div class="sect1">
+<h2 id="automatic-unplanned-failover-operations">Automatic unplanned failover operations</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>During an unplanned automatic failover, you can monitor the status of the operation using the <code>snapmirror failover show</code> command. For example:</p>
 </div>
@@ -23788,8 +23793,10 @@ Last Progress Update: -
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="sm-bc-availability">SM-BC availability</h3>
+</div>
+<div class="sect1">
+<h2 id="sm-bc-availability">SM-BC availability</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>You can check the availability of the SM-BC relationship using a series of commands, either on the primary cluster, the secondary cluster, or both.</p>
 </div>
@@ -23826,6 +23833,7 @@ SMBC_B::*&gt; volume show -fields is-smbc-master,smbc-consensus,is-smbc-failover
 vserver volume  is-smbc-master is-smbc-failover-capable smbc-consensus
 ------- ------- -------------- ------------------------ --------------
 vs1     vol1_dp false          true                     No-consensus</pre>
+</div>
 </div>
 </div>
 </div>

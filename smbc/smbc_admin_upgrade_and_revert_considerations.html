@@ -23585,7 +23585,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-27 22:35:08 +0000">01/27/2022</time>
+    <time datetime="2022-05-13 18:07:03 +0000">05/13/2022</time>
     
   
 
@@ -23598,19 +23598,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23626,8 +23626,9 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="upgrade">Upgrade</h3>
+<div class="sect1">
+<h2 id="upgrade">Upgrade</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Before you can configure and use SM-BC, you must upgrade all nodes on the source and destination clusters to ONTAP 9.8 or later.<br>
 <a href="link:../upgrade/index.html">Upgating software on ONTAP clusters</a></p>
@@ -23648,14 +23649,18 @@ SM-BC is not supported with mixed ONTAP 9.7 and ONTAP 9.8 clusters.
 <p>Upgrading clusters from 9.8 or 9.9.1 to 9.10.1 creates new consistency groups on both source and destination for SM-BC relationships.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="reverting-to-ontap-9-9-1-from-ontap-9-10-1">Reverting to ONTAP 9.9.1 from ONTAP 9.10.1</h3>
+</div>
+<div class="sect1">
+<h2 id="reverting-to-ontap-9-9-1-from-ontap-9-10-1">Reverting to ONTAP 9.9.1 from ONTAP 9.10.1</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To revert relationships from 9.10.1 to 9.9.1, SM-BC relationships must be deleted, followed by the 9.10.1 consistency group instance. Consistency groups cannot be deleted with an active SMBC relationship. Any FlexVol volumes that were upgraded to 9.10.1 previously associated with another Smart Container or Enterprise App in 9.9.1 or earlier will no longer be associated on revert. Deleting consistency groups does not delete the constituent volumes or volume granular snapshots. Refer to <a href="../consistency-groups/delete-task.html">Delete a consistency group</a> for more information on this task.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="reverting-to-ontap-9-7-from-ontap-9-8">Reverting to ONTAP 9.7 from ONTAP 9.8</h3>
+</div>
+<div class="sect1">
+<h2 id="reverting-to-ontap-9-7-from-ontap-9-8">Reverting to ONTAP 9.7 from ONTAP 9.8</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>When you revert from ONTAP 9.8 to ONTAP 9.7, you must be aware of the following:</p>
 </div>
@@ -23725,7 +23730,7 @@ Disable snapshot policies.
     snapmirror policy show -type
    active-strict-sync-mirror,active-sync-mirror
    The command to delete a policy is :
-    snapmirror policy delete -vserver &lt;vserver-name&gt; -policy &lt;policy-name&gt;</pre>
+    snapmirror policy delete -vserver &lt;SVM-name&gt; -policy &lt;policy-name&gt;</pre>
 </div>
 </div>
 </li>
@@ -23733,6 +23738,7 @@ Disable snapshot policies.
 </div>
 <div class="paragraph">
 <p>For information on reverting clusters, see <a href="../revert/index.html">Revert ONTAP</a>.</p>
+</div>
 </div>
 </div>
 
