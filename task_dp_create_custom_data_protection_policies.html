@@ -23585,24 +23585,24 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-09 22:31:46 +0000">12/09/2021</time>
+    <time datetime="2022-05-17 21:44:49 +0000">05/17/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
     <img  class="avatar avatar-small"
           alt="netapp-lenida"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23612,7 +23612,7 @@
 </p>
 
 <div class="paragraph lead">
-<p>You can create custom data protection policies with System Manager when the existing default protection policies are not appropriate for your needs.</p>
+<p>You can create custom data protection policies with System Manager when the existing default protection policies are not appropriate for your needs. Beginning with ONTAP 9.11.1, you can use System Manager to create custom mirror and vault policies, to display and select legacy policies. This capability is also available in ONTAP 9.8P12 and later patches of ONTAP 9.8.</p>
 </div>
 <div class="paragraph">
 <p>Create custom protection policies on both the source and destination cluster.</p>
@@ -23628,6 +23628,12 @@
 </li>
 <li>
 <p>In the <strong>Protection Policies</strong> pane, click <span class="image"><img src="./media/icon_add.gif" alt="plus"></span>.</p>
+</li>
+<li>
+<p>Enter the new policy name, and select the policy scope.</p>
+</li>
+<li>
+<p>Choose a policy type. To add a vault-only or mirror-only policy, choose <strong>Asynchronous</strong>, and click <strong>Use a legacy policy type</strong>.</p>
 </li>
 <li>
 <p>Complete the required fields.</p>
