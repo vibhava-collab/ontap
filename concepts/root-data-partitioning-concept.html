@@ -23585,11 +23585,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-25 20:33:09 +0000">03/25/2022</time>
+    <time datetime="2022-05-20 15:27:21 +0000">05/20/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-sumathi">
+    <img  class="avatar avatar-small"
+          alt="netapp-sumathi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/64958806?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -23603,6 +23611,8 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>Every node must have a root aggregate for storage system configuration files. The root aggregate has the RAID type of the data aggregate.</p>
 </div>
@@ -23630,6 +23640,31 @@
 </div>
 <div class="paragraph">
 <p>Both types of root-data partitioning are part of the ONTAP <em>Advanced Drive Partitioning (ADP)</em> feature. Both are configured at the factory: root-data partitioning for entry-level FAS2xxx, FAS9000, FAS8200, FAS80xx and AFF systems, root-data-data partitioning for AFF systems only.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="drives-partitioned-and-used-for-the-root-aggregate">Drives partitioned and used for the root aggregate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The drives that are partitioned for use in the root aggregate depend on the system configuration.
+Knowing how many drives are used for the root aggregate helps you to determine how much of the
+drives' capacity is reserved for the root partition, and how much is available for use in a data
+aggregate.</p>
+</div>
+<div class="paragraph">
+<p>The root-data partitioning capability is supported for entry-level platforms, All Flash FAS platforms,
+and FAS platforms with only SSDs attached.</p>
+</div>
+<div class="paragraph">
+<p>For entry-level platforms, only the internal drives are partitioned.</p>
+</div>
+<div class="paragraph">
+<p>For All Flash FAS platforms and FAS platforms with only SSDs attached, all drives that are attached
+to the controller when the system is initialized are partitioned, up to a limit of 24 per node. Drives
+that are added after system configuration are not partitioned.</p>
+</div>
+</div>
 </div>
 
     </article>
