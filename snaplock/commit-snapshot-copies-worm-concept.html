@@ -23585,24 +23585,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-11 19:49:03 +0000">05/11/2022</time>
+    <time datetime="2022-05-23 21:40:36 +0000">05/23/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
-    <img  class="avatar avatar-small"
-          alt="netapp-ahibbard"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/85892662?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
     <img  class="avatar avatar-small"
           alt="netapp-lenida"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23707,12 +23707,12 @@ LUNs are not supported on SnapLock volumes. Although it is possible to move LUNs
 <p>Identify the destination cluster.</p>
 </li>
 <li>
-<p>On the destination cluster, install the SnapLock license, initialize the ComplianceClock, and create a SnapLock aggregate, as described in <a href="workflow-concept.html">SnapLock workflow</a>.</p>
+<p>On the destination cluster, install the SnapLock license, initialize the ComplianceClock, and, if you are using an ONTAP release earlier than 9.10.1, create a SnapLock aggregate, as described in <a href="workflow-concept.html">SnapLock workflow</a>.</p>
 </li>
 <li>
 <p>On the destination cluster, create a SnapLock destination volume of type <code>DP</code> that is either the same or greater in size than the source volume:</p>
 <div class="paragraph">
-<p><code><strong>volume create -vserver <em>SVM_name</em> -volume <em>volume_name</em> -aggregate <em>aggregate_name</em> -type DP -size <em>size</em></strong></code></p>
+<p><code><strong>volume create -vserver <em>SVM_name</em> -volume <em>volume_name</em> -aggregate <em>aggregate_name</em> -snaplock-type compliance|enterprise -type DP -size <em>size</em></strong></code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -23722,7 +23722,7 @@ LUNs are not supported on SnapLock volumes. Although it is possible to move LUNs
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The SnapLock mode, Compliance or Enterprise, is inherited from the aggregate. Version-flexible destination volumes are not supported. The language setting of the destination volume must match the language setting of the source volume.</p>
+<p>In ONTAP releases earlier than ONTAP 9.10.1, the SnapLock mode, Compliance or Enterprise, is inherited from the aggregate. Version-flexible destination volumes are not supported. The language setting of the destination volume must match the language setting of the source volume.</p>
 </div>
 </td>
 </tr>
@@ -23733,7 +23733,7 @@ LUNs are not supported on SnapLock volumes. Although it is possible to move LUNs
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>cluster2::&gt; volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -type DP -size 2GB</pre>
+<pre>cluster2::&gt; volume create -vserver SVM2 -volume dstvolB -aggregate node01_aggr -snaplock-type compliance -type DP -size 2GB</pre>
 </div>
 </div>
 </li>

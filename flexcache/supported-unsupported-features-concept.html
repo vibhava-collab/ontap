@@ -23585,11 +23585,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-23 13:21:13 +0000">03/23/2022</time>
+    <time datetime="2022-05-23 23:30:13 +0000">05/23/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-lenida">
+    <img  class="avatar avatar-small"
+          alt="netapp-lenida"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54081920?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
     <img  class="avatar avatar-small"
           alt="netapp-forry"
@@ -23678,13 +23686,17 @@
 <p>Yes</p>
 </div>
 <div class="paragraph">
-<p>Supported beginning with ONTAP 9.7</p>
+<p>Supported beginning with ONTAP 9.7
+You can audit NFS file access events in FlexCache relationships using native ONTAP auditing.
+For more information, see <a href="audit-flexcache-volumes-concept.html">Considerations for auditing FlexCache volumes</a></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Yes</p>
 </div>
 <div class="paragraph">
-<p>Supported beginning with ONTAP 9.7</p>
+<p>Supported beginning with ONTAP 9.7
+You can audit NFS file access events in FlexCache relationships using native ONTAP auditing.
+For more information, see <a href="audit-flexcache-volumes-concept.html">Considerations for auditing FlexCache volumes</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -23994,16 +24006,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>The primary volume or secondary volume in a SnapMirror relationship cannot be a FlexCache volume.</p>
+<p>You can have a FlexCache volume from an origin primary volume in SnapMirror relationship.</p>
 </li>
 <li>
-<p>Only the primary volume of a SnapMirror relationship can be a FlexCache origin volume.</p>
-<div class="paragraph">
 <p>Beginning with ONTAP 9.8, a SnapMirror secondary volume can be a FlexCache origin volume.</p>
-</div>
-</li>
-<li>
-<p>You can have a FlexCache volume from an origin primary volume in SnapMirror relationship, but not from a secondary volume.</p>
 </li>
 </ul>
 </div></div></td>
