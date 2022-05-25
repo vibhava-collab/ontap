@@ -9,15 +9,15 @@
   <meta property="og:title" content="EMS configuration workflow" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/error-messages/config-workflow-task.html" />
-	<meta property="og:description" content="EMS configuration workflow." />
+	<meta property="og:description" content="You must configure important EMS event notifications to be sent either as email, forwarded to a syslog server, forwarded to an SNMP traphost, or forwarded to..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="EMS configuration workflow.">
-  <meta name="keywords" content=" ems, configuration, workflow"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must configure important EMS event notifications to be sent either as email, forwarded to a syslog server, forwarded to an SNMP traphost, or forwarded to...">
+  <meta name="keywords" content=" ems, ems notification, send ems"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -17233,8 +17233,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -23519,8 +23517,6 @@
       </a>
       <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/config-workflow-task.html">
         Workflow
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/decide-send-event-notifications-task.html">
-        Decide where to send event notifications
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/configure-ems-events-send-email-task.html">
         Configure EMS events to send email notifications
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/configure-ems-events-notifications-syslog-task.html">
@@ -23585,7 +23581,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-09 21:09:33 +0000">03/09/2022</time>
+    <time datetime="2022-05-24 19:42:52 +0000">05/24/2022</time>
     
   
 
@@ -23612,12 +23608,74 @@
 </p>
 
 <div class="paragraph lead">
-<p>You must configure important EMS event notifications to be sent either as email, forwarded to a syslog server, forwarded to an SNMP traphost, or forwarded to a REST API server. This helps you to avoid system disruptions by taking corrective actions in a timely manner.</p>
+<p>You must configure important EMS event notifications to be sent either as email, forwarded to a syslog server, forwarded to an SNMP traphost, or forwarded to a webhook application. This helps you to avoid system disruptions by taking corrective actions in a timely manner.</p>
+</div>
+<div class="paragraph">
+<div class="title">About this task</div>
+<p>If your environment already contains a syslog server for aggregating the logged events from other systems, such as servers and applications, then it is easier to use that syslog server also for important event notifications from storage systems.</p>
+</div>
+<div class="paragraph">
+<p>If your environment does not already contain a syslog server, then it is easier to use email for important event notifications.</p>
+</div>
+<div class="paragraph">
+<p>If you already forward event notifications to an SNMP traphost, then you might want to monitor that traphost for important events.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../media/ems-config-workflow.png" alt="This illustration is a flowchart of the EMS configuration workflow for high-severity events. The steps in the workflow match the topics in this guide.">
+<img src="../media/ems-config-workflow.png" alt="This illustration is a flowchart of the EMS configuration workflow for high-severity events. The steps in the workflow diagram match the topics in this guide.">
 </div>
+</div>
+<div class="ulist">
+<div class="title">Choices</div>
+<ul>
+<li>
+<p>Set EMS to send event notifications.</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">If you want&#8230;&#8203;</p></th>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Refer to this&#8230;&#8203;</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The EMS to send important event notifications to an email address</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="configure-ems-events-send-email-task.html">Configure important EMS events to send email notifications</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The EMS to forward important event notifications to a syslog server</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="configure-ems-events-notifications-syslog-task.html">Configure important EMS events to forward notifications to a syslog server</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you want the EMS to forward event notifications to an SNMP traphost</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="configure-snmp-traphosts-event-notifications-task.html">Configure SNMP traphosts to receive event notifications</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you want the EMS to forward event notifications to a webhook application</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="configure-webhooks-event-notifications-task.html">Configure important EMS events to forward notifications to a webhook application</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 </div>
 
     </article>

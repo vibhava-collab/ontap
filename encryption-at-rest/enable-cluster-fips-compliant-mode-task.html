@@ -17233,8 +17233,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -23519,8 +23517,6 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/config-workflow-task.html">
         Workflow
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/decide-send-event-notifications-task.html">
-        Decide where to send event notifications
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/configure-ems-events-send-email-task.html">
         Configure EMS events to send email notifications
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/error-messages/configure-ems-events-notifications-syslog-task.html">
@@ -23585,7 +23581,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-12 17:26:28 +0000">04/12/2022</time>
+    <time datetime="2022-05-24 21:23:17 +0000">05/24/2022</time>
     
   
 
@@ -23603,6 +23599,8 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>You can use the <code>security config modify</code> command with the -<code>is-fips-enabled</code> option to enable cluster-wide FIPS-compliant mode for data in flight. Doing so forces the cluster to use OpenSSL in FIPS mode when connecting to KMIP servers.</p>
 </div>
@@ -23623,6 +23621,29 @@
 </div>
 <div class="paragraph">
 <p>You must reboot cluster nodes manually after modifying the cluster-wide security configuration.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ontap-9-11-1rc1-consideration">ONTAP 9.11.1RC1 consideration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Due to a change in ONTAP version 9.11.1RC1, FIPS 140-2 compliance management mode no longer uses FIPS 140-2 validated software module.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP 9.11.1RC1 upgraded the OpenSSL version used for management and control plane connections for HTTPS. This version of OpenSSL (OpenSSL 3.x FIPS Provider) has not yet completed the FIPS 140-2 Cryptographic Module Validation Program (CMVP) validation process.</p>
+</div>
+<div class="paragraph">
+<p>When FIPS compliance mode is enabled, encryption algorithms used for HTTPS connections are identical to the OpenSSL Project OpenSSL 3.x FIPS Provider algorithms that were issued in Cryptographic Algorithm Validation Program (CAVP) certificate A1938. <strong>This change only affects ONTAP systems configured in FIPS compliance mode.</strong></p>
+</div>
+<div class="paragraph">
+<p>This issue will be fixed once the upgraded OpenSSL module present in ONTAP 9.11.1RC1 completes FIPS 140-2 validation with NIST. If your environment requires ONTAP cluster management control plane run with a FIPS 140-2 CMVP validated module, then it is recommended to not upgrade to 9.11.1RC1.</p>
+</div>
+<div class="paragraph">
+<p>This does not affect NetApp encryption at rest technologies like NSE, NVE, and NAE, as those features use a different cryptographic module than the one provided by OpenSSL in ONTAP.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Upgrading_to_ONTAP_9.11.1RC1_results_in_FIPS_140-2_compliance_management_configuration_that_is_not_validated" target="_blank" rel="noopener">Upgrading to ONTAP 9.11.1RC1 results in FIPS 140-2 compliance management configuration that is not validated</a></p>
 </div>
 <div class="olist arabic">
 <div class="title">Steps</div>
@@ -23683,6 +23704,8 @@ SSL       true       TLSv1.2, TLSv1.1        ALL:!LOW:         yes
 </div>
 </li>
 </ol>
+</div>
+</div>
 </div>
 
     </article>
