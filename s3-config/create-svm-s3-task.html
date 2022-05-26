@@ -11942,48 +11942,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-11-05 13:34:43 +0000">11/05/2021</time>
+    <time datetime="2022-05-26 16:15:34 +0000">05/26/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
     <img  class="avatar avatar-small"
           alt="netapp-forry"
@@ -23606,8 +23562,23 @@
 <div class="title">About this task</div>
 <p>If you are only providing S3 object storage from this SVM, the S3 server does not require any DNS configuration. However, you might want to configure DNS on the SVM if other protocols are used.</p>
 </div>
+<div class="paragraph">
+<p>When you configure S3 access to a new or existing storage VM using System Manager, you are prompted to enter certificate and networking information, and the S3 object storage server is created in a single operation.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>You should be prepared to enter an S3 server name (FQDN) and IP addresses for interface role Data.</p>
+</div>
+<div class="paragraph">
+<p>If you are using an external-CA signed certificate, you will be prompted to enter it during this procedure; you also have the option to use a system-generated certificate.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="title">Example 1. Steps</div>
+<div class="content">
+<div class="openblock">
+<div class="title">CLI</div>
+<div class="content">
 <div class="olist arabic">
-<div class="title">Steps</div>
 <ol class="arabic">
 <li>
 <p>Verify that S3 is licensed on your cluster:</p>
@@ -23621,7 +23592,7 @@
 <li>
 <p>Create an SVM:</p>
 <div class="paragraph">
-<p><code>vserver create -vserver svm_name -rootvolume root_volume_name -aggregate aggregate_name -rootvolume-security-style unix -language C.UTF-8 -ipspace ipspace_name</code></p>
+<p><code>vserver create -vserver <em>svm_name</em> -rootvolume <em>root_volume_name</em> -aggregate <em>aggregate_name</em> -rootvolume-security-style unix -language C.UTF-8 -ipspace <em>ipspace_name</em></code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -23640,7 +23611,7 @@
 <li>
 <p>Verify the configuration and status of the newly created SVM:</p>
 <div class="paragraph">
-<p><code>vserver show -vserver svm_name</code></p>
+<p><code>vserver show -vserver <em>svm_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>The <code>Vserver Operational State</code> field must display the <code>running</code> state. If it displays the <code>initializing</code> state, it means that some intermediate operation such as root volume creation failed, and you must delete the SVM and re-create it.</p>
@@ -23689,6 +23660,63 @@ Vserver creation completed</pre>
                            QoS Policy Group: -
                                 Config Lock: false
                                IPspace Name: ipspaceA</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">System Manager</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Enable S3 on a storage VM.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Add a new storage VM: click <strong>Storage &gt; Storage VMs</strong>, then click <strong>Add</strong>.</p>
+<div class="paragraph">
+<p>If this is a new system with no existing storage VMs: click <strong>Dashboard &gt; Configure Protocols</strong>.</p>
+</div>
+<div class="paragraph">
+<p>If you are adding an S3 server to an existing storage VM: click <strong>Storage &gt; Storage VMs</strong>, select a storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="../media/icon_gear.gif" alt="settings icon"></span> under <strong>S3</strong>.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Enable S3</strong>, then enter the S3 Server Name.</p>
+<div class="paragraph">
+<p>This will be the Fully Qualified Domain Name (FQDN) that clients will use.</p>
+</div>
+</li>
+<li>
+<p>Select the certificate type.</p>
+<div class="paragraph">
+<p>Whether you select system-generated certificate or one of your own, it will be required for client access.</p>
+</div>
+</li>
+<li>
+<p>Enter the network interfaces.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If you selected the system-generated certificate, you see the certificate information when the new storage VM creation is confirmed. Click <strong>Download</strong> and save it for client access.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The secret key will not be displayed again.</p>
+</li>
+<li>
+<p>If you need the certificate information again: click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, and click <strong>Settings</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </div>
 

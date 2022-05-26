@@ -11942,48 +11942,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,7 +23529,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-10 18:35:25 +0000">01/10/2022</time>
+    <time datetime="2022-05-24 20:19:42 +0000">05/24/2022</time>
     
   
 
@@ -23594,6 +23542,14 @@
           style="border-radius: 50%;"/>
   </a>
   
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23603,7 +23559,7 @@
 <p>For ONTAP S3 to be used as a local FabricPool capacity tier, you must define an object store based on the bucket you created, and then attach the object store to a performance tier aggregate to create a FabricPool.</p>
 </div>
 <div class="paragraph">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">Before you begin</div>
 <p>You must have the ONTAP S3 server name and a bucket name, and the S3 server must have been created using cluster LIFs (with the <code>-vserver Cluster</code> parameter).</p>
 </div>
 <div class="paragraph">
@@ -23622,7 +23578,7 @@
 <li>
 <p>Create the object store for the local capacity tier:</p>
 <div class="paragraph">
-<p><code>storage aggregate object-store config create -object-store-name store_name -ipspace Cluster -provider-type ONTAP_S3 -server S3_server_name -container-name bucket_name -access-key access_key -secret-password password</code></p>
+<p><code>storage aggregate object-store config create -object-store-name <em>store_name</em> -ipspace Cluster -provider-type ONTAP_S3 -server <em>S3_server_name</em> -container-name <em>bucket_name</em> -access-key <em>access_key</em> -secret-password password</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -23663,10 +23619,10 @@
 <li>
 <p>Attach the object store to an aggregate:</p>
 <div class="paragraph">
-<p><code>storage aggregate object-store attach -aggregate aggr_name -object-store-name store_name</code></p>
+<p><code>storage aggregate object-store attach -aggregate <em>aggr_name</em> -object-store-name <em>store_name</em></code></p>
 </div>
 <div class="paragraph">
-<p>You can use the <code>allow-flexgroup</code> <code><strong>true</strong></code> option to attach aggregates that contain FlexGroup volume constituents.</p>
+<p>You can use the <code>allow-flexgroup <strong>true</strong></code> option to attach aggregates that contain FlexGroup volume constituents.</p>
 </div>
 <div class="listingblock">
 <div class="content">

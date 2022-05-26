@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Provision buckets</title>
+  <title></title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Provision buckets" />
+  <meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/task_object_provision_buckets.html" />
-	<meta property="og:description" content="Add an S3 bucket for the new S3 object store or add additional buckets to an existing object store." />
+	<meta property="og:description" content="" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Add an S3 bucket for the new S3 object store or add additional buckets to an existing object store.">
-  <meta name="keywords" content=" netapp, ontap, S3 bucket, bucket, buckets, S3 object store, S3-enabled storage VM, S3, SVM, storage, object, object store, FabricPool, FabricPool tiering, tier, FQDN, Quality of Service, QoS"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -53,6 +53,9 @@
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    pageRedirect("https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-task.html");
+    function pageRedirect(url) { location.href = url; }
+  </script><script>
     if (document.location.hostname === "docs.netapp.com") {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
@@ -169,7 +172,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Provision buckets](https://docs.netapp.com/us-en/ontap/task_object_provision_buckets.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/task_object_provision_buckets.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[](https://docs.netapp.com/us-en/ontap/task_object_provision_buckets.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/redirect/task_object_provision_buckets.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -11942,57 +11945,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/ontap/pdfs/pages/task_object_provision_buckets.pdf" >
-    <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21563,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23574,39 +23516,23 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Provision buckets</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-04 20:52:04 +0000">05/04/2022</time>
+    <time datetime="2022-05-24 21:07:01 +0000">05/24/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
-          alt="netapp-forry"
+          alt="netapp-ahibbard"
           width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/51911827?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
-    <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aherbin">
-    <img  class="avatar avatar-small"
-          alt="netapp-aherbin"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/38955266?v=4"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23615,103 +23541,7 @@
 
 </p>
 
-<div class="paragraph lead">
-<p>Add an S3 bucket for the new S3 object store or add additional buckets to an existing object store.</p>
-</div>
-<div class="paragraph">
-<p>For remote client access, you must configure buckets in an S3-enabled storage VM. If you create a bucket in a storage VM that is not S3-enabled, it will only be available for local tiering.</p>
-</div>
-<div class="paragraph">
-<p>If you are provisioning buckets in a Cloud Volumes ONTAP environment, you should use the CLI procedure for better performance. Learn about <a href="s3-config/create-bucket-task.html">configuring buckets with the CLI</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Beginning with ONTAP 9.8, when you provision storage, QoS is enabled by default. You can disable QoS or choose a custom QoS policy during the provisioning process or at a later time.
-</td>
-</tr>
-</table>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Add a new bucket on an S3-enabled storage VM.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click <strong>Storage &gt; Buckets</strong>, then click <strong>Add</strong>.</p>
-</li>
-<li>
-<p>Enter a name, select the storage VM, and enter a size.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>If you click <strong>Save</strong> at this point, a bucket is created with these default settings:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>No users are granted access to the bucket unless any group policies are already in effect.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-You should not use the S3 root user to manage ONTAP object storage and share its permissions, because it has unlimited access to the object store. Instead, create a user or group with administrative privileges that you assign.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>A Quality of Service (performance) level that is the highest available for your system.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>You can click <strong>More Options</strong> to configure user permissions and performance level when you configure the bucket, or you can modify these settings later.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>You must have already created user and groups before using <strong>More Options</strong> to configure their permissions.</p>
-</li>
-<li>
-<p>If you intend to use the S3 object store for FabricPool tiering, consider selecting <strong>Use for tiering</strong> (use low-cost media with optimal performance for the tiered data) rather than a performance service level.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>On S3 client apps – another ONTAP system or an external 3rd-party app – verify access to the new bucket by entering the following:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The S3 server CA certificate.</p>
-</li>
-<li>
-<p>The user’s access key and secret key.</p>
-</li>
-<li>
-<p>The S3 server FQDN name and bucket name.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
+
 
     </article>
     <!-- Page Container -->

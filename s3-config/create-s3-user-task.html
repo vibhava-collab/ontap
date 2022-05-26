@@ -11942,48 +11942,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-05-24 20:19:42 +0000">05/24/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23595,7 +23551,7 @@
 <p>User authorization is required on all ONTAP object stores in order to restrict connectivity to authorized clients.</p>
 </div>
 <div class="paragraph">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">Before you begin.</div>
 <p>An S3-enabled SVM must already exist.</p>
 </div>
 <div class="paragraph">
@@ -23622,16 +23578,54 @@
 </tr>
 </table>
 </div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">CLI</div>
+<div class="content">
 <div class="olist arabic">
-<div class="title">Step</div>
 <ol class="arabic">
 <li>
-<p>Create an S3 user:</p>
-<div class="paragraph">
-<p><code>vserver object-store-server user create -vserver svm_name -user user_name [-comment text]</code></p>
-</div>
+<p>Create an S3 user:<br>
+<code>vserver object-store-server user create -vserver <em>svm_name</em> -user <em>user_name</em> [-comment <em>text</em>]</code></p>
+</li>
+<li>
+<p>Be sure to save the access key and secret key, they will be required for access from S3 clients.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">System Manager</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit the storage VM: click <strong>Storage &gt; storage VMs</strong>, click the storage VM, click <strong>Settings</strong> and then click <span class="image"><img src="../media/icon_pencil.gif" alt="pencil icon"></span> under S3.</p>
+</li>
+<li>
+<p>Add a user: click <strong>Users</strong>, then click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a name and click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Be sure to save the access key and secret key, they will be required for access from S3 clients.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ulist">
+<div class="title">Next steps</div>
+<ul>
+<li>
+<p><a href="create-modify-groups-task.html">Create or modify S3 groups</a></p>
+</li>
+</ul>
 </div>
 
     </article>

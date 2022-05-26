@@ -11951,48 +11951,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-23 22:13:10 +0000">02/23/2022</time>
+    <time datetime="2022-05-26 18:49:10 +0000">05/26/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-barbe">
+    <img  class="avatar avatar-small"
+          alt="netapp-barbe"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/55463742?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/mpittman-netapp">
     <img  class="avatar avatar-small"
           alt="mpittman-netapp"
@@ -23599,14 +23555,6 @@
           alt="netapp-thomi"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-barbe">
-    <img  class="avatar avatar-small"
-          alt="netapp-barbe"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/55463742?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23627,6 +23575,9 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can create a service policy for LIFs. You can assign a service policy to one or more LIFs; thereby allowing the LIF to carry traffic for a single service or a list of services.</p>
+</div>
+<div class="paragraph">
+<p>You need advanced privileges to run the <code>network interface service-policy create</code> command.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
@@ -23653,7 +23604,8 @@
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>network interface service show
+<pre>cluster1::&gt; network interface service show
+
 Service                     Protocol:Ports
 -------                     --------------
 cluster-core                -
@@ -23673,52 +23625,11 @@ management-ssh              tcp:22
 </div>
 </li>
 <li>
-<p>Create a service policy:</p>
+<p>View the service policies that exist in the cluster:</p>
 <div class="literalblock">
 <div class="content">
-<pre>network interface service-policy create -vserver &lt;svm_name&gt; -policy &lt;service_policy_name&gt; -services &lt;service_name&gt; -allowed-addresses &lt;IP_address/mask,...&gt;</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>"service_name" specifies a list of services that should be included in the policy.</p>
-</li>
-<li>
-<p>"IP_address/mask" specifies the list of subnet masks for addresses that are allowed to access the services in the service policy. By default, all specified services are added with a default allowed address list of 0.0.0.0/0, which allows traffic from all subnets. When a non-default allowed address list is provided, LIFs using the policy are configured to block all requests with a source address that does not match any of the specified masks.</p>
-<div class="paragraph">
-<p>The following example shows how to create a data service policy, svm1_data_policy, for an SVM that includes NFS and SMB services:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>network interface service-policy create -vserver svm1 -policy svm1_data_policy -services data-nfs,data-cifs,data-core -allowed-addresses 10.1.0.0/16</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following example shows how to create an intercluster service policy:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>network interface service-policy create -vserver cluster1 -policy intercluster1 -services intercluster-core -allowed-addresses 10.1.0.0/16</pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Verify that the service policy is created.</p>
-<div class="literalblock">
-<div class="content">
-<pre>network interface service-policy show</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following output shows the service policies that are available:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>network interface service-policy show
+<pre>cluster1::&gt; network interface service-policy show
+
 Vserver   Policy                     Service: Allowed Addresses
 --------- -------------------------- ----------------------------------------
 cluster1
@@ -23749,6 +23660,105 @@ vs0
                                      management-https: 0.0.0.0/0
 
 7 entries were displayed.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a service policy:</p>
+<div class="literalblock">
+<div class="content">
+<pre>cluster1::&gt; set -privilege advanced
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by technical support.
+Do you wish to continue? (y or n): y
+
+cluster1::&gt; network interface service-policy create -vserver &lt;svm_name&gt; -policy &lt;service_policy_name&gt; -services &lt;service_name&gt; -allowed-addresses &lt;IP_address/mask,...&gt;</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"service_name" specifies a list of services that should be included in the policy.</p>
+</li>
+<li>
+<p>"IP_address/mask" specifies the list of subnet masks for addresses that are allowed to access the services in the service policy. By default, all specified services are added with a default allowed address list of 0.0.0.0/0, which allows traffic from all subnets. When a non-default allowed address list is provided, LIFs using the policy are configured to block all requests with a source address that does not match any of the specified masks.</p>
+<div class="paragraph">
+<p>The following example shows how to create a data service policy, <em>svm1_data_policy</em>, for an SVM that includes <em>NFS</em> and <em>SMB</em> services:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cluster1::&gt; set -privilege advanced
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by technical support.
+Do you wish to continue? (y or n): y
+
+cluster1::&gt; network interface service-policy create -vserver svm1 -policy svm1_data_policy -services data-nfs,data-cifs,data-core</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following example shows how to create an intercluster service policy:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cluster1::&gt; set -privilege advanced
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by technical support.
+Do you wish to continue? (y or n): y
+
+cluster1::&gt; network interface service-policy create -vserver cluster1 -policy intercluster1 -services intercluster-core</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Verify that the service policy is created.</p>
+<div class="literalblock">
+<div class="content">
+<pre>cluster1::&gt; network interface service-policy show</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following output shows the service policies that are available:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>cluster1::&gt; network interface service-policy show
+
+Vserver   Policy                     Service: Allowed Addresses
+--------- -------------------------- ----------------------------------------
+cluster1
+          default-intercluster       intercluster-core: 0.0.0.0/0
+                                     management-https: 0.0.0.0/0
+
+          intercluster1              intercluster-core: 0.0.0.0/0
+
+          default-management         management-core: 0.0.0.0/0
+                                     management-autosupport: 0.0.0.0/0
+                                     management-ssh: 0.0.0.0/0
+                                     management-https: 0.0.0.0/0
+
+          default-route-announce     management-bgp: 0.0.0.0/0
+
+Cluster
+          default-cluster            cluster-core: 0.0.0.0/0
+
+vs0
+          default-data-blocks        data-core: 0.0.0.0/0
+                                     data-iscsi: 0.0.0.0/0
+
+          default-data-files         data-core: 0.0.0.0/0
+                                     data-nfs: 0.0.0.0/0
+                                     data-cifs: 0.0.0.0/0
+                                     data-flexcache: 0.0.0.0/0
+
+          default-management         data-core: 0.0.0.0/0
+                                     management-ssh: 0.0.0.0/0
+                                     management-https: 0.0.0.0/0
+
+          svm1_data_policy           data-core: 0.0.0.0/0
+                                     data-nfs: 0.0.0.0/0
+                                     data-cifs: 0.0.0.0/0
+
+9 entries were displayed.</pre>
 </div>
 </div>
 </li>
@@ -23818,7 +23828,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>network interface modify -vserver cluster1 -lif lif1 -service-policy default-management</pre>
+<pre>cluster1::&gt; network interface modify -vserver cluster1 -lif lif1 -service-policy default-management</pre>
 </div>
 </div>
 </div>
@@ -23842,7 +23852,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Create a service policy</p>
+<p>Create a service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy create</code></p>
@@ -23850,7 +23860,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Add an additional service entry to an existing service policy</p>
+<p>Add an additional service entry to an existing service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy add-service</code></p>
@@ -23858,7 +23868,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Clone an existing service policy</p>
+<p>Clone an existing service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy clone</code></p>
@@ -23866,7 +23876,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Modify a service entry in an existing service policy</p>
+<p>Modify a service entry in an existing service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy modify-service</code></p>
@@ -23874,7 +23884,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Remove a service entry from an existing service policy</p>
+<p>Remove a service entry from an existing service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy remove-service</code></p>
@@ -23882,7 +23892,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Rename an existing service policy</p>
+<p>Rename an existing service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy rename</code></p>
@@ -23890,7 +23900,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Delete an existing service policy</p>
+<p>Delete an existing service policy (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy delete</code></p>
@@ -23898,7 +23908,7 @@ A service policy can only be used by LIFs in the same SVM that you specified whe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Restore a built-in service-policy to its original state</p>
+<p>Restore a built-in service-policy to its original state (advanced privileges required)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><code>network interface service-policy restore-defaults</code></p>

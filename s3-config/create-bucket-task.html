@@ -9,15 +9,15 @@
   <meta property="og:title" content="Create a bucket" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/s3-config/create-bucket-task.html" />
-	<meta property="og:description" content="S3 objects are kept in buckets—they are not nested as files inside a directory inside other directories." />
+	<meta property="og:description" content="S3 objects are kept in _buckets_--they are not nested as files inside a directory inside other directories." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="S3 objects are kept in buckets—they are not nested as files inside a directory inside other directories.">
-  <meta name="keywords" content=" create, bucket"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="S3 objects are kept in _buckets_--they are not nested as files inside a directory inside other directories.">
+  <meta name="keywords" content=" s3, bucket, system manager,"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -11942,48 +11942,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,7 +23529,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-10 20:43:21 +0000">05/10/2022</time>
+    <time datetime="2022-05-25 17:11:09 +0000">05/25/2022</time>
     
   
 
@@ -23607,6 +23555,8 @@
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph lead">
 <p>S3 objects are kept in <em>buckets</em>--they are not nested as files inside a directory inside other directories.</p>
 </div>
@@ -23616,7 +23566,7 @@
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>When you create a bucket, you have two provisioning options:</p>
+<p>For the CLI, when you create a bucket, you have two provisioning options:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -23646,27 +23596,36 @@
 </li>
 <li>
 <p>If you do not specify aggregates and constituents for a new bucket, the new bucket will be added to an existing FlexGroup.
-See the FlexGroup documentation for more information.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="../flexgroup/index.html">FlexGroup volumes management</a></p>
-</div>
-</li>
-</ul>
-</div>
+See <a href="../flexgroup/index.html">FlexGroup volumes management</a> for more information.</p>
 <div class="paragraph">
 <p>When you specify aggregates and constituents when creating a bucket, no QoS policy groups, default or custom, are applied. You can do so later with the <code>vserver object-store-server bucket modify</code> command.</p>
 </div>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p><strong>Note:</strong> If you are serving buckets from Cloud Volumes ONTAP, it is strongly recommended that you manually select the underlying aggregates to ensure that they are using one node only. Using aggregates from both nodes can impact performance, because the nodes will be in geographically separated availability zones and hence susceptible to latency issues.</p>
+<p><strong>Note:</strong> If you are serving buckets from Cloud Volumes ONTAP, you should use the CLI procedure. It is strongly recommended that you manually select the underlying aggregates to ensure that they are using one node only. Using aggregates from both nodes can impact performance, because the nodes will be in geographically separated availability zones and hence susceptible to latency issues.</p>
 </div>
 <div class="paragraph">
 <p>Storage service levels are predefined adaptive Quality of Service (QoS) policy groups, with <em>value</em>, <em>performance</em>, and <em>extreme</em> default levels. Instead of one of the default storage service levels, you can also define a custom QoS policy group and apply it to a bucket.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Beginning with ONTAP 9.8, when you provision storage, QoS is enabled by default. You can disable QoS or choose a custom QoS policy during the provisioning process or at a later time.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><a href="storage-service-definitions-reference.html">Storage service definitions</a></p>
@@ -23675,13 +23634,25 @@ See the FlexGroup documentation for more information.</p>
 <p>If you are configuring local capacity tiering, you create buckets and users in a data SVM, not in the system SVM where the S3 server is located.</p>
 </div>
 <div class="paragraph">
+<p>For remote client access, you must configure buckets in an S3-enabled storage VM. If you create a bucket in a storage VM that is not S3-enabled, it will only be available for local tiering.</p>
+</div>
+<div class="paragraph">
 <p><a href="../performance-admin/index.html">Performance management</a></p>
 </div>
 <div class="paragraph">
 <p>See the <code>vserver object-store-server bucket</code> man pages for additional configuration and display options.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="process-to-create-buckets">Process to create buckets</h2>
+<div class="sectionbody">
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">CLI</div>
+<div class="content">
 <div class="olist arabic">
-<div class="title">Steps</div>
 <ol class="arabic">
 <li>
 <p>If you plan to select aggregates and FlexGroup components yourself, set the privilege level to advanced (otherwise, admin privilege level is sufficient): <code>set -privilege advanced</code></p>
@@ -23760,6 +23731,92 @@ See the FlexGroup documentation for more information.</p>
 <div class="listingblock">
 <div class="content">
 <pre>cluster-1::*&gt; vserver object-store-server bucket create -vserver svm1.example.com -bucket testbucket -aggr-list aggr1 -size 1TB</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">System Manager</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add a new bucket on an S3-enabled storage VM.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <strong>Storage &gt; Buckets</strong>, then click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Enter a name, select the storage VM, and enter a size.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you click <strong>Save</strong> at this point, a bucket is created with these default settings:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>No users are granted access to the bucket unless any group policies are already in effect.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+You should not use the S3 root user to manage ONTAP object storage and share its permissions, because it has unlimited access to the object store. Instead, create a user or group with administrative privileges that you assign.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>A Quality of Service (performance) level that is the highest available for your system.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>You can click <strong>More Options</strong> to configure user permissions and performance level when you configure the bucket, or you can modify these settings later.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You must have already created user and groups before using <strong>More Options</strong> to configure their permissions.</p>
+</li>
+<li>
+<p>If you intend to use the S3 object store for FabricPool tiering, consider selecting <strong>Use for tiering</strong> (use low-cost media with optimal performance for the tiered data) rather than a performance service level.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>On S3 client apps – another ONTAP system or an external 3rd-party app – verify access to the new bucket by entering the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The S3 server CA certificate.</p>
+</li>
+<li>
+<p>The user’s access key and secret key.</p>
+</li>
+<li>
+<p>The S3 server FQDN name and bucket name.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 

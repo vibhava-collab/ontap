@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>ONTAP S3 configuration overview with System Manager</title>
+  <title></title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="ONTAP S3 configuration overview with System Manager" />
+  <meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/concept_object_provision_overview.html" />
-	<meta property="og:description" content="Beginning with ONTAP 9.8, you can enable an Amazon Simple Storage Service (S3) object storage server in an ONTAP cluster." />
+	<meta property="og:description" content="" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Beginning with ONTAP 9.8, you can enable an Amazon Simple Storage Service (S3) object storage server in an ONTAP cluster.">
-  <meta name="keywords" content=" StorageGRID, Amazon Simple Storage Service, S3, storage, object, object storage, object storage server, object provision, overview, on-premises, FabricPool, AFF, tier, tiering, bucket, remote, local, cluster, clusters, cloud tier, self-tiering, deployments, performance, throughput, capacity, latency, QoS"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -53,6 +53,9 @@
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    pageRedirect("https://docs.netapp.com/us-en/ontap/s3-config/index.html");
+    function pageRedirect(url) { location.href = url; }
+  </script><script>
     if (document.location.hostname === "docs.netapp.com") {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
@@ -169,7 +172,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[ONTAP S3 configuration overview with System Manager](https://docs.netapp.com/us-en/ontap/concept_object_provision_overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/concept_object_provision_overview.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[](https://docs.netapp.com/us-en/ontap/concept_object_provision_overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/redirect/concept_object_provision_overview.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -11942,57 +11945,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/ontap/pdfs/pages/concept_object_provision_overview.pdf" >
-    <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21563,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23574,26 +23516,18 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">ONTAP S3 configuration overview with System Manager</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-05-10 20:43:21 +0000">05/10/2022</time>
+    <time datetime="2022-05-24 21:07:01 +0000">05/24/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
-    <img  class="avatar avatar-small"
-          alt="netapp-forry"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/51911827?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
           alt="netapp-ahibbard"
@@ -23602,115 +23536,12 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
-    <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aherbin">
-    <img  class="avatar avatar-small"
-          alt="netapp-aherbin"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/38955266?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph lead">
-<p>The topics in this section show you how to configure and manage S3 object storage services with System Manager in ONTAP 9.8 and later releases.</p>
-</div>
-<div class="paragraph">
-<p>Beginning with ONTAP 9.8, you can enable an ONTAP Simple Storage Service (S3) object storage server in an ONTAP cluster. For more information, see <a href="s3-config/s3-support-concept.html">S3 support in ONTAP 9</a>.</p>
-</div>
-<div class="paragraph">
-<p>System Manager supports two on-premises use case scenarios for serving S3 object storage:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>FabricPool tier to a bucket on local cluster (tier to a local bucket) or remote cluster (cloud tier).</p>
-</li>
-<li>
-<p>S3 client app access to a bucket on the local cluster or a remote cluster.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For more information about FabricPool tiering, see <a href="concept_cloud_overview.html">FabricPool tier management overview with System Manager</a>.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/ontap/images/note.svg" alt="Note">
-</td>
-<td class="content">
-ONTAP S3 is appropriate if you want S3 capabilities on existing clusters without additional hardware and management. For deployments larger than 300TB, NetApp StorageGRID software continues to be the NetApp flagship solution for object storage. For more information, see the <a href="https://docs.netapp.com/sgws-114/index.jsp" target="_blank" rel="noopener">StorageGRID documentation</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>When you create an S3 bucket using System Manager, ONTAP configures a default performance service level that is the highest available on your system. For example, on an AFF system, the default setting would be <strong>Extreme</strong>. Performance service levels are predefined adaptive Quality of Service (QoS) policy groups. Instead of one of the default service levels, you can specify a custom QoS policy group or no policy group.</p>
-</div>
-<div class="paragraph">
-<p>Predefined adaptive QoS policy groups are:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Extreme</strong>: Used for applications that expect the lowest latency and highest performance.</p>
-</li>
-<li>
-<p><strong>Performance</strong>: Used for applications with modest performance needs and latency.</p>
-</li>
-<li>
-<p><strong>Value</strong>: Used for applications for which throughput and capacity are more important than latency.</p>
-</li>
-<li>
-<p><strong>Custom</strong>: Specify a custom QoS policy or no QoS policy.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>If you select <strong>Use for tiering</strong>, no performance service levels are selected, and the system tries to select low-cost media with optimal performance for the tiered data.</p>
-</div>
-<div class="paragraph">
-<p>See also: <a href="./performance-admin/adaptive-qos-policy-groups-task.html">Use adaptive QoS policy groups</a>.</p>
-</div>
-<div class="paragraph">
-<p>ONTAP tries to provision this bucket on local tiers that have the most appropriate disks, satisfying the chosen service level. However, if you need to specify which disks to include in the bucket, consider configuring S3 object storage from the CLI by specifying the local tiers (aggregate). If you configure the S3 server from the CLI, you can still manage it with System Manager if desired. For more information, see the documentation for <a href="s3-config/index.html">S3 configuration with the CLI</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="configuring-s3-buckets-on-cloud-volumes-ontap">Configuring S3 buckets on Cloud Volumes ONTAP</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>If you want to serve buckets from Cloud Volumes ONTAP, it is strongly recommended that you manually select the underlying aggregates to ensure that they are using one node only. Using aggregates from both nodes can impact performance, because the nodes will be in geographically separated availability zones and hence susceptible to latency issues. Therefore, in Cloud Volumes ONTAP environments, you should <a href="s3-config/create-bucket-task.html">configure S3 buckets from the CLI</a>.</p>
-</div>
-<div class="paragraph">
-<p>Otherwise, S3 servers on Cloud Volumes ONTAP are configured and maintained the same in Cloud Volumes ONTAP as in on-premises environments</p>
-</div>
-</div>
-</div>
+
 
     </article>
     <!-- Page Container -->

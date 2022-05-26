@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Enable an S3 server on a storage</title>
+  <title></title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Enable an S3 server on a storage" />
+  <meta property="og:title" content="" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/task_object_provision_enable_s3_server.html" />
-	<meta property="og:description" content="Add a storage VM with an S3 server for serving content to S3 clients." />
+	<meta property="og:description" content="" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Add a storage VM with an S3 server for serving content to S3 clients.">
-  <meta name="keywords" content=" netapp, ontap, System Manager, S3, S3 server, storage VM, storage VMs, S3 client, client, clients, server, certificate, network, protocol, protocol servers, configure protocols, Fully Qualified Domain Name, FQDN, client, client access, network, network interface, network interfaces, DNS"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -53,6 +53,9 @@
   <link rel="stylesheet" href="/us-en/ontap/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
   <link rel='stylesheet' href='/us-en/ontap/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    pageRedirect("https://docs.netapp.com/us-en/ontap/s3-config/create-svm-s3-task.html");
+    function pageRedirect(url) { location.href = url; }
+  </script><script>
     if (document.location.hostname === "docs.netapp.com") {
       var head = document.getElementsByTagName('head')[0];
       var onetrustConsent = document.createElement("script");
@@ -169,7 +172,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[Enable an S3 server on a storage](https://docs.netapp.com/us-en/ontap/task_object_provision_enable_s3_server.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/task_object_provision_enable_s3_server.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/ontap/issues/new?body=Page%3A%20[](https://docs.netapp.com/us-en/ontap/task_object_provision_enable_s3_server.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/ontap/blob/main/redirect/task_object_provision_enable_s3_server.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/ontap/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/ontap/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -11942,57 +11945,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/ontap/pdfs/pages/task_object_provision_enable_s3_server.pdf" >
-    <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21563,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23574,39 +23516,23 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Enable an S3 server on a storage</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2020-11-04 22:47:24 +0000">11/04/2020</time>
+    <time datetime="2022-05-24 21:07:01 +0000">05/24/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-rlithman">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
     <img  class="avatar avatar-small"
-          alt="netapp-rlithman"
+          alt="netapp-ahibbard"
           width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54725121?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-aherbin">
-    <img  class="avatar avatar-small"
-          alt="netapp-aherbin"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/38955266?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
-    <img  class="avatar avatar-small"
-          alt="netapp-forry"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23615,68 +23541,7 @@
 
 </p>
 
-<div class="paragraph lead">
-<p>Add an S3 server to a new or existing storage VM for serving content to S3 clients.</p>
-</div>
-<div class="paragraph">
-<p>An S3 server can coexist in a storage VM with other protocol servers, or you can create a new storage VM to isolate the namespace and workload.</p>
-</div>
-<div class="paragraph">
-<div class="title">Before you begin</div>
-<p>You should be prepared to enter an S3 server name (FQDN) and IP addresses for interface role Data.</p>
-</div>
-<div class="paragraph">
-<p>If you are using an external-CA signed certificate, you will be prompted to enter it during this procedure; you also have the option to use a system-generated certificate.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Steps</div>
-<ol class="arabic">
-<li>
-<p>Enable S3 on a storage VM.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Add a new storage VM: click <strong>Storage &gt; Storage VMs</strong>, then click <strong>Add</strong>.</p>
-<div class="paragraph">
-<p>If this is a new system with no existing storage VMs: click <strong>Dashboard &gt; Configure Protocols</strong>.</p>
-</div>
-<div class="paragraph">
-<p>If you are adding an S3 server to an existing storage VM: click <strong>Storage &gt; Storage VMs</strong>, select a storage VM, click <strong>Settings</strong>, and then click <span class="image"><img src="./media/icon_gear.gif" alt="settings icon"></span> under <strong>S3</strong>.</p>
-</div>
-</li>
-<li>
-<p>Click <strong>Enable S3</strong>, then enter the S3 Server Name.</p>
-<div class="paragraph">
-<p>This will be the Fully Qualified Domain Name (FQDN) that clients will use.</p>
-</div>
-</li>
-<li>
-<p>Select the certificate type.</p>
-<div class="paragraph">
-<p>Whether you select system-generated certificate or one of your own, it will be required for client access.</p>
-</div>
-</li>
-<li>
-<p>Enter the network interfaces.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>If you selected the system-generated certificate, you see the certificate information when the new storage VM creation is confirmed. Click <strong>Download</strong> and save it for client access.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>The secret key will not be displayed again.</p>
-</li>
-<li>
-<p>If you need the certificate information again: click <strong>Storage &gt; Storage VMs</strong>, select the storage VM, and click <strong>Settings</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
+
 
     </article>
     <!-- Page Container -->

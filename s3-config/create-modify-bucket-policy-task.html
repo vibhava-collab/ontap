@@ -11942,48 +11942,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-05-24 20:19:42 +0000">05/24/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23595,28 +23551,42 @@
 <p>You can add access rules to the default bucket policy. The scope of its access control is the containing bucket, so it is most appropriate when there is a single bucket.</p>
 </div>
 <div class="paragraph">
-<div class="title">What you&#8217;ll need</div>
+<div class="title">Before you begin</div>
 <p>An S3-enabled SVM containing an S3 server and a bucket must already exist.</p>
+</div>
+<div class="paragraph">
+<p>You must have already created users or groups before granting permissions.</p>
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
 <p>You can add new statements for new users and groups, or you can modify the attributes of existing statements. For more options, see the <code>vserver object-store-server bucket policy</code> man pages.</p>
 </div>
+<div class="paragraph">
+<p>User and group permissions can be granted when the bucket is created or as needed later. You can also modify the bucket capacity and QoS policy group assignment.</p>
+</div>
+<div class="paragraph">
+<p>Beginning ONTAP 9.9.1 and later releases, if you plan to support AWS client object tagging functionality with the ONTAP S3 server, the actions <code>GetObjectTagging</code>, <code>PutObjectTagging</code>, and <code>DeleteObjectTagging</code> need to be allowed using the bucket or group policies.</p>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">CLI</div>
+<div class="content">
 <div class="olist arabic">
 <div class="title">Steps</div>
 <ol class="arabic">
 <li>
 <p>Add a statement to a bucket policy:</p>
 <div class="paragraph">
-<p><code>vserver object-store-server bucket policy add-statement -vserver svm_name -bucket bucket_name -effect {allow|deny} -action object_store_actions -principal user_and_group_names -resource object_store_resources [-sid text] [-index integer]</code></p>
+<p><code>vserver object-store-server bucket policy add-statement -vserver <em>svm_name</em> -bucket <em>bucket_name</em> -effect {allow|deny} -action <em>object_store_actions</em> -principal <em>user_and_group_names</em> -resource <em>object_store_resources</em> [-sid text] [-index integer]</code></p>
 </div>
 <div class="paragraph">
 <p>The following parameters define access permissions:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
@@ -23690,6 +23660,46 @@
 <div class="listingblock">
 <div class="content">
 <pre>cluster1::&gt; vserver object-store-server bucket policy statement create -vserver svm1.example.com -bucket bucket1 -effect allow -action GetObject,PutObject,DeleteObject,ListBucket -principal group/group1 -resource bucket1/* -sid "fullAccessForGroup1"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">System Manager</div>
+<div class="content">
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Edit the bucket: click <strong>Storage &gt; Buckets</strong>, click the desired bucket, and then click <strong>Edit</strong>.
+When adding or modifying permissions, you can specify the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Principal: the user or group to whom access is granted.</p>
+</li>
+<li>
+<p>Effect: allows or denies access to a user or group.</p>
+</li>
+<li>
+<p>Actions: permissible actions in the bucket for a given user or group.</p>
+</li>
+<li>
+<p>Resources: paths and names of objects within the bucket for which access is granted or denied.</p>
+<div class="paragraph">
+<p>The defaults <strong><em>bucketname</em></strong> and <strong><em>bucketname/*</em></strong> grant access to all objects in the bucket. You can also grant access to single objects; for example, <strong><em>bucketname/</em>*_readme.txt</strong>.</p>
+</div>
+</li>
+<li>
+<p>Conditions (optional): expressions that are evaluated when access is attempted. For example, you can specify a list of IP addresses for which access will be allowed or denied.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </div>
 

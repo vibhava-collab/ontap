@@ -11942,48 +11942,11 @@
           
           <a target="_blank" 
             
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_System_Manager.pdf" 
+              href="/us-en/ontap/pdfs/sidebar/S3_configuration.pdf" 
             
           >
             <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with System Manager
-          </a>
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          
-          
-          
-          <a target="_blank" 
-            
-              href="/us-en/ontap/pdfs/sidebar/S3_configuration_with_the_CLI.pdf" 
-            
-          >
-            <img src="/us-en/ontap/images/pdf.png" width="16" height="16"/>
-            S3 configuration with the CLI
+            S3 configuration
           </a>
           
 
@@ -21606,22 +21569,7 @@
         <div class="na-navbar-padding"> S3 object storage management</div>
       </a>
       <ul><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with System Manager</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/concept_object_provision_overview.html">
-        Object storage overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_enable_s3_server.html">
-        Enable S3 server
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_buckets.html">
-        Provision buckets
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_add_s3_users_groups.html">
-        Add S3 users and groups
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_bucket_access.html">
-        Manage bucket access
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/task_object_provision_manage_svm_access.html">
-        Manage storage VM access
-      </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> S3 configuration with the CLI</div>
+        <div class="na-navbar-padding"> S3 configuration</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/ontap/s3-config/index.html">
         Overview
@@ -23581,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-21 22:41:12 +0000">10/21/2021</time>
+    <time datetime="2022-05-24 19:37:03 +0000">05/24/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23616,7 +23572,7 @@
 <li>
 <p>Create a self-signed digital certificate:</p>
 <div class="paragraph">
-<p><code>security certificate create -vserver svm_name -type root-ca -common-name ca_cert_name</code></p>
+<p><code>security certificate create -vserver <em>svm_name</em> -type root-ca -common-name <em>ca_cert_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>The <code>-type root-ca</code> option creates and installs a self-signed digital certificate to sign other certificates by acting as a certificate authority (CA).</p>
@@ -23644,7 +23600,7 @@ The certificate's generated name for reference: svm1_ca_159D1587CE21E9D4_svm1_ca
 <li>
 <p>Generate a certificate signing request:</p>
 <div class="paragraph">
-<p><code>security certificate generate-csr -common-name s3_server_name [additional_options]</code></p>
+<p><code>security certificate generate-csr -common-name <em>s3_server_name</em> [additional_options]</code></p>
 </div>
 <div class="paragraph">
 <p>The <code>-common-name</code> parameter for the signing request must be the S3 server name (FQDN).</p>
@@ -23659,7 +23615,7 @@ The certificate's generated name for reference: svm1_ca_159D1587CE21E9D4_svm1_ca
 <li>
 <p>Sign the CSR using SVM_CA to generate S3 Server&#8217;s certificate:</p>
 <div class="paragraph">
-<p><code>security certificate sign -vserver svm_name -ca ca_cert_name -ca-serial ca_cert_serial_number [additional_options]</code></p>
+<p><code>security certificate sign -vserver <em>svm_name</em> -ca <em>ca_cert_name</em> -ca-serial <em>ca_cert_serial_number</em> [additional_options]</code></p>
 </div>
 <div class="paragraph">
 <p>Enter the command options that you used in previous steps:</p>
@@ -23687,7 +23643,7 @@ The certificate's generated name for reference: svm1_ca_159D1587CE21E9D4_svm1_ca
 <li>
 <p>Install the signed certificate on the S3-enabled SVM:</p>
 <div class="paragraph">
-<p><code>security certificate install -type server -vserver svm_name</code></p>
+<p><code>security certificate install -type server -vserver <em>svm_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>When prompted, enter the certificate and private key.</p>
@@ -23702,7 +23658,7 @@ The certificate's generated name for reference: svm1_ca_159D1587CE21E9D4_svm1_ca
 <li>
 <p>Get the public key certificate:</p>
 <div class="paragraph">
-<p><code>security certificate show -vserver svm_name -common-name ca_cert_name -type root-ca -instance</code></p>
+<p><code>security certificate show -vserver <em>svm_name</em> -common-name <em>ca_cert_name</em> -type root-ca -instance</code></p>
 </div>
 <div class="paragraph">
 <p>Save the public key certificate for later client-side configuration.</p>
