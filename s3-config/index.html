@@ -9,14 +9,14 @@
   <meta property="og:title" content="S3 configuration overview" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/s3-config/index.html" />
-	<meta property="og:description" content="You can use ONTAP 9 CLI commands to configure S3 client access to objects contained in a bucket in an SVM." />
+	<meta property="og:description" content="Beginning with ONTAP 9.8, you can enable an ONTAP Simple Storage Service (S3) object storage server in an ONTAP cluster." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can use ONTAP 9 CLI commands to configure S3 client access to objects contained in a bucket in an SVM.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Beginning with ONTAP 9.8, you can enable an ONTAP Simple Storage Service (S3) object storage server in an ONTAP cluster.">
   <meta name="keywords" content=" decide, s3, configuration, client, access, configure, object, bucket, svm"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -23538,19 +23538,19 @@
           style="border-radius: 50%;"/>
   </a>
   
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
-    <img  class="avatar avatar-small"
-          alt="netapp-thomi"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/54111336?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
     <img  class="avatar avatar-small"
           alt="netapp-forry"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23562,7 +23562,20 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Beginning with ONTAP 9.8, you can enable an ONTAP Simple Storage Service (S3) object storage server in an ONTAP cluster. For more information, see <a href="s3-support-concept.html">S3 support in ONTAP 9</a>.</p>
+<p>Beginning with ONTAP 9.8, you can enable an ONTAP Simple Storage Service (S3) object storage server in an ONTAP cluster.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP supports two on-premises use case scenarios for serving S3 object storage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>FabricPool tier to a bucket on local cluster (tier to a local bucket) or remote cluster (cloud tier).</p>
+</li>
+<li>
+<p>S3 client app access to a bucket on the local cluster or a remote cluster.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>You should use these procedures if you want to configure S3 object storage in the following way:</p>
@@ -23589,23 +23602,7 @@
 <p>You can configure and manage ONTAP S3 with System Manager and the ONTAP CLI. When you enable S3 and create buckets using System Manager, ONTAP selects best-practice defaults for simplified configuration. If you need to specify configuration parameters, you might want to use the ONTAP CLI.  If you configure the S3 server and buckets from the CLI, you can still manage them with System Manager if desired, or vice-versa.</p>
 </div>
 <div class="paragraph">
-<p>System Manager supports two on-premises use case scenarios for serving S3 object storage:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>FabricPool tier to a bucket on local cluster (tier to a local bucket) or remote cluster (cloud tier).</p>
-</li>
-<li>
-<p>S3 client app access to a bucket on the local cluster or a remote cluster.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
 <p>When you create an S3 bucket using System Manager, ONTAP configures a default performance service level that is the highest available on your system. For example, on an AFF system, the default setting would be <strong>Extreme</strong>. Performance service levels are predefined adaptive Quality of Service (QoS) policy groups. Instead of one of the default service levels, you can specify a custom QoS policy group or no policy group.</p>
-</div>
-<div class="paragraph">
-<p>For more information about FabricPool tiering, see <a href="../concept_cloud_overview.html">FabricPool tier management overview with System Manager</a>.</p>
 </div>
 <div class="paragraph">
 <p>Predefined adaptive QoS policy groups are:</p>
@@ -23635,12 +23632,8 @@
 <div class="paragraph">
 <p>ONTAP tries to provision this bucket on local tiers that have the most appropriate disks, satisfying the chosen service level. However, if you need to specify which disks to include in the bucket, consider configuring S3 object storage from the CLI by specifying the local tiers (aggregate). If you configure the S3 server from the CLI, you can still manage it with System Manager if desired.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>If you want the ability to specify which aggregates are used for buckets, you can only do so using the CLI.</p>
-</li>
-</ul>
 </div>
 </div>
 </div>

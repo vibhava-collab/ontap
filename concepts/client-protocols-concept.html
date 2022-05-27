@@ -9,14 +9,14 @@
   <meta property="og:title" content="Client protocols" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/ontap/concepts/client-protocols-concept.html" />
-	<meta property="og:description" content="ONTAP supports all major industry-standard client protocols: NFS, SMB, FC, FCoE, iSCSI, and NVMe/FC." />
+	<meta property="og:description" content="ONTAP supports all major industry-standard client protocols: NFS, SMB, FC, FCoE, iSCSI, NVMe/FC, and S3." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/ontap/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP supports all major industry-standard client protocols: NFS, SMB, FC, FCoE, iSCSI, and NVMe/FC.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP supports all major industry-standard client protocols: NFS, SMB, FC, FCoE, iSCSI, NVMe/FC, and S3.">
   <meta name="keywords" content=" client protocols"><!-- Icons -->
   <link rel="icon" href="/us-en/ontap/images/favicon.ico" type="image/x-icon">
 
@@ -23529,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-23 19:52:09 +0000">10/23/2021</time>
+    <time datetime="2022-05-27 17:44:10 +0000">05/27/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-forry">
+    <img  class="avatar avatar-small"
+          alt="netapp-forry"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/51911827?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23542,7 +23550,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>ONTAP supports all major industry-standard client protocols: NFS, SMB, FC, FCoE, iSCSI, and NVMe/FC.</p>
+<p>ONTAP supports all major industry-standard client protocols: NFS, SMB, FC, FCoE, iSCSI, NVMe/FC, and S3.</p>
 </div>
 </div>
 </div>
@@ -23603,6 +23611,41 @@
 </div>
 <div class="paragraph">
 <p>Unlike FC and iSCSI, NVMe does not use LUNs. Instead it uses namespaces, which are stored in an ONTAP volume. NVMe namespaces can be accessed only through the NVMe protocol.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="s3">S3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Beginning with ONTAP 9.8, you can enable an ONTAP Simple Storage Service (S3) server in an ONTAP cluster, allowing you to serve data in object storage using S3 buckets.</p>
+</div>
+<div class="paragraph">
+<p>ONTAP supports two on-premises use case scenarios for serving S3 object storage:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>FabricPool tier to a bucket on local cluster (tier to a local bucket) or remote cluster (cloud tier).</p>
+</li>
+<li>
+<p>S3 client app access to a bucket on the local cluster or a remote cluster.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/ontap/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="paragraph">
+<p>ONTAP S3 is appropriate if you want S3 capabilities on existing clusters without additional hardware and management. For deployments larger than 300TB, NetApp StorageGRID software continues to be the NetApp flagship solution for object storage. Learn about <a href="https://docs.netapp.com/sgws-114/index.jsp" target="_blank" rel="noopener">StorageGRID</a>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
