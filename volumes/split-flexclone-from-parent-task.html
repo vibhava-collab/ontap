@@ -23529,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-12-09 22:31:46 +0000">12/09/2021</time>
+    <time datetime="2022-05-27 16:17:38 +0000">05/27/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
     <img  class="avatar avatar-small"
           alt="netapp-thomi"
@@ -23616,7 +23624,7 @@ vs1       clone1           40.73MB</pre>
 <li>
 <p>Start the split operation:</p>
 <div class="paragraph">
-<p><code>volume clone split start -vserver vserver_name -flexclone clone_volume_name</code></p>
+<p><code>volume clone split start -vserver <em>vserver_name</em> -flexclone <em>clone_volume_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>The following example shows how you can initiate the process to split the FlexClone volume clone1 from its parent volume vol1:</p>
@@ -23634,7 +23642,7 @@ Warning: Are you sure you want to split clone volume clone1 in Vserver vs1 ?
 <li>
 <p>Monitor the status of the FlexClone split operation:</p>
 <div class="paragraph">
-<p><code>volume clone split show -vserver vserver_name -flexclone clone_volume_name</code></p>
+<p><code>volume clone split show -vserver <em>vserver_name</em> -flexclone <em>clone_volume_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>The following example shows the status of the FlexClone split operation on an AFF system:</p>
@@ -23653,7 +23661,7 @@ vs1       clone1        0         0       411247   153600         0        37</p
 <li>
 <p>Verify that the split volume is no longer a FlexClone volume:</p>
 <div class="paragraph">
-<p><code>volume show -volume volume_name -fields clone-volume</code></p>
+<p><code>volume show -volume <em>volume_name</em> -fields <em>clone-volume</em></code></p>
 </div>
 <div class="paragraph">
 <p>The value of the <code>clone-volume</code> option is <code>false</code> for a volume that is not a FlexClone volume.</p>

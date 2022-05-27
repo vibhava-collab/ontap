@@ -23538,16 +23538,32 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-04 16:41:06 +0000">01/04/2022</time>
+    <time datetime="2022-05-27 16:18:42 +0000">05/27/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-barbe">
     <img  class="avatar avatar-small"
           alt="netapp-barbe"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/55463742?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-thomi">
+    <img  class="avatar avatar-small"
+          alt="netapp-thomi"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/54111336?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -23609,19 +23625,19 @@ If NAS auditing is already enabled on an existing SVM, the aggregate&#8217;s sta
 <li>
 <p>If you plan on specifying a Snapshot policy when you create the SVM and do not know the name of the policy, list the available policies and identify and record the name of the Snapshot policy you want to use:</p>
 <div class="paragraph">
-<p><code>volume snapshot policy show -vserver &lt;vserver_name&gt;</code></p>
+<p><code>volume snapshot policy show -vserver <em>vserver_name</em></code></p>
 </div>
 </li>
 <li>
 <p>If you plan on specifying a quota policy when you create the SVM and do not know the name of the policy, list the available policies and identify and record the name of the quota policy you want to use:</p>
 <div class="paragraph">
-<p><code>volume quota policy show -vserver &lt;vserver_name&gt;</code></p>
+<p><code>volume quota policy show -vserver <em>vserver_name</em></code></p>
 </div>
 </li>
 <li>
 <p>Create an SVM:</p>
 <div class="paragraph">
-<p><code>vserver create -vserver &lt;vserver_name&gt; -aggregate &lt;aggregate_name&gt; ‑rootvolume &lt;root_volume_name&gt; -rootvolume-security-style {unix|ntfs|mixed} [-ipspace &lt;IPspace_name&gt;] [-language &lt;language&gt;] [-snapshot-policy &lt;snapshot_policy_name&gt;] [-quota-policy &lt;quota_policy_name&gt;] [-comment &lt;comment&gt;]</code></p>
+<p><code>vserver create -vserver <em>vserver_name</em> -aggregate <em>aggregate_name</em> ‑rootvolume <em>root_volume_name</em> -rootvolume-security-style {unix|ntfs|mixed} [-ipspace <em>IPspace_name</em>] [-language &lt;language&gt;] [-snapshot-policy <em>snapshot_policy_name</em>] [-quota-policy <em>quota_policy_name</em>] [-comment <em>comment</em>]</code></p>
 </div>
 <div class="literalblock">
 <div class="content">

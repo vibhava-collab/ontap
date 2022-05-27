@@ -23529,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-05-27 16:17:38 +0000">05/27/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23584,7 +23592,7 @@
 <li>
 <p>For each data1 partition owned by the node that will be the passive node, assign it to the active node:</p>
 <div class="paragraph">
-<p><code>storage disk assign -force -data1 -owner <em>active_node_name</em> -disk disk_name</code></p>
+<p><code>storage disk assign -force -data1 -owner <em>active_node_name</em> -disk <em>disk_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>You do not need to include the partition as part of the disk name</p>
@@ -23593,7 +23601,7 @@
 <li>
 <p>For each data2 partition owned by the node that will be the passive node, assign it to the active node:</p>
 <div class="paragraph">
-<p><code>storage disk assign -force -data2 -owner active_node_name -disk disk_name</code></p>
+<p><code>storage disk assign -force -data2 -owner <em>active_node_name</em> -disk <em>disk_name</em></code></p>
 </div>
 <div class="paragraph">
 <p>You do not need to include the partition as part of the disk name</p>

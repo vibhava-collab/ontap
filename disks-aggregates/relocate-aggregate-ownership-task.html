@@ -23529,11 +23529,19 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-14 21:50:12 +0000">10/14/2021</time>
+    <time datetime="2022-05-27 16:17:38 +0000">05/27/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ahibbard">
+    <img  class="avatar avatar-small"
+          alt="netapp-ahibbard"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/85892662?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -23640,7 +23648,7 @@ aggr_5     239.0GB   239.0GB    0% online       4 node4  raid_dp,
 <li>
 <p>Issue the command to start the aggregate relocation:</p>
 <div class="paragraph">
-<p><code>storage aggregate relocation start -aggregate-list <em>aggregate-1</em>, <em>aggregate-2</em>&#8230;&#8203; -node source-node -destination <em>destination-node</em></code></p>
+<p><code>storage aggregate relocation start -aggregate-list <em>aggregate-1</em>, <em>aggregate-2</em>&#8230;&#8203; -node <em>source-node</em> -destination <em>destination-node</em></code></p>
 </div>
 <div class="paragraph">
 <p>The following command moves the aggregates aggr_1 and aggr_2 from Node1 to Node3. Node3 is Node1&#8217;s HA partner. The aggregates can be moved only within the HA pair.</p>
