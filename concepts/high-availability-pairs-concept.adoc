@@ -9,7 +9,7 @@ summary: "Cluster nodes are configured in high-availability (HA) pairs for fault
 :imagesdir: ../media/
 
 [.lead]
-Cluster nodes are configured in _high-availability (HA) pairs_ for fault tolerance and nondisruptive operations. If a node fails or if you need to bring a node down for routine maintenance, its partner can _take over_ its storage and continue to serve data from it. The partner _gives back_ storage when the node is brought back on line.
+Cluster nodes are configured in _high-availability (HA) pairs_ for fault tolerance and nondisruptive operations. If a node fails or if you need to bring a node down for routine maintenance, its partner can _take over_ its storage and continue to serve data from it. The partner _gives back_ storage when the node is brought back online.
 
 HA pairs always consist of like controller models. The controllers typically reside in the same chassis with redundant power supplies.
 
